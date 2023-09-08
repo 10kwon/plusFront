@@ -214,44 +214,6 @@ export const HomePage = (props) => {
 
 
 			
-    <div
-				class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
-				dark:bg-gray-600 rounded-xl">
-
-				<h3
-					class="flex items-center pt-1 pb-1 md:px-4 text-lg font-semibold
-					capitalize dark:text-gray-300">
-					<span>공지사항</span>
-					<button class="ml-2">
-          <MegaphoneIcon className="h-5 w-5" aria-hidden="true" />
-					</button>
-				</h3>
-
-				<div>
-					<ul class="pt-1 pb-2 px-3 overflow-y-auto">
-          {blogData.map((item, index) => (
-                  <Card href={`https://mapi.pcor.me/view.php?id=${item.postid}`} className="mb-2" key={index}>
-                  <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {item.title.substring(0,64)}
-                  </h5>
-                  <p className="font-normal text-gray-700 dark:text-gray-400">
-                  {item.contents.substring(0,64)+"..."}
-                  </p>
-                </Card>
-      ))}
-
-					</ul>
-
-					<a
-						href="https://mapi.pcor.me/list.php?id=48"
-						class="flex justify-center capitalize text-blue-500
-						dark:text-blue-200">
-						<span>전체보기</span>
-					</a>
-				</div>
-			</div>
-
-
 			<div
 				class="hidden md:block md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
 				dark:bg-gray-600 rounded-xl">
