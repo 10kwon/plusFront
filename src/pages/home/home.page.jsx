@@ -86,6 +86,9 @@ export const HomePage = (props) => {
                   <h2 class="text-4xl my-auto flex items-center text-white font-bold">
                   {item.title}
                         </h2>
+                        <p class="text-2xl my-auto flex items-center text-white">
+                  바로가기 →
+                        </p>
                   </div>
                 </div>
           </div>
@@ -129,7 +132,7 @@ export const HomePage = (props) => {
 		<div class="md:ml-4 mt-2 flex text-3xl">
     {
         props.isLogin ? <span class="font-semibold">{props.userName}님, 반가워요!</span>
-        : <span><span style={{ animationDelay: "0.15s", animationFillMode: "forwards" }} class="animate-fade-up">어서 오세요</span><br/><span class="font-bold">로그인 후 이용해주세요</span></span>
+        : <span><span style={{ animationDelay: "0.15s", animationFillMode: "forwards" }} class="animate-fade-up">어서 오세요! </span><br class="md:hidden block"/><span class="font-bold">로그인 후 이용해 주세요<span class="hidden md:visible">.</span></span></span>
       }
 			
 		</div>

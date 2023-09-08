@@ -16,7 +16,7 @@ import { Fragment, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
 import { Dialog, Popover, Tab, Transition, Menu } from '@headlessui/react'
-import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon, HomeIcon, PlusCircleIcon} from '@heroicons/react/24/outline'
+import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon, HomeIcon, PlusCircleIcon, ArrowSmallUpIcon} from '@heroicons/react/24/outline'
 import nl2br from "react-nl2br";
 
 const navigation = {
@@ -509,6 +509,12 @@ export default function Header(props) {
                 </button>
 			</div>
 			</div>
+
+      <a href="#">
+      <button class="hidden md:block transform ease-in duration-100 active:scale-95 fixed z-90 bottom-8 right-8 bg-blue-500 w-16 h-16 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-blue-600 hover:shadow-lg">
+      <ArrowSmallUpIcon className="h-6 w-full" />
+</button>
+</a>
 </>
 )
 }

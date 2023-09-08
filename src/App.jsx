@@ -10,6 +10,8 @@ import { AboutcPage } from "./pages/app/aboutcplus";
 import { AboutvPage } from "./pages/app/aboutvplus";
 import { AboutgPage } from "./pages/app/aboutgplus";
 
+import { NotionPage } from "./pages/app/notion";
+
 import { ShopPage } from "./pages/app/shop";
 import { CardPage } from "./pages/app/card";
 import { SupportPage } from "./pages/app/support";
@@ -97,6 +99,7 @@ function App() {
         
         <Route path="/event" element={<Event230804Page isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
 
+        <Route path="/notion" element={<NotionPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
         <Route path="/" element={<HomePage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
         <Route path='*' element={<ErrorPage />}/>
       </Routes>
