@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { Dialog, Popover, Tab, Transition, Menu } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon, HomeIcon, PlusCircleIcon, ArrowSmallUpIcon} from '@heroicons/react/24/outline'
 import nl2br from "react-nl2br";
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 
 const navigation = {
   categories: [
@@ -151,6 +152,9 @@ const navigation = {
   pages: [
     { name: '팀 소개', href: '/aboutPlus' },
   ],
+  linkedpages: [
+    { name: 'Plus NOW', href: 'https://now.pcor.me' },
+  ],
 }
 
 function classNames(...classes) {
@@ -267,14 +271,18 @@ export default function Header(props) {
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   {navigation.pages.map((page) => (
                     <div key={page.name} className="flow-root">
-                      <a href={page.href} className="-m-2 block p-2 font-medium text-gray-900">
+                      <button onClick={() => navigate(page.href)} className="-m-2 block p-2 font-medium text-gray-900">
                         {page.name}
+                      </button>
+                    </div>
+                  ))}
+                  {navigation.linkedpages.map((page) => (
+                    <div key={page.name} className="flow-root">
+                      <a href={page.href} className="-m-2 block p-2 font-medium text-gray-900">
+                        {page.name}<ArrowUpRightIcon className="h-4 inline-block"/>
                       </a>
                     </div>
                   ))}
-                </div>
-
-                <div className="border-t border-gray-200 px-4 py-6">
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -394,6 +402,16 @@ export default function Header(props) {
                     >
                       {page.name}
                     </button>
+                  ))}
+                  {navigation.linkedpages.map((page) => (
+                    <a
+                      key={page.name}
+                      href={page.href}
+                      className="flex items-center font-medium text-gray-700 hover:text-gray-800"
+                    >
+                      {page.name}
+                      <ArrowUpRightIcon className="h-6 inline-block"/>
+                    </a>
                   ))}
                 </div>
               </Popover.Group>
