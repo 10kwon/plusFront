@@ -42,7 +42,7 @@ const navigation = {
           name: '사용하기',
           items: [
             { name: '상점', href: '/shop' },
-            { name: '카드', href: '/card' },
+            { name: '카드', href: '/card/setting' },
           ],
         },
         {
