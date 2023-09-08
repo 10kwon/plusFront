@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import Header from '../../components/header/header.jsx';
+import Header from '../../components/header/header.prod.jsx';
 import Footer from '../../components/footer/footer.prod.jsx';
 import {Card, Avatar, Tabs, Breadcrumb} from 'flowbite-react';
 import { HomeIcon, ChevronRightIcon } from '@heroicons/react/20/solid'

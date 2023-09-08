@@ -22,7 +22,8 @@ import 'swiper/css/pagination';
 import { Canvas, useFrame } from '@react-three/fiber';
 import RotatingImage from '../../components/regCardSpin';
 
-import { ChevronRightIcon } from '@heroicons/react/20/solid'
+import { ChevronRightIcon, MegaphoneIcon, GiftIcon, UserCircleIcon, ShoppingBagIcon } from '@heroicons/react/20/solid'
+import { motion } from "framer-motion"
 
 export const HomePage = (props) => {
   const navigate = useNavigate()
@@ -72,13 +73,23 @@ export const HomePage = (props) => {
           clickable: true,
         }}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper "
+        className="mySwiper"
       >
       {bannerData.map((item, index) => (
         <SwiperSlide key={index}>
           <a href={item.link}>
           <div class="hidden md:block h-36 md:h-64 lg:h-96 p-4 bg-cover bg-center" style={{ backgroundImage: `url(${item.url})` }}>
+          
+          <div class="absolute bg-gradient-to-l from-transparent to-blue-800 inset-0 z-0"></div>
+                <div class="relative flex flex-row items-end max-w-screen-xl mx-auto">
+                  <div class="p-6 rounded-xl h-full flex flex-col w-full z-10 ">
+                  <h2 class="text-4xl my-auto flex items-center text-white font-bold">
+                  {item.title}
+                        </h2>
+                  </div>
+                </div>
           </div>
+
           </a>
         </SwiperSlide>
       ))}
@@ -118,13 +129,13 @@ export const HomePage = (props) => {
 		<div class="md:ml-4 mt-2 flex text-3xl">
     {
         props.isLogin ? <span class="font-semibold">{props.userName}님, 반가워요!</span>
-        : <span><span>어서 오세요</span><br/><span class="font-bold">로그인 후 이용해주세요</span></span>
+        : <span><span style={{ animationDelay: "0.15s", animationFillMode: "forwards" }} class="animate-fade-up">어서 오세요</span><br/><span class="font-bold">로그인 후 이용해주세요</span></span>
       }
 			
 		</div>
-		<div class="md:flex">
+		<div class="md:grid md:grid-cols-2">
     <div
-				class="block md:hidden md:mr-6 md:w-1/2 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
+				class="block md:hidden md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
 				dark:bg-gray-600 rounded-xl">
 
 				<h3
@@ -165,7 +176,7 @@ export const HomePage = (props) => {
 				</div>
 			</div>
     <div
-				class="md:mr-6 md:w-1/2 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
+				class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
 				dark:bg-gray-600 rounded-xl">
 
 				<h3
@@ -173,7 +184,7 @@ export const HomePage = (props) => {
 					capitalize dark:text-gray-300">
 					<span>이벤트</span>
 					<button class="ml-2">
-          <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
+          <GiftIcon className="h-5 w-5" aria-hidden="true" />
 					</button>
 				</h3>
 
@@ -201,7 +212,7 @@ export const HomePage = (props) => {
 
 			
     <div
-				class="md:mr-6 md:w-1/2 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
+				class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
 				dark:bg-gray-600 rounded-xl">
 
 				<h3
@@ -209,7 +220,7 @@ export const HomePage = (props) => {
 					capitalize dark:text-gray-300">
 					<span>공지사항</span>
 					<button class="ml-2">
-          <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
+          <MegaphoneIcon className="h-5 w-5" aria-hidden="true" />
 					</button>
 				</h3>
 
@@ -239,7 +250,7 @@ export const HomePage = (props) => {
 
 
 			<div
-				class="hidden md:block md:mr-6 md:w-1/2 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
+				class="hidden md:block md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
 				dark:bg-gray-600 rounded-xl">
 
 				<h3
@@ -247,7 +258,7 @@ export const HomePage = (props) => {
 					capitalize dark:text-gray-300">
 					<span>내 Plus ID</span>
 					<button class="ml-2">
-          <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
+          <UserCircleIcon className="h-5 w-5" aria-hidden="true" />
 					</button>
 				</h3>
 
@@ -288,17 +299,17 @@ class="mt-3 px-3 w-full bg-blue-500 font-bold text-white text-center m-auto py-2
 					capitalize dark:text-gray-300">
 					<span>상점 인기 상품</span>
 					<button class="ml-2">
-          <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
+          <ShoppingBagIcon className="h-5 w-5" aria-hidden="true" />
 					</button>
 				</h3>
 
         <div class="grid m-0  grid-cols-2  space-x-4 overflow-y-scroll flex justify-center items-center w-full ">
         {shopData.map((item, index) => (
           <a href="/shop">
-        				<div class="relative flex flex-col justify-between bg-white shadow-md rounded-xl transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center rounded-xl shadow-md h-64 my-2"
+        				<div class="relative flex flex-col justify-between bg-white shadow-md rounded-xl transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center shadow-md h-64 my-2"
                 style={{ backgroundImage: `url(${item.thumbnail})` }}
                 key={index}>
-                <div class="absolute bg-gradient-to-t from-green-400 to-blue-400  opacity-50 inset-0 z-0"></div>
+                <div class="absolute bg-gradient-to-b from-transparent to-black  opacity-50 inset-0 z-0"></div>
                 <div class="relative flex flex-row items-end  h-72 w-full ">
                   <div class="p-6 rounded-xl  flex flex-col w-full z-10 ">
                   <h2 class="text-sm flex items-center text-white font-normal">

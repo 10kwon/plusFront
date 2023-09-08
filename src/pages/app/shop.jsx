@@ -116,21 +116,18 @@ export const ShopPage = (props) => {
 
 
 
-        <h3
-					class="flex items-center pt-8 pb-1 md:px-4 text-lg font-semibold
+        <h2
+					class="flex items-center pt-8 pb-1 md:px-4 text-2xl font-bold
 					capitalize dark:text-gray-300">
-					<span>상점 인기 상품</span>
-					<button class="ml-2">
-          <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
-					</button>
-				</h3>
+					<span>추천 상품</span>
+				</h2>
 
         <div class="grid m-0  grid-cols-2  space-x-4 overflow-y-scroll flex justify-center items-center w-full ">
         {shopData.map((item, index) => (
-        				<div class="relative flex flex-col justify-between bg-white shadow-md rounded-xl transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center rounded-xl shadow-md h-64 my-2"
+        				<div class="relative flex flex-col justify-between bg-white shadow-md rounded-xl transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center shadow-md h-64 my-2"
                 style={{ backgroundImage: `url(${item.thumbnail})` }}
                 key={index} onClick={() => handleProductClick(item)}>
-                <div class="absolute bg-gradient-to-b from-white to-black  opacity-70 inset-0 z-0"></div>
+                <div class="absolute bg-gradient-to-b from-transparent to-black  opacity-50 inset-0 z-0"></div>
                 <div class="relative flex flex-row items-end  h-72 w-full ">
                   <div class="p-6 rounded-xl  flex flex-col w-full z-10 ">
                   <h2 class="text-sm flex items-center text-white font-normal">
@@ -153,14 +150,11 @@ export const ShopPage = (props) => {
 
 			</div>
 
-      <h3
-					class="flex items-center pt-8 pb-1 md:px-4 text-lg font-semibold
+      <h2
+					class="flex items-center pt-8 pb-1 md:px-4 text-2xl font-bold
 					capitalize dark:text-gray-300">
 					<span>전체 상품</span>
-					<button class="ml-2">
-          <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
-					</button>
-				</h3>
+				</h2>
         <select
         value={selectedCategory}
         className="rounded-xl mt-2 lg:ml-2"
@@ -305,16 +299,19 @@ export const ShopPage = (props) => {
 
                   {nl2br(selectedProduct.productDescription)}
                   </div>
+
+
+                                          </div>
+                                          <div class="px-4 bottom-0 sticky w-full">
                   <a href={`https://mapi.pcor.me/form/buy.php?iid=${selectedProduct.iid}`}>
                   <button 
 onClick={() => setIsPopupOpen(false)}
 class="mt-3 px-3 w-full bg-blue-500 font-bold text-white text-center m-auto py-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-blue-700">
 구매하기
 </button>
-</a>
-
-                                          </div>
+</a></div>
                                           </>
+                                          
                     )}
                     </div>
                     
