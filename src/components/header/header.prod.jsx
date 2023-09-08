@@ -34,7 +34,7 @@ const navigation = {
           items: [
             { name: 'Metro+', href: '/metroPlus' },
             { name: '리크봇', href: 'https://leek.pcor.me' },
-            { name: '이벤트', href: 'https://mapi.pcor.me/list.php?id=60' },
+            { name: 'Plus NOW 이벤트', href: 'https://now.pcor.me/' },
           ],
         },
         {
@@ -120,7 +120,7 @@ const navigation = {
           id: 'supportNotice',
           name: '새로운 소식',
           items: [
-            { name: '공지사항', href: 'https://mapi.pcor.me/list.php?id=48' },
+            { name: 'Plus NOW 공지사항', href: 'https://now.pcor.me/' },
           ],
         },
       ],
