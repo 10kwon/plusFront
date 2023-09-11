@@ -64,15 +64,15 @@ export const HomePage = (props) => {
       {bannerData.map((item, index) => (
         <SwiperSlide key={index}>
           <a href={item.link}>
-          <div class="hidden md:block h-36 md:h-64 lg:h-96 p-4 bg-cover bg-center" style={{ backgroundImage: `url(${item.url})` }}>
+          <div class="h-36 md:h-64 lg:h-96 p-4 bg-cover bg-center" style={{ backgroundImage: `url(${item.url})` }}>
           
           <div class="absolute bg-gradient-to-l from-transparent to-blue-800 inset-0 z-0"></div>
                 <div class="relative flex flex-row items-end max-w-screen-xl mx-auto">
-                  <div class="p-6 rounded-xl h-full flex flex-col w-full z-10 ">
-                  <h2 class="text-4xl my-auto flex items-center text-white font-bold">
+                  <div class="md:p-6 rounded-xl h-full flex flex-col w-full z-10 ">
+                  <h2 class="text-2xl md:text-4xl my-auto flex items-center text-white font-bold">
                   {item.title}
                         </h2>
-                        <p class="text-2xl my-auto flex items-center text-white">
+                        <p class="text-xl md:text-2xl my-auto flex items-center text-white">
                   바로가기 →
                         </p>
                   </div>
@@ -123,51 +123,11 @@ export const HomePage = (props) => {
 			
 		</div>
 		<div class="md:grid md:grid-cols-2">
-    <div
-				class="block md:hidden md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
-				dark:bg-gray-600 rounded-xl">
-
-				<h3
-					class="flex items-center pt-1 pb-1 md:px-4 text-lg font-semibold
-					capitalize dark:text-gray-300">
-					<span>새로운 소식</span>
-					<button class="ml-2">
-          <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
-					</button>
-				</h3>
-
-				<div>
-          <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        loop={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: true,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper "
-      >
-      {bannerData.map((item, index) => (
-        <SwiperSlide key={index}>
-          <a href={item.link} class="rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100">
-          <div class="h-36 md:h-64 lg:h-96 p-4 rounded-xl bg-cover bg-center" style={{ backgroundImage: `url(${item.url})` }}>
-          </div>
-          <p class="w-full text-center pt-2 pb-8 font-bold">{item.title}</p>
-          </a>
-        </SwiperSlide>
-      ))}
-      </Swiper>
-
-				</div>
-			</div>
+  
 
 			
 			<div
-				class="hidden md:block md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
+				class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
 				dark:bg-gray-600 rounded-xl">
     <h3
 					class="flex items-center pt-1 pb-1 md:px-4 text-lg font-semibold
@@ -210,7 +170,7 @@ export const HomePage = (props) => {
       </div>
       
 			<div
-				class="hidden md:block md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
+				class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
 				dark:bg-gray-600 rounded-xl">
 				<h3
 					class="flex items-center pt-1 pb-1 md:px-4 text-lg font-semibold

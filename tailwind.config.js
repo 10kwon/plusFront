@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       zIndex: {
         '100': '100',
+      },
+      height: {
+        '128': '52rem',
       }
     },
   },
