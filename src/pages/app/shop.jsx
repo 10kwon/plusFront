@@ -359,13 +359,14 @@ class="mt-3 px-3 w-full bg-blue-500 font-bold text-white text-center m-auto py-2
                     <span className="sr-only">Close</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
-                  {/*isPopupOpen && (
-                  <Iframe url={selectedProduct.merchant}
+                  {isPopupOpen && (
+                  <Iframe url={`https://mapi.pcor.me/form/buy.php?iid=${selectedProduct.iid}`}
         id=""
         className="w-full h-128 mt-8"
         display="block"
         position="relative"/>
-                  )*/}
+                  )}
+                  {/*
                   <div class="w-full h-128 mt-8 relative block">
                   <div class="px-6 py-8 md:px-16 md:py-16">
                   <h3 class="text-xl md:text-2xl font-semibold">결제할 상품의 이름</h3>
@@ -377,7 +378,7 @@ class="mt-3 px-3 w-full bg-blue-500 font-bold text-white text-center m-auto py-2
                   10kwonadmin
                   </div>
                   </div>
-                  </div>
+                  </div>*/}
                 </div>
               </Dialog.Panel>
             </Transition.Child>

@@ -23,8 +23,7 @@ function Footer(props) {
           <img alt="크리에이티브 커먼즈 라이선스" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
             <span>이 저작물은 <a href="http://creativecommons.org/licenses/by-sa/4.0/" class="hover:text-purple-500 rounded-xl scale-100 transform ease-in duration-100 active:scale-95 hover:bg-gray-100">크리에이티브 커먼즈 저작자표시-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다. (단, 라이선스가 명시된 일부 컨텐츠 제외)
             </span><br/>
-            <span class="font-bold">저희가 제공하는 정보의 사실 여부에 대해선 보증할 수 없어요.<br/>
-            이 서비스의 내용으로 관련 기관에 민원을 넣지 마세요.</span>
+            <span class="">Plus의 뉴스 섹션은 뉴스픽에서 제공하는 것으로, Plus의 공식적 견해가 아닐 수 있어요.</span>
           </span>
           <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
 <a href="https://twitter.com/@metroplus_" class="transform ease-in duration-100 active:scale-95 active:bg-gray-100 text-gray-500 hover:text-blue-400 dark:hover:text-white">

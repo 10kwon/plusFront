@@ -22,7 +22,7 @@ import 'swiper/css/pagination';
 import { Canvas, useFrame } from '@react-three/fiber';
 import RotatingImage from '../../components/regCardSpin';
 
-import { ChevronRightIcon, MegaphoneIcon, GiftIcon, UserCircleIcon, ShoppingBagIcon } from '@heroicons/react/20/solid'
+import { ChevronRightIcon, MegaphoneIcon, GiftIcon, UserCircleIcon, ShoppingBagIcon, NewspaperIcon } from '@heroicons/react/20/solid'
 import { motion } from "framer-motion"
 
 export const HomePage = (props) => {
@@ -41,6 +41,12 @@ export const HomePage = (props) => {
       .catch(error => console.log(error));
   }, []);
 
+  const [newsData, setNewsData] = useState([]);
+  useEffect(() => {
+    axios.get('https://mapi.pcor.me/api/board/newsPopular.php')
+      .then(response => setNewsData(response.data))
+      .catch(error => console.log(error));
+  }, []);
   useEffect(() => {
     AOS.init();
   })
@@ -138,7 +144,7 @@ export const HomePage = (props) => {
 					</button>
 				</h3>
 
-        <div class="grid m-0  grid-cols-2  space-x-4 overflow-y-scroll flex justify-center items-center w-full ">
+        <div class="grid m-0  grid-cols-2  space-x-4 overflow-x-scroll flex justify-center items-center w-full ">
         {shopData.map((item, index) => (
           <a href="/shop">
         				<div class="relative flex flex-col justify-between bg-white shadow-md rounded-xl transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center shadow-md h-64 my-2"
@@ -169,6 +175,46 @@ export const HomePage = (props) => {
 			</div>
       </div>
       
+      <div
+				class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
+				dark:bg-gray-600 rounded-xl">
+    <h3
+					class="flex items-center pt-1 pb-1 md:px-4 text-lg font-semibold
+					capitalize dark:text-gray-300">
+					<span>뉴스 인기 기사</span>
+					<button class="ml-2">
+          <NewspaperIcon className="h-5 w-5" aria-hidden="true" />
+					</button>
+				</h3>
+
+        <div className="mx-auto max-w-2xl px-4 pb-16 sm:px-6 sm:pb-24 lg:max-w-7xl lg:px-8">
+          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10">
+            {newsData.map((item, index) => (
+              <a href="/reward/news">
+              <div key={item.postid} className="group relative rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100">
+
+              <div className="mt-4 flex justify-between">
+                <div>
+                <p className="mt-1 text-sm text-gray-500">{item.author}</p>
+                  <h3 className="text-lg font-bold text-gray-900">
+                      <span aria-hidden="true" className="absolute inset-0" />
+                      {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-700"><img src="https://coin.pcor.me/resources/images/pluscoin.svg" class="h-4 mr-1 inline-block" alt="Coin"/>{item.reward.toLocaleString()+"코인 지급"}</p>
+                </div>
+                <div className="justify-end aspect-square w-24 h-24 overflow-hidden rounded-xl bg-gray-200 group-hover:opacity-75">
+                <img
+                  src={item.thumbnail}
+                  alt="상품 미리보기 이미지"
+                  className="h-full w-full object-cover object-center"
+                />
+              </div>
+              </div>
+            </div></a>
+          ))}
+        </div>
+      </div>
+      </div>
 			<div
 				class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
 				dark:bg-gray-600 rounded-xl">

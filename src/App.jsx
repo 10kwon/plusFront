@@ -16,6 +16,7 @@ import { ShopPage } from "./pages/app/shop";
 import { CardPage } from "./pages/app/card";
 import { SupportPage } from "./pages/app/support";
 import { SekaiIssuePage } from "./pages/app/sekai";
+import { NewsPicPage } from "./pages/app/newspic";
 
 //행사 페이지
 import { Event230804Page } from "./pages/promotion/230804";
@@ -96,7 +97,8 @@ function App() {
         <Route path="/card/setting" element={<CardPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
         <Route path="/support" element={<SupportPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
         <Route path="/sekai" element={<SekaiIssuePage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
-        
+        <Route path="/reward/news" element={<NewsPicPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
+
         <Route path="/event" element={<Event230804Page isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
 
         <Route path="/notion" element={<NotionPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />

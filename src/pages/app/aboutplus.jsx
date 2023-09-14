@@ -25,12 +25,6 @@ export const AboutpPage = (props) => {
       imageUrl:
         'https://pbs.twimg.com/profile_images/1586900429580816386/god7cKBM_400x400.jpg',
     },
-    {
-      name: '토끼',
-      role: 'UI 디자이너',
-      imageUrl:
-        'https://pbs.twimg.com/profile_images/1658030364307369989/bTacYB0a_400x400.jpg',
-    },
   ]
 
   const links = [
