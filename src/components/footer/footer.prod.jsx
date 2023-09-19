@@ -26,10 +26,9 @@ function Footer(props) {
             <span class="">Plus의 뉴스 섹션은 뉴스픽에서 제공하는 것으로, Plus의 공식적 견해가 아닐 수 있어요.</span>
           </span>
           <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-<a href="https://twitter.com/@metroplus_" class="transform ease-in duration-100 active:scale-95 active:bg-gray-100 text-gray-500 hover:text-blue-400 dark:hover:text-white">
-<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-<path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
-</path>
+<a href="https://x.com/@metroplus_" class="transform ease-in duration-100 active:scale-95 active:bg-gray-100 text-gray-500 hover:text-black dark:hover:text-white">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 300 271" xmlns="http://www.w3.org/2000/svg">
+ <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"/>
 </svg>
 </a>
 <a href="https://github.com/10kwon" class="transform ease-in duration-100 active:scale-95 active:bg-gray-100 text-gray-500 hover:text-gray-900 dark:hover:text-white">

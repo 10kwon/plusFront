@@ -45,7 +45,7 @@ export const AuthPage = (props) => {
     Google으로 로그인
   </button>
   </a>
-  <a href="https://mapi.pcor.me/oauth/twitter.php?action=login">
+  <a href="https://mapi.pcor.me/oauth/x.php?action=login">
   <button
     className="w-full text-white bg-black text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
   >
