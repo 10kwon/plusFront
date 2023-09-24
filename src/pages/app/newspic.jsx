@@ -73,17 +73,14 @@ export const NewsPicPage = (props) => {
     메인
   </Breadcrumb.Item>
   <Breadcrumb.Item>
- 미션
-  </Breadcrumb.Item>
-  <Breadcrumb.Item>
- 뉴스 읽기
+ 리워드
   </Breadcrumb.Item>
 </Breadcrumb>
 <h3
 					class="flex items-center pt-6 md:px-4 text-3xl font-bold
 					capitalize dark:text-gray-300">
             
-					<span>뉴스 읽기</span>
+					<span>리워드 받기</span>
 				</h3>
 
 
@@ -92,7 +89,7 @@ export const NewsPicPage = (props) => {
         <h2
 					class="flex items-center pt-8 pb-1 md:px-4 text-2xl font-bold
 					capitalize dark:text-gray-300">
-					<span>'인기있'드라인</span>
+					<span>추천 리워드</span>
 				</h2>
         <div class="md:flex overflow-x-scroll md:justify-center md:items-center">
         {shopData.map((item, index) => (
@@ -125,7 +122,7 @@ export const NewsPicPage = (props) => {
       <h2
 					class="flex items-center pt-8 pb-1 md:px-4 text-2xl font-bold
 					capitalize dark:text-gray-300">
-					<span>전체 뉴스</span>
+					<span>전체 리워드 보기</span>
 				</h2>
 
 
