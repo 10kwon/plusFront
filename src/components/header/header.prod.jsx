@@ -16,7 +16,7 @@ import { Fragment, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
 import { Dialog, Popover, Tab, Transition, Menu } from '@headlessui/react'
-import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon, HomeIcon, PlusCircleIcon, ArrowSmallUpIcon, NewspaperIcon} from '@heroicons/react/24/outline'
+import { GiftIcon, Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon, HomeIcon, PlusCircleIcon, ArrowSmallUpIcon, NewspaperIcon} from '@heroicons/react/24/outline'
 import nl2br from "react-nl2br";
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 
@@ -506,23 +506,23 @@ export default function Header(props) {
 
 <div
 			class="md:hidden fixed z-50 w-full bottom-0 p-5 px-6 flex items-center justify-between backdrop-blur-lg bg-white/70 shadow-3xl text-gray-900 cursor-pointer">
-			<div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400 ">
+			<div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
       <button  onClick={() => setOpen(true)}>
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                 </button>
 			</div>
-      <div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400 ">
+      <div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
       <button onClick={() => navigate('/')}>
       <HomeIcon className="h-6 w-6" aria-hidden="true" />
                 </button>  
 			</div>
-			<div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400 ">
+			<div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
       <button onClick={() => navigate('/reward/news')}>
-      <NewspaperIcon className="h-6 w-6" aria-hidden="true" />
+      <GiftIcon className="h-6 w-6" aria-hidden="true" />
                 </button>  
 			</div>
       
-			<div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400 ">
+			<div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
       <button onClick={() => navigate('/shop')}>
       <ShoppingBagIcon className="h-6 w-6" aria-hidden="true" />
                 </button>  
