@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import axios from 'axios';
+import nl2br from "react-nl2br";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -75,10 +76,10 @@ export const HomePage = (props) => {
           <div class="absolute bg-black/50 inset-0 z-0"></div>
                 <div class="relative flex flex-row items-end max-w-screen-xl mx-auto">
                   <div class="md:p-6 rounded-xl h-full flex flex-col w-full z-10 ">
-                  <h2 class="text-2xl md:text-4xl my-auto flex items-center text-white font-bold">
-                  {item.title}
+                  <h2 class="text-3xl md:text-4xl my-auto flex items-center text-white font-bold">
+                  {nl2br(item.title)}
                         </h2>
-                        <p class="text-xl md:text-2xl my-auto flex items-center text-white">
+                        <p class="text-lg md:text-2xl mt-4 my-auto flex items-center text-white">
                   바로가기 →
                         </p>
                   </div>
@@ -147,7 +148,7 @@ export const HomePage = (props) => {
         <div class="grid m-0  grid-cols-2  space-x-4 overflow-x-scroll flex justify-center items-center w-full ">
         {shopData.map((item, index) => (
           <a href="/shop">
-        				<div class="relative flex flex-col justify-between bg-white shadow-md rounded-xl transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center shadow-md h-64 my-2"
+        				<div class="relative flex flex-col justify-between bg-blue-900 shadow-md rounded-xl transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center shadow-md h-64 my-2"
                 style={{ backgroundImage: `url(${item.thumbnail})` }}
                 key={index}>
                 <div class="absolute bg-gradient-to-b from-transparent to-black  opacity-50 inset-0 z-0"></div>
@@ -181,9 +182,9 @@ export const HomePage = (props) => {
     <h3
 					class="flex items-center pt-1 pb-1 md:px-4 text-lg font-semibold
 					capitalize dark:text-gray-300">
-					<span>뉴스 인기 기사</span>
+					<span>혜택 참여하기</span>
 					<button class="ml-2">
-          <NewspaperIcon className="h-5 w-5" aria-hidden="true" />
+          <GiftIcon className="h-5 w-5" aria-hidden="true" />
 					</button>
 				</h3>
 
