@@ -70,9 +70,9 @@ export const HomePage = (props) => {
       {bannerData.map((item, index) => (
         <SwiperSlide key={index}>
           <a href={item.link}>
-          <div class="h-36 md:h-64 lg:h-96 p-4 bg-cover bg-center" style={{ backgroundImage: `url(${item.url})` }}>
+          <div class="h-64 lg:h-96 p-4 bg-cover bg-center" style={{ backgroundImage: `url(${item.url})` }}>
           
-          <div class="absolute bg-gradient-to-l from-transparent to-blue-800 inset-0 z-0"></div>
+          <div class="absolute bg-black/50 inset-0 z-0"></div>
                 <div class="relative flex flex-row items-end max-w-screen-xl mx-auto">
                   <div class="md:p-6 rounded-xl h-full flex flex-col w-full z-10 ">
                   <h2 class="text-2xl md:text-4xl my-auto flex items-center text-white font-bold">
