@@ -1,13 +1,22 @@
-import React from 'react';
+import { Fragment, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import Header from '../../components/header/header.prod.jsx';
 import Footer from '../../components/footer/footer.prod.jsx';
+import useDarkSide from '../../components/useDarkSide';
 
 export const AuthPage = (props) => {
+  const [colorTheme, setTheme] = useDarkSide();
+  const [darkSide, setDarkSide] = useState(colorTheme === 'light' ? true : false);
+
+  const toggleDarkMode = checked => {
+    setTheme(colorTheme);
+    setDarkSide(checked);
+  };
+
     const navigate = useNavigate()
     return(
         <div className="dark:bg-gray-800 dark:text-white">
-  <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-24 lg:px-8">
+  <div className="flex min-h-screen flex-1 flex-col justify-center px-6 py-24 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <button  onClick={() => navigate('/')}>
           <img
@@ -31,18 +40,18 @@ export const AuthPage = (props) => {
     <img
             className="h-6 w-auto inline-block mr-2"
             src="/resources/images/discord.svg"
-            alt="Plus"
+            alt="Discord"
           /> Discord로 로그인하기
   </button>
   </a>
   <a href="https://mapi.pcor.me/oauth/kakao.php?action=login">
   <button
-    className="w-full text-black bg-yellow-300 text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
+    className="w-full text-black bg-[#FEE500] text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
   >
     <img
             className="h-6 w-auto inline-block mr-2"
             src="/resources/images/kakao.svg"
-            alt="Plus"
+            alt="Kakao"
           /> 카카오로 로그인하기
   </button>
   </a>
@@ -53,7 +62,7 @@ export const AuthPage = (props) => {
     <img
             className="h-6 w-auto inline-block mr-2"
             src="/resources/images/google.svg"
-            alt="Plus"
+            alt="Google"
           /> Google으로 로그인하기
   </button>
   </a>
