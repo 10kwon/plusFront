@@ -20,6 +20,10 @@ import { GiftIcon, Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon, H
 import nl2br from "react-nl2br";
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 
+import useDarkSide from '../useDarkSide';
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
+
+
 const navigation = {
   categories: [
     {
@@ -163,6 +167,15 @@ function classNames(...classes) {
 }
 
 export default function Header(props) {
+  const [colorTheme, setTheme] = useDarkSide();
+  const [darkSide, setDarkSide] = useState(colorTheme === 'light' ? true : false);
+
+  const toggleDarkMode = checked => {
+    setTheme(colorTheme);
+    setDarkSide(checked);
+  };
+
+
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
   return (
@@ -291,10 +304,10 @@ export default function Header(props) {
         </Dialog>
       </Transition.Root>
 
-      <header className="z-50 w-full bg-white">
+      <header className="z-50 w-full bg-white dark:bg-gray-900">
 
-        <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 bg-white lg:px-8">
-          <div className="border-b border-gray-200">
+        <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 bg-white dark:bg-gray-900 lg:px-8">
+          <div className="border-b border-gray-200 dark:border-gray-800">
             <div className="flex h-16 md:h-20 items-center">
 
               {/* Logo */}
@@ -320,8 +333,8 @@ export default function Header(props) {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? 'border-blue-500 text-blue-500'
-                                  : 'border-transparent text-gray-700 hover:text-gray-800',
+                                  ? 'border-blue-500 text-blue-500 dark:border-blue-300 dark:text-blue-300'
+                                  : 'border-transparent text-gray-700 hover:text-gray-800 dark:text-gray-100 dark:hover:text-gray-200',
                                 'relative z-10 -mb-px flex items-center border-b-2 pt-px font-medium transition-colors duration-200 ease-out'
                               )}
                             >
@@ -340,9 +353,9 @@ export default function Header(props) {
                           >
                             <Popover.Panel className="absolute inset-x-0 z-100 top-full text-sm text-gray-500">
                               {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                              <div className="absolute inset-0 top-1/2 bg-white shadow" aria-hidden="true" />
+                              <div className="absolute inset-0 top-1/2 bg-white dark:bg-gray-900 shadow" aria-hidden="true" />
 
-                              <div className="relative bg-white">
+                              <div className="relative bg-white dark:bg-gray-900 ">
                                 <div className="mx-auto max-w-7xl px-8">
                                   <div className="grid grid-cols-4 gap-x-8 gap-y-10 py-8">
                                       {category.featured.map((item) => (
@@ -371,12 +384,12 @@ export default function Header(props) {
                                             aria-labelledby={`${section.name}-heading`}
                                             className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
                                           >
-                                            <a className="text-lg font-bold text-black">
+                                            <a className="text-lg font-bold text-black dark:text-white">
                                                 {section.name}
                                                 </a>
                                             {section.items.map((item) => (
                                               <li key={item.name} className="flex">
-                                                <a href={item.href} className="text-lg hover:text-blue-500 hover:font-bold">
+                                                <a href={item.href} className="text-lg dark:text-gray-100 dark:hover:text-blue-300 hover:text-blue-500 hover:font-bold">
                                                 • {item.name}
                                                 </a>
                                               </li>
@@ -399,7 +412,7 @@ export default function Header(props) {
                     <button
                       key={page.name}
                       onClick={() => navigate(page.href)}
-                      className="flex items-center font-medium text-gray-700 hover:text-gray-800"
+                      className="flex items-center font-medium text-gray-700 hover:text-gray-800 dark:text-gray-100 dark:hover:text-gray-200"
                     >
                       {page.name}
                     </button>
@@ -408,7 +421,7 @@ export default function Header(props) {
                     <a
                       key={page.name}
                       href={page.href}
-                      className="flex items-center font-medium text-gray-700 hover:text-gray-800"
+                      className="flex items-center font-medium text-gray-700 hover:text-gray-800 dark:text-gray-100 dark:hover:text-gray-200"
                     >
                       {page.name}
                       <ArrowUpRightIcon className="h-6 inline-block"/>
@@ -418,13 +431,20 @@ export default function Header(props) {
               </Popover.Group>
 
               <div className="ml-auto flex items-center">
-                <div className="lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                <div className="flex lg:flex-1 lg:items-center lg:justify-end space-x-6">
+                <button
+        type="button"
+        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+      >
+        <span className="sr-only">다크 모드 토글하기</span>
+        <DarkModeSwitch checked={darkSide} onChange={toggleDarkMode} className="h-6" />
+      </button>
                 {
                 props.isLogin ? 
                 <Menu>
                 <div>
                     <Menu.Button
-                    className="flex rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100">
+                    className="flex rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:text-white">
                     <img className="rounded-full h-6 w-6 object-cover mr-2" src={props.userImage} alt="프로필 이미지"/>
                         <h1><span className="font-bold">{props.userName}</span>님</h1>
                         </Menu.Button>
@@ -487,7 +507,7 @@ export default function Header(props) {
                     <div>
                     <button
                           onClick={() => navigate('/signin')}
-                          className="flex rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100">
+                          className="flex rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-white">
                               <h1><span className="font-bold">로그인</span></h1>
                               <span aria-hidden="true">&nbsp;&rarr;</span>
                               </button>
