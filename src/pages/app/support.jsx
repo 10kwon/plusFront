@@ -9,7 +9,7 @@ import Iframe from 'react-iframe';
 export const SupportPage = (props) => {
 
   return (
-    <div>
+    <div className="dark:bg-gray-800 dark:text-white">
         <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin} />
         <div class="mx-auto w-full max-w-screen-xl">
         <main

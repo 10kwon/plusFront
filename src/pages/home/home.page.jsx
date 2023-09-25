@@ -52,7 +52,7 @@ export const HomePage = (props) => {
     AOS.init();
   })
   return (
-    <div>
+    <div className="dark:bg-gray-800 dark:text-white">
         <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin} />
         <Swiper
         spaceBetween={30}
@@ -76,7 +76,7 @@ export const HomePage = (props) => {
           <div class="absolute bg-black/50 inset-0 z-0"></div>
                 <div class="relative flex flex-row items-end max-w-screen-xl mx-auto">
                   <div class="md:p-6 rounded-xl h-full flex flex-col w-full z-10 ">
-                  <h2 class="text-3xl md:text-4xl my-auto flex items-center text-white font-bold">
+                  <h2 class="text-3xl md:text-4xl mt-4 my-auto flex items-center text-white font-bold">
                   {nl2br(item.title)}
                         </h2>
                         <p class="text-lg md:text-2xl mt-4 my-auto flex items-center text-white">
@@ -134,8 +134,7 @@ export const HomePage = (props) => {
 
 			
 			<div
-				class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
-				dark:bg-gray-600 rounded-xl">
+				class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col rounded-xl">
     <h3
 					class="flex items-center pt-1 pb-1 md:px-4 text-lg font-semibold
 					capitalize dark:text-gray-300">
@@ -177,8 +176,7 @@ export const HomePage = (props) => {
       </div>
       
       <div
-				class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
-				dark:bg-gray-600 rounded-xl">
+				class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col rounded-xl">
     <h3
 					class="flex items-center pt-1 pb-1 md:px-4 text-lg font-semibold
 					capitalize dark:text-gray-300">
@@ -188,20 +186,20 @@ export const HomePage = (props) => {
 					</button>
 				</h3>
 
-        <div className="mx-auto max-w-2xl px-4 pb-16 sm:px-6 sm:pb-24 lg:max-w-7xl lg:px-8">
+        <div className="mx-auto w-full md:max-w-2xl px-4 pb-16 sm:px-6 sm:pb-24 lg:max-w-7xl lg:px-8">
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10">
             {newsData.map((item, index) => (
               <a href="/reward/news">
-              <div key={item.postid} className="group relative rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100">
+              <div key={item.postid} className="group relative rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800">
 
               <div className="mt-4 flex justify-between">
                 <div>
                 <p className="mt-1 text-sm text-gray-500">{item.author}</p>
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
                       <span aria-hidden="true" className="absolute inset-0" />
                       {item.title}
                   </h3>
-                  <p className="text-sm text-gray-700"><img src="https://coin.pcor.me/resources/images/pluscoin.svg" class="h-4 mr-1 inline-block" alt="Coin"/>{item.reward.toLocaleString()+"코인 지급"}</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-200"><img src="https://coin.pcor.me/resources/images/pluscoin.svg" class="h-4 mr-1 inline-block" alt="Coin"/>{item.reward.toLocaleString()+"코인 지급"}</p>
                 </div>
                 <div className="justify-end aspect-square w-24 h-24 overflow-hidden rounded-xl bg-gray-200 group-hover:opacity-75">
                 <img
@@ -217,8 +215,7 @@ export const HomePage = (props) => {
       </div>
       </div>
 			<div
-				class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col bg-white
-				dark:bg-gray-600 rounded-xl">
+				class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col rounded-xl">
 				<h3
 					class="flex items-center pt-1 pb-1 md:px-4 text-lg font-semibold
 					capitalize dark:text-gray-300">

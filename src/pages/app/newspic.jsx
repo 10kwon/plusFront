@@ -59,7 +59,7 @@ export const NewsPicPage = (props) => {
   };
 
   return (
-    <div>
+    <div className="dark:bg-gray-800 dark:text-white">
       
         <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin} />
         <div class="mx-auto w-full max-w-screen-xl">
@@ -127,11 +127,11 @@ export const NewsPicPage = (props) => {
 
 
       {/* Render the products based on the selected category */}
-      <div className="bg-white">
+      <div className="w-full ">
         <div className="mx-auto max-w-2xl px-4 pb-16 sm:px-6 sm:pb-24 lg:max-w-7xl lg:px-8">
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {shopfData.map((item, index) => (
-              <div key={item.postid} className="group relative rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100" onClick={() => handleProductClick(item)}>
+              <div key={item.postid} className="group relative rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800" onClick={() => handleProductClick(item)}>
                 <div className="hidden lg:block aspect-video w-full overflow-hidden rounded-xl bg-gray-200 group-hover:opacity-75 lg:h-60 lg:w-60">
                 <img
                   src={item.thumbnail}
@@ -142,7 +142,7 @@ export const NewsPicPage = (props) => {
               <div className="mt-4 flex justify-between">
                 <div>
                 <p className="mt-1 text-sm text-gray-500">{item.author}</p>
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
                       <span aria-hidden="true" className="absolute inset-0" />
                       {item.title}
                   </h3>

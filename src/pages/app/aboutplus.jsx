@@ -42,7 +42,7 @@ export const AboutpPage = (props) => {
     <div>
       
         <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin} />
-        <div className="bg-white">
+        <div className="bg-white dark:bg-gray-900">
 
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
@@ -62,7 +62,7 @@ export const AboutpPage = (props) => {
             <h1 className="text-transparent bg-gradient-to-br from-blue-500 to-green-500 bg-clip-text font-bold tracking-tight text-6xl md:text-9xl" data-aos="fade-up" data-aos-duration="1000">
               모든&nbsp;<br/>플랫폼을&nbsp;<br/>하나로.
             </h1>
-            <p className="mt-6 text-2xl leading-8 text-gray-600" data-aos="fade-up" data-aos-duration="1000">
+            <p className="mt-6 text-2xl leading-8 text-gray-600 dark:text-gray-100" data-aos="fade-up" data-aos-duration="1000">
               사용자들을 위한 혁신을 추구하고, Plus라는 이름 아래 일관성 있는 플랫폼을 개발하고 있어요.
             </p>
           </div>

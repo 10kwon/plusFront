@@ -90,7 +90,7 @@ export const ShopPage = (props) => {
   };
 
   return (
-    <div>
+    <div className="dark:bg-gray-800 dark:text-white">
       
         <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin} />
         <div class="mx-auto w-full max-w-screen-xl">
@@ -123,9 +123,9 @@ export const ShopPage = (props) => {
 					<span>추천 상품</span>
 				</h2>
 
-        <div class="grid m-0  grid-cols-2  space-x-4 overflow-y-scroll flex justify-center items-center w-full ">
+        <div class="grid m-0  grid-cols-2  space-x-4 overflow-x-scroll flex justify-center items-center w-full ">
         {shopData.map((item, index) => (
-        				<div class="relative flex flex-col justify-between bg-white shadow-md rounded-xl transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center shadow-md h-64 my-2"
+        				<div class="relative flex flex-col justify-between bg-blue-900 shadow-md rounded-xl transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center shadow-md h-64 my-2"
                 style={{ backgroundImage: `url(${item.thumbnail})` }}
                 key={index} onClick={() => handleProductClick(item)}>
                 <div class="absolute bg-gradient-to-b from-transparent to-black  opacity-50 inset-0 z-0"></div>
@@ -158,7 +158,7 @@ export const ShopPage = (props) => {
 				</h2>
         <select
         value={selectedCategory}
-        className="rounded-xl mt-2 lg:ml-2"
+        className="rounded-xl mt-2 lg:ml-2 text-black"
         onChange={(e) => setSelectedCategory(e.target.value)}
       >
   <option value="">카테고리를 선택하세요</option>
@@ -179,11 +179,11 @@ export const ShopPage = (props) => {
       </select>
 
       {/* Render the products based on the selected category */}
-      <div className="bg-white">
+      <div className="">
         <div className="mx-auto max-w-2xl px-4 pb-16 sm:px-6 sm:pb-24 lg:max-w-7xl lg:px-8">
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {filteredProducts.map((item, index) => (
-              <div key={item.iid} className="group relative rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100" onClick={() => handleProductClick(item)}>
+              <div key={item.iid} className="group relative rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800" onClick={() => handleProductClick(item)}>
                 <div className="hidden lg:block aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-xl bg-gray-200 group-hover:opacity-75 lg:h-60 lg:w-60">
                 <img
                   src={item.thumbnail}
@@ -194,11 +194,11 @@ export const ShopPage = (props) => {
               <div className="mt-4 flex justify-between">
                 <div>
                 <p className="mt-1 text-sm text-gray-500">{item.merchant}</p>
-                  <h3 className="text-sm text-gray-700">
+                  <h3 className="text-sm text-gray-700 dark:text-gray-200">
                       <span aria-hidden="true" className="absolute inset-0" />
                       {item.product}
                   </h3>
-                  <p className="text-lg font-bold text-gray-900">{item.price.toLocaleString()+"코인"}</p>
+                  <p className="text-lg font-bold text-gray-900 dark:text-gray-100">{item.price.toLocaleString()+"코인"}</p>
                 </div>
                 <div className="lg:hidden w-24 h-24 overflow-hidden rounded-xl bg-gray-200 group-hover:opacity-75 lg:h-60 lg:w-60">
                 <img
@@ -265,7 +265,7 @@ export const ShopPage = (props) => {
                         </button>
                       </div>
                     </Transition.Child>
-                    <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                    <div className="flex h-full flex-col overflow-y-scroll bg-white dark:bg-gray-900 py-6 shadow-xl">
                       <div className="px-4 sm:px-6">
                         <Dialog.Title className="text-base font-semibold leading-6 text-gray-900">
                           상세 보기
@@ -285,17 +285,17 @@ export const ShopPage = (props) => {
                   </div>
                   <p class="text-gray-500 text-xs text-center">이미지를 클릭하면 크게 볼 수 있어요</p>
                   <div class="pt-4">
-                  <h4 class="">{selectedProduct.merchant}</h4>
-                  <h3 class="font-bold text-2xl">{selectedProduct.product}</h3>
+                  <h4 class="dark:text-white">{selectedProduct.merchant}</h4>
+                  <h3 class="font-bold text-2xl dark:text-white">{selectedProduct.product}</h3>
                   <h4 class="text-gray-500">{selectedProduct.purchaseCount}회 구매 | 1인 구매 한도 {selectedProduct.purchaseLimit}개</h4>
                   </div>
                   <div class="py-2 border-b">
-                  <h3 class="font-bold text-2xl text-blue-500">{selectedProduct.price.toLocaleString()}코인</h3>
+                  <h3 class="font-bold text-2xl text-blue-500 dark:text-blue-300">{selectedProduct.price.toLocaleString()}코인</h3>
                   </div>
-                  <div class="py-2 border-b">
+                  <div class="py-2 border-b dark:text-white ">
                   
-                  <div class="bg-red-100 rounded-xl px-2 py-2 text-center mb-4">
-                    <ExclamationCircleIcon class="h-6 w-6 text-red-500 inline-block mr-1"/> PlusCoin 상점에서 판매하는 모든 상품은 유료로 결제되지 않았다면 <span class="text-red-500">환불할 수 없어요</span>.
+                  <div class="bg-red-100 dark:bg-red-950 dark:text-white rounded-xl px-2 py-2 text-center mb-4">
+                    <ExclamationCircleIcon class="h-6 w-6 text-red-500 dark:text-red-300 inline-block mr-1"/> PlusCoin 상점에서 판매하는 모든 상품은 유료로 결제되지 않았다면 <span class="text-red-500 dark:text-red-300">환불할 수 없어요</span>.
                   </div>
 
                   {nl2br(selectedProduct.productDescription)}

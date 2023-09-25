@@ -525,7 +525,7 @@ export default function Header(props) {
 
 
 <div
-			class="md:hidden fixed z-50 w-full bottom-0 p-5 px-6 flex items-center justify-between backdrop-blur-lg bg-white/70 shadow-3xl text-gray-900 cursor-pointer">
+			class="md:hidden fixed z-50 w-full bottom-0 p-5 px-6 flex items-center justify-between backdrop-blur-lg bg-white/70 dark:bg-black/70 shadow-3xl text-gray-900 dark:text-gray-100 cursor-pointer">
 			<div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
       <button  onClick={() => setOpen(true)}>
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />

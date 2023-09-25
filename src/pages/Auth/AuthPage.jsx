@@ -6,7 +6,7 @@ import Footer from '../../components/footer/footer.prod.jsx';
 export const AuthPage = (props) => {
     const navigate = useNavigate()
     return(
-        <div>
+        <div className="dark:bg-gray-800 dark:text-white">
   <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-24 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <button  onClick={() => navigate('/')}>
@@ -16,7 +16,7 @@ export const AuthPage = (props) => {
             alt="Plus"
           />
           </button>
-          <h2 className="mt-10 text-2xl font-bold leading-9 tracking-tight text-gray-900">
+          <h2 className="mt-10 text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
           Plus ID로 로그인
           </h2>
         </div>
@@ -28,35 +28,49 @@ export const AuthPage = (props) => {
   <button
     className="w-full text-white bg-indigo-500 text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
   >
-    Discord로 로그인
+    <img
+            className="h-6 w-auto inline-block mr-2"
+            src="/resources/images/discord.svg"
+            alt="Plus"
+          /> Discord로 로그인하기
   </button>
   </a>
   <a href="https://mapi.pcor.me/oauth/kakao.php?action=login">
   <button
     className="w-full text-black bg-yellow-300 text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
   >
-    카카오로 로그인
+    <img
+            className="h-6 w-auto inline-block mr-2"
+            src="/resources/images/kakao.svg"
+            alt="Plus"
+          /> 카카오로 로그인하기
   </button>
   </a>
   <a href="https://mapi.pcor.me/oauth/google.php?action=login">
   <button
     className="w-full text-black bg-gray-100 text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
   >
-    Google으로 로그인
+    <img
+            className="h-6 w-auto inline-block mr-2"
+            src="/resources/images/google.svg"
+            alt="Plus"
+          /> Google으로 로그인하기
   </button>
   </a>
-  <a href="https://mapi.pcor.me/oauth/x.php?action=login">
+  <a href="https://mapi.pcor.me/oauth/twitter.php?action=login">
   <button
     className="w-full text-white bg-black text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
   >
-    X로 로그인
+    <svg className="h-4 w-auto text-white inline-block mr-2" fill="currentColor" viewBox="0 0 300 271" xmlns="http://www.w3.org/2000/svg">
+ <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"/>
+</svg> X로 로그인하기
   </button>
   </a>
   <a href="https://mapi.pcor.me/oauth/ip.php?action=login">
   <button
-    className="w-full text-white bg-gray-500 text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
+    className="w-full text-black border-2 border-black bg-white text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
   >
-    익명으로 로그인
+    익명으로 로그인하기
   </button>
   </a>
             </div>

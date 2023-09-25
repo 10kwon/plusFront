@@ -23,10 +23,9 @@ function Footer(props) {
           <img alt="크리에이티브 커먼즈 라이선스" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
             <span>이 저작물은 <a href="http://creativecommons.org/licenses/by-sa/4.0/" class="hover:text-purple-500 rounded-xl scale-100 transform ease-in duration-100 active:scale-95 hover:bg-gray-100">크리에이티브 커먼즈 저작자표시-동일조건변경허락 4.0 국제 라이선스</a>에 따라 이용할 수 있습니다. (단, 라이선스가 명시된 일부 컨텐츠 제외)
             </span><br/>
-            <span class="">Plus의 뉴스 섹션은 뉴스픽에서 제공하는 것으로, Plus의 공식적 견해가 아닐 수 있어요.</span>
           </span>
           <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-<a href="https://x.com/@metroplus_" class="transform ease-in duration-100 active:scale-95 active:bg-gray-100 text-gray-500 hover:text-black dark:hover:text-white">
+<a href="https://x.com/@10kwon_" class="transform ease-in duration-100 active:scale-95 active:bg-gray-100 text-gray-500 hover:text-black dark:hover:text-white">
 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 300 271" xmlns="http://www.w3.org/2000/svg">
  <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"/>
 </svg>
@@ -42,7 +41,7 @@ function Footer(props) {
 <path d="M11.857 3.143h-1.143V6.57h1.143V3.143zm-3.143 0H7.571V6.57h1.143V3.143z"></path>
 </svg>
 </a>
-<a href="https://toss.me/만원이만원이" class="transform ease-in duration-100 active:scale-95 active:bg-gray-100 text-gray-500 hover:text-blue-600 dark:hover:text-white">
+<a href="https://toss.me/silentp" class="transform ease-in duration-100 active:scale-95 active:bg-gray-100 text-gray-500 hover:text-blue-600 dark:hover:text-white">
 <svg class="w-5 h-5" width="903" height="848" viewBox="0 0 903 848" xmlns="http://www.w3.org/2000/svg" fill="currentColor" xmlnsXlink="http://www.w3.org/1999/xlink" xmlSpace="preserve" overflow="hidden"><defs><clipPath id="clip0"><rect x="1750" y="939" width="903" height="848"></rect></clipPath></defs><g clip-path="url(#clip0)" transform="translate(-1750 -939)"><path d="M499.422 651.66 536.85 827.672C538.531 836.515 530.962 844.515 522.131 842.41 467.883 832.725 411.532 815.882 355.601 791.88 104.125 685.346-48.1068 476.49 15.8132 325.321 64.1742 212.051 220.191 163.626 401.439 191.839L364.012 15.8253C362.33 6.98413 369.899-1.01466 378.73 1.09015 432.979 10.7733 489.329 27.619 545.26 51.6215 796.737 158.152 948.548 367.009 884.628 518.598 836.687 631.448 680.67 679.873 499.422 651.66" fill="currentColor" fill-rule="evenodd" fill-opacity="1" transform="matrix(1 0 0 -1 1751 1786)"></path></g></svg>
 </a>
 <a href="https://www.youtube.com/channel/UCl6iCsMQpnG5EtgMq_qKeig" class="transform ease-in duration-100 active:scale-95 active:bg-gray-100 text-gray-500 hover:text-red-500 dark:hover:text-white">
