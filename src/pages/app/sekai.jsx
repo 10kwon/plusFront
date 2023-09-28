@@ -67,7 +67,7 @@ export const SekaiIssuePage = (props) => {
   const handleFormSubmit = async () => {
     try {
       // 데이터를 PHP 서버로 전송
-      const response = await axios.post("https://mapi.pcor.me/api/sekai/issue.php", {
+      const response = await axios.post("https://mapi.pcor.me/api/auth/sekai/issue.php", {
         sekaiValue,
         selectedItem
       },
@@ -98,7 +98,7 @@ export const SekaiIssuePage = (props) => {
   const navigate = useNavigate()
   return (
 
-    <div className="dark:bg-gray-800 dark:text-white min-h-screen">
+    <div className="max-w-md mx-auto dark:bg-gray-800 dark:text-white min-h-screen">
       
       {/* Progress Bar */}
       <div className="w-full h-2 bg-gray-200 dark:bg-gray-700">
@@ -215,7 +215,7 @@ export const SekaiIssuePage = (props) => {
         이제 PlusCoin을 이용할 수 있어요.
       </p>
     </div>
-    <div class={`${currentStep == 5 ? "hidden" : ""} px-4 bottom-8 fixed w-full ${currentStep >= 2 ? "gap-4 flex" : ""}`}>
+    <div class={`max-w-md mx-auto ${currentStep == 5 ? "hidden" : ""} px-4 bottom-8 fixed w-full ${currentStep >= 2 ? "gap-4 flex" : ""}`}>
     {currentStep >= 2 ?
     <button             
                 onClick={() => setCurrentStep(currentStep - 1)}
