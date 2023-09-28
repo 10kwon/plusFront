@@ -23,7 +23,7 @@ export const CardPage = (props) => {
   }, []);
 
 if (props.isLogin == 0){
-  //window.location.href="/signin";
+  window.location.href="/signin";
 }
 
   return (

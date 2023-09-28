@@ -446,7 +446,7 @@ export default function Header(props) {
                     <Menu.Button
                     className="flex rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:text-white">
                     <img className="rounded-full h-6 w-6 object-cover mr-2" src={props.userImage} alt="프로필 이미지"/>
-                        <h1><span className="font-bold">{props.userName}</span>님</h1>
+                        <h1><span className="hidden md:block font-bold">{props.userName}</span>님</h1>
                         </Menu.Button>
                 </div>
                       <Transition
