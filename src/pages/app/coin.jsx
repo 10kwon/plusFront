@@ -55,14 +55,14 @@ export const CoinPage = (props) => {
 				</h2>
 <div class="pt-1 pb-1 md:px-4">
 <ul>
-              {transactions.map((transaction, index) => (
+              {/*transactions.map((transaction, index) => (
                 <li key={index}>
                   <p>Product: {transaction.product}</p>
                   <p>Price: {transaction.price}</p>
                   <p>Timestamp: {transaction.timestamp}</p>
                   <p>From User: {transaction.from_username}</p>
                 </li>
-              ))}
+              ))*/}
             </ul>
 </div>
 
