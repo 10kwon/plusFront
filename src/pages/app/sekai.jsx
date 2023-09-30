@@ -39,7 +39,7 @@ export const SekaiIssuePage = (props) => {
     setCurrentStep(currentStep + 1);
     setIsNextButtonDisabled(true);
 
-    if (currentStep == 3){
+    if (currentStep == 3 || currentStep == 1){
       setIsNextButtonDisabled(false);
     }
   };
@@ -220,7 +220,8 @@ export const SekaiIssuePage = (props) => {
         이제 PlusCoin을 이용할 수 있어요.
       </p>
     </div>
-    <div class={`max-w-md mx-auto ${currentStep == 5 ? "hidden" : ""} px-4 bottom-8 fixed w-full ${currentStep >= 2 ? "gap-4 flex" : ""}`}>
+    <div class={`max-w-md mx-auto ${currentStep == 5 ? "hidden" : ""} px-4 bottom-8 fixed w-full `}>
+    <div class={`${currentStep >= 2 ? "gap-4 flex" : "mb-2 "}`}>
     {currentStep >= 2 ?
     <button             
                 onClick={() => setCurrentStep(currentStep - 1)}
@@ -228,12 +229,15 @@ class="mt-3 px-3 w-1/2 font-bold bg-gray-300 hover:bg-gray-400 text-black text-c
 이전
 </button>
 : <span></span>}
+
                  <button             
                 onClick={currentStep !== 4 ? handleNextStep : handleFormSubmit}
                 disabled={isNextButtonDisabled}
 class={`${isNextButtonDisabled == true ? "opacity-50" : ""} mt-3 px-3 ${currentStep >= 2 ? "w-1/2" : "w-full"} bg-blue-500 font-bold text-white text-center m-auto py-3 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-blue-700`}>
 {currentStep !== 4 ? "다음" : "완료하기"}
 </button>
+</div>
+<button onClick={() => navigate('/')} class={`${currentStep !== 1 ? "opacity-0 -mb-64" : ""} text-blue-500 w-full py-2 hover:bg-gray-100 dark:hover-bg-gray-800 rounded-xl transform ease-in duration-100 active:scale-95`}>나중에 가입하기</button>
 </div>
    </div>
    
