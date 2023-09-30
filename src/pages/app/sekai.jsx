@@ -39,7 +39,7 @@ export const SekaiIssuePage = (props) => {
     setCurrentStep(currentStep + 1);
     setIsNextButtonDisabled(true);
 
-    if (currentStep == 3 || currentStep == 1){
+    if (currentStep == 3 || currentStep == 0){
       setIsNextButtonDisabled(false);
     }
   };
