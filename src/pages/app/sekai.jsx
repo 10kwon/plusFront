@@ -75,26 +75,29 @@ export const SekaiIssuePage = (props) => {
         withCredentials: true, // withCredentials를 true로 설정
         credentials: "same-origin", // credentials를 'same-origin'으로 설정
       });
-
+  
       if (response.status === 200) {
         // 전송이 성공하면 가입 축하 화면으로 이동하거나 작업을 수행하세요.
         setCurrentStep(5); // 예시로 5단계로 설정
       } else {
-        // 전송이 실패한 경우 에러 처리
+        // 전송이 실패한 경우 오류 처리
         if (response.data && response.data.error) {
-          // 오류 메시지를 사용자에게 표시하는 예: 오류 창 띄우기
+          // 오류 메시지를 사용자에게 표시
           alert(response.data.error);
-
-          // 메인 페이지로 리디렉션 (예시 URL로 변경)
-          window.location.href = "/";
+        } else {
+          // 오류 응답에 오류 메시지가 없는 경우 기본 오류 메시지 출력
+          alert("서버 오류: 오류 메시지 없음");
         }
+  
+        // 메인 페이지로 리디렉션 (예시 URL로 변경)
+        window.location.href = "/";
       }
     } catch (error) {
       // 오류 처리
       console.error("오류 발생", error);
     }
   };
-
+  
   const navigate = useNavigate()
   return (
 

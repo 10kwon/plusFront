@@ -446,7 +446,7 @@ export default function Header(props) {
                     <Menu.Button
                     className="flex rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:text-white">
                     <img className="rounded-full h-6 w-6 object-cover mr-2" src={props.userImage} alt="프로필 이미지"/>
-                        <h1><span className="hidden md:block font-bold">{props.userName}</span>님</h1>
+                        <h1 className="hidden md:block font-bold"><span >{props.userName}</span>님</h1>
                         </Menu.Button>
                 </div>
                       <Transition
@@ -460,6 +460,19 @@ export default function Header(props) {
                     >
                       <Menu.Items className="opacity-0 absolute right-4 z-10 mt-12 w-56 origin-top-right rounded-xl bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="py-1">
+                        <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                <strong>{props.userName}</strong>님
+                              </a>
+                            )}
+                          </Menu.Item>
                           <Menu.Item>
                             {({ active }) => (
                               <a
