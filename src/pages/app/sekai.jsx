@@ -237,7 +237,7 @@ class={`${isNextButtonDisabled == true ? "opacity-50" : ""} mt-3 px-3 ${currentS
 {currentStep !== 4 ? "다음" : "완료하기"}
 </button>
 </div>
-<button onClick={() => navigate('/')} class={`${currentStep !== 1 ? "opacity-0 -mb-64" : ""} text-blue-500 w-full py-2 hover:bg-gray-100 dark:hover-bg-gray-800 rounded-xl transform ease-in duration-100 active:scale-95`}>나중에 가입하기</button>
+<button onClick={() => navigate('/')} class={`${currentStep !== 1 ? "opacity-0 -mb-64" : ""} text-blue-500 w-full py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transform ease-in duration-100 active:scale-95`}>나중에 가입하기</button>
 </div>
    </div>
    

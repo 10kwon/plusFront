@@ -10,7 +10,7 @@ import { AboutcPage } from "./pages/app/aboutcplus";
 import { AboutvPage } from "./pages/app/aboutvplus";
 import { AboutgPage } from "./pages/app/aboutgplus";
 
-import { NotionPage } from "./pages/app/notion";
+import { CoinPage } from "./pages/app/coin";
 
 import { ShopPage } from "./pages/app/shop";
 import { CardPage } from "./pages/app/card";
@@ -36,7 +36,7 @@ function App() {
   let [userEmail, setUserEmail] = useState("");
   let [userImg, setUserImg] = useState("");
   let [userCoin, setUserCoin] = useState("");
-  let [userNoti, setUserNoti] = useState("");
+  let [userSekai, setUserSekai] = useState("");
   let [userNotiC, setUserNotiC] = useState("");
 
   useEffect(() => {if (searchParams.get("sessionID") !== null) {
@@ -59,6 +59,7 @@ function App() {
           setUserEmail(res.data.user[1]);
           setUserImg(res.data.user[2]);
           setUserCoin(res.data.user[3]);
+          setUserSekai(res.data.user[4]);
         } else {
           console.log(res.data);
         }
@@ -96,12 +97,14 @@ function App() {
         <Route path="/shop" element={<ShopPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
         <Route path="/card/setting" element={<CardPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
         <Route path="/support" element={<SupportPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
-        <Route path="/sekai" element={<SekaiIssuePage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
-        <Route path="/reward/news" element={<NewsPicPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
+        
+        <Route path="/reward" element={<NewsPicPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
 
         <Route path="/event" element={<Event230804Page isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
 
-        <Route path="/notion" element={<NotionPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
+        <Route path="/coin/sekai" element={<SekaiIssuePage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
+        <Route path="/coin" element={<CoinPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} userSekai={userSekai} />} />
+        
         <Route path="/" element={<HomePage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
         <Route path='*' element={<ErrorPage />}/>
       </Routes>

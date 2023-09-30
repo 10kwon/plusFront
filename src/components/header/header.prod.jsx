@@ -36,10 +36,9 @@ const navigation = {
           id: 'pluscoinEarn',
           name: '모으기',
           items: [
-            { name: '뉴스 읽기', href: '/reward/news' },
+            { name: '리워드 받기', href: '/reward' },
             { name: 'Metro+', href: '/metroPlus' },
             { name: '리크봇', href: 'https://leek.pcor.me' },
-            { name: 'Plus NOW 이벤트', href: 'https://now.pcor.me/' },
           ],
         },
         {
@@ -48,6 +47,8 @@ const navigation = {
           items: [
             { name: '상점', href: '/shop' },
             { name: '카드', href: '/card/setting' },
+            { name: 'Sekai 발급받기', href: '/coin/sekai' },
+            { name: '잔액', href: '/coin' },
           ],
         },
         {
@@ -549,17 +550,27 @@ export default function Header(props) {
       <HomeIcon className="h-6 w-6" aria-hidden="true" />
                 </button>  
 			</div>
-			<div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
-      <button onClick={() => navigate('/reward/news')}>
-      <GiftIcon className="h-6 w-6" aria-hidden="true" />
+      
+      <div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
+      <button onClick={() => navigate('/coin')}>
+      <PlusCircleIcon className="h-6 w-6" aria-hidden="true" />
                 </button>  
 			</div>
       
+			<div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
+      <button onClick={() => navigate('/reward')}>
+      <GiftIcon className="h-6 w-6" aria-hidden="true" />
+                </button>  
+			</div>
+
+
 			<div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
       <button onClick={() => navigate('/shop')}>
       <ShoppingBagIcon className="h-6 w-6" aria-hidden="true" />
                 </button>  
 			</div>
+
+      
 			
 			</div>
 

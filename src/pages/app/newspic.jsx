@@ -146,7 +146,7 @@ export const NewsPicPage = (props) => {
                       <span aria-hidden="true" className="absolute inset-0" />
                       {item.title}
                   </h3>
-                  <p className="text-sm text-gray-700"><img src="https://coin.pcor.me/resources/images/pluscoin.svg" class="h-4 mr-1 inline-block" alt="Coin"/>{item.reward.toLocaleString()+"코인 지급"}</p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300"><img src="https://coin.pcor.me/resources/images/pluscoin.svg" class="h-4 mr-1 inline-block" alt="Coin"/>{item.reward.toLocaleString()+"코인 지급"}</p>
                 </div>
                 <div className="justify-end lg:hidden aspect-square w-24 h-24 overflow-hidden rounded-xl bg-gray-200 group-hover:opacity-75 lg:h-60 lg:w-60">
                 <img
