@@ -69,16 +69,11 @@ function App() {
 
   useEffect(() => {
     const token = cookies.sessionID;
-    Axios.get("https://mapi.pcor.me/api/auth/notification/count.php?sessionID="+token, {
-      withCredentials: true,
-      credentials: 'same-origin',
-    })
+    Axios.get("https://imnyang.xyz/api")
       .then((res) => {
-        if (res.data.status == "success") {
-          setUserNotiC(res.data);
-        } else {
+        
           console.log(res.data);
-        }
+        
       })
       .catch((err) => console.log(err));
   }, []);
