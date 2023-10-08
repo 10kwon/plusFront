@@ -20,6 +20,7 @@ import { NewsPicPage } from "./pages/app/newspic";
 
 //행사 페이지
 import { Event230804Page } from "./pages/promotion/230804";
+import { Event231008Page } from "./pages/promotion/231008";
 
 import { Routes, Route, useSearchParams, useNavigate } from "react-router-dom";
 import { HomePage } from "./pages/home/home.page";
@@ -95,7 +96,8 @@ function App() {
         
         <Route path="/reward" element={<NewsPicPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
 
-        <Route path="/event" element={<Event230804Page isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
+        <Route path="/event/pl0804act" element={<Event230804Page isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
+        <Route path="/event/pl1008act" element={<Event231008Page isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
 
         <Route path="/coin/sekai" element={<SekaiIssuePage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} />} />
         <Route path="/coin" element={<CoinPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userNotiC={userNotiC} userSekai={userSekai} />} />
