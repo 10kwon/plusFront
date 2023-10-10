@@ -7,16 +7,7 @@ export const ErrorPage = (props) => {
 <div class="flex items-center justify-center min-h-screen bg-white py-48">
 <div class="flex flex-col">
 <div class="flex flex-col items-center">
-<img src="https://injeonmetro.co.kr/resources/images/DASI-404.png" alt="404" class="h-32"/>
-<div class="text-red-500 font-bold text-7xl">
-404
-</div>
-<div class="text-3xl xl:text-7xl lg:text-6xl md:text-5xl">
-Not Found
-</div>
-<div class="text-gray-400 font-medium text-sm md:text-xl lg:text-2xl mt-8">
-찾는 페이지가 존재하지 않아요
-</div>
+<img src="/404_nocharacter.png" alt="404 NOT FOUND - 미끄랴끼얏호우!" class="h-64"/>
 </div>
 <button 
 onClick={() => navigate('/')}
