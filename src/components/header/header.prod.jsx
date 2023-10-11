@@ -156,10 +156,10 @@ const navigation = {
     },
   ],
   pages: [
-    { name: '팀 소개', href: '/aboutPlus' },
   ],
   linkedpages: [
     { name: 'Plus NOW', href: 'https://now.pcor.me' },
+    { name: 'Sqlare', href: 'https://sqlare.com' },
   ],
 }
 
