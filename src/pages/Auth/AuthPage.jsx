@@ -33,6 +33,15 @@ export const AuthPage = (props) => {
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 
             <div>
+            <a href="#">
+  <button
+    className="w-full text-white bg-gray-900 text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
+  >
+<img src="/resources/images/qloat.png" alt="Qloat" className="h-6 w-auto text-white inline-block mr-2"/>  Qloat으로 로그인하기 <span className="inline-flex items-center rounded-xl px-2 ml-2 text-white bg-gradient-to-r from-blue-500 to-purple-500 ring-1 ring-inset ring-blue-700/10">
+        예정
+      </span>
+  </button>
+  </a>
             <a href="https://discordapp.com/api/oauth2/authorize?client_id=1028652743440736317&redirect_uri=https%3A%2F%2Fmapi.pcor.me%2Foauth%2Fdiscord.php&response_type=code&scope=identify">
   <button
     className="w-full text-white bg-indigo-500 text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
