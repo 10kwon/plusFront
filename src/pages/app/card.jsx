@@ -30,27 +30,7 @@ if (props.isLogin == 0){
     <div className="dark:bg-gray-800 dark:text-white">
       
         <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin} />
-        <div class="mx-auto w-full max-w-screen-xl">
-        <main
-		class="my-1 pt-2 pb-2 px-4 md:px-10 flex-1 rounded-l-lg
-		transition duration-500 ease-in-out overflow-y-auto">
-        <Breadcrumb class="pt-6 md:px-4" aria-label="Default breadcrumb example">
-  <Breadcrumb.Item
-  >
-    메인
-  </Breadcrumb.Item>
-  <Breadcrumb.Item>
- 설정
-  </Breadcrumb.Item>
-</Breadcrumb>
-<h3
-					class="flex items-center pt-6 md:px-4 text-3xl font-bold
-					capitalize dark:text-gray-300">
-            
-					<span>등록카드 설정</span>
-				</h3>
-</main>
-</div>
+
 <div class="min-h-screen">
         <Iframe url="https://mapi.pcor.me/profilecard.php"
         id="iframeId"
