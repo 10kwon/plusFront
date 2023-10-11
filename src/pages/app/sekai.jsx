@@ -184,6 +184,14 @@ export const SekaiIssuePage = (props) => {
             <span class="text-gray-500 text-sm">PlusCoin을 얻으면 상점에서 사용할 수 있어요</span>
             </label>
         </div>
+        <div class="flex items-center mt-4">
+            <input id="benefit3" type="radio" name="benefit" value="pass" checked={selectedItem === "pass"}
+              onChange={handleRadioChange} class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-500 text-blue-600 dark:text-blue-600 bg-gray-100"/>
+            <label class="text-xl ml-2 block">
+            시즌패스+<br/>
+            <span class="text-gray-500 text-sm">매주 새로운 등록카드를 1달동안 받을 수 있어요</span>
+            </label>
+        </div>
     </fieldset>
     </div>
     <div className={`${currentStep == 4 ? 'block' : 'hidden'} py-8 px-5`}>
@@ -219,6 +227,9 @@ export const SekaiIssuePage = (props) => {
       <p className="dark:text-gray-300 text-gray-700 mb-4 text-center">
         이제 PlusCoin을 이용할 수 있어요.
       </p>
+      <div class="flex flex-col items-center">
+<img src="/congrats_sekai.png" alt="축하 캐릭터" class="h-96"/>
+</div>
     </div>
     <div class={`max-w-md mx-auto ${currentStep == 5 ? "hidden" : ""} px-4 bottom-8 fixed w-full `}>
     <div class={`${currentStep >= 2 ? "gap-4 flex" : "mb-2 "}`}>

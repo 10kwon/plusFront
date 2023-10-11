@@ -7,7 +7,7 @@ export const ErrorPage = (props) => {
 <div class="flex items-center justify-center min-h-screen bg-white py-48">
 <div class="flex flex-col">
 <div class="flex flex-col items-center">
-<img src="/404_nocharacter.png" alt="404 NOT FOUND - 미끄랴끼얏호우!" class="h-64"/>
+<img src="/404_nocharacter.png" alt="404 NOT FOUND - 미끄랴끼얏호우!" class="h-96"/>
 </div>
 <button 
 onClick={() => navigate('/')}
