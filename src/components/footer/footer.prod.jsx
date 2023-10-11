@@ -12,7 +12,10 @@ function Footer(props) {
           <div class="mb-6 md:mb-0">
               <a href="#" class="flex items-center">
                   <img src="/Plus.svg" class="h-8 mr-3" alt="" />
-                  <span class="self-center text-2xl text-gray-500 font-semibold whitespace-nowrap dark:text-white">Plus</span>
+                  <span class="self-center text-2xl text-gray-500 font-semibold whitespace-nowrap dark:text-white">
+                      Plus</span>               <span class="self-center text-xl text-gray-500 font-semibold whitespace-nowrap dark:text-white">
+                      with Sqlare</span>
+              
               </a>
           </div>
       </div>
@@ -20,7 +23,8 @@ function Footer(props) {
       <div class="sm:flex sm:items-center sm:justify-between">
       
           <span class="text-sm text-gray-500 dark:text-gray-400">
-          Copyright &copy; 2021~ Plus Platforms, All rights reserved.
+          Copyright &copy; 2021~ Plus Platforms<br/>
+          Copyright &copy; 2023~ Sqlare
           </span>
           <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
 <a href="https://x.com/@PlusPlatforms" class="transform ease-in duration-100 active:scale-95 active:bg-gray-100 text-gray-500 hover:text-black dark:hover:text-white">
