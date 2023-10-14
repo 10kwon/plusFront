@@ -107,13 +107,21 @@ export const CoinPage = (props) => {
 					<span>최근 거래 내역</span>
 				</h2>
 <div class="pt-1 pb-1 md:px-4">
-<ul>
+<ul className="divide-y divide-gray-200 dark:divide-gray-700">
+
               {transactions.map((transaction, index) => (
-                <li key={index}>
-                  <p>Product: {transaction.product}</p>
-                  <p>Price: {transaction.price}</p>
-                  <p>Timestamp: {transaction.timestamp}</p>
-                </li>
+                <li key={index} className="rounded-xl flex justify-between gap-x-6 transform ease-in duration-100 active:scale-95 py-5 hover:bg-gray-200 dark:hover:bg-gray-700">
+                <div className="flex min-w-0 gap-x-4">
+                  <img className="hidden h-12 w-12 flex-none rounded-full bg-gray-50" src={`${transaction.legacyLogSource !== null ? "" : ""}`} alt="" />
+                  <div className="min-w-0 flex-auto">
+                    <p className="font-semibold leading-6">{transaction.product}</p>
+                    <p className="truncate text-sm leading-5 text-gray-500 dark:text-gray-200">{transaction.timestamp}</p>
+                  </div>
+                </div>
+                <div className="shrink-0 flex flex-col items-end">
+                  <p className={`${Number(transaction.price) > 0 ? 'text-blue-500 dark:text-blue-300' : 'text-gray-500 dark:text-gray-300'} leading-6 font-bold`}>{Number(transaction.price) * -1}코인</p>
+                </div>
+              </li>
               ))}
             </ul>
 </div>
