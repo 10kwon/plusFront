@@ -17,7 +17,12 @@ export const CoinPage = (props) => {
       credentials: "same-origin", // credentials를 'same-origin'으로 설정
     }) // Replace with your API endpoint
       .then((response) => {
-        setTransactions(response.data);
+        if (response.data.status == "fail") {
+          alert("로그인해 주세요.");
+          window.location.href = "/";
+        } else {
+        setTransactions(response.data.data);
+        }
       })
       .catch((error) => {
        alert("Failed to get transactions (Intended error. will be implemented.)");
@@ -42,7 +47,7 @@ export const CoinPage = (props) => {
               alert("로그인해 주세요.");
               window.location.href = "/";
             } else {
-              const newTransactions = response.data;
+              const newTransactions = response.data.data;
             setTransactions([...transactions, ...newTransactions]);
             setPage(page + 1);
             setIsLoading(false);
@@ -108,7 +113,6 @@ export const CoinPage = (props) => {
                   <p>Product: {transaction.product}</p>
                   <p>Price: {transaction.price}</p>
                   <p>Timestamp: {transaction.timestamp}</p>
-                  <p>From User: {transaction.from_username}</p>
                 </li>
               ))}
             </ul>
