@@ -197,21 +197,21 @@ export const PayPage = (props) => {
           <button  onClick={() => setCurrentStep(currentStep - 1)}>
             <ChevronLeftIcon className="h-6"/>
           </button>
-      <h1 className="text-3xl font-bold my-4">아이템 지원 받기</h1>
+      <h1 className="text-3xl font-bold my-4">주문할 매장 선택</h1>
       <p className="dark:text-gray-300 text-gray-700 mb-4">
-        지금 가입하시는 {props.userName}님만을 위한 혜택!
+        <strong>서울특별시 강서구 공항대로</strong> 근처
       </p>
 
       <fieldset class="mt-5">
         <legend class="sr-only">
-            혜택을 선택하세요
+            프랜차이즈를 선택하세요
         </legend>
 
         <div class="flex items-center mt-4">
             <input id="benefit1" type="radio" name="benefit" value="lightcyan" checked={selectedItem === "lightcyan"}
               onChange={handleRadioChange} class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-500 text-blue-600 dark:text-blue-600 bg-gray-100"/>
             <label class="text-xl ml-2 block">
-            LIGHT CYAN 등록카드<br/>
+            피자헛<br/>
             <span class="text-gray-500 text-sm">등록카드를 얻으면 프로필로 사용할 수 있어요</span>
             </label>
         </div>

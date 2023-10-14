@@ -9,10 +9,13 @@ export const CoinPage = (props) => {
   const [transactions, setTransactions] = useState([]);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  
+
   useEffect(() => {
     // Make an Axios request to fetch the transactions
-    axios.get('https://mapi.pcor.me/api/auth/payment/coin.php') // Replace with your API endpoint
+    axios.get('https://mapi.pcor.me/api/auth/payment/coin.php',{
+      withCredentials: true, // withCredentials를 true로 설정
+      credentials: "same-origin", // credentials를 'same-origin'으로 설정
+    }) // Replace with your API endpoint
       .then((response) => {
         setTransactions(response.data);
       })
@@ -30,7 +33,10 @@ export const CoinPage = (props) => {
       if (!isLoading) {
         setIsLoading(true);
         // 여기에서 API 요청을 보내어 새 데이터를 가져옵니다.
-        axios.get(`https://mapi.pcor.me/api/auth/payment/coin.php?page=${page + 1}`)
+        axios.get(`https://mapi.pcor.me/api/auth/payment/coin.php?page=${page + 1}`,{
+          withCredentials: true, // withCredentials를 true로 설정
+          credentials: "same-origin", // credentials를 'same-origin'으로 설정
+        })
           .then((response) => {
             if (response.data.status == "fail") {
               alert("로그인해 주세요.");
