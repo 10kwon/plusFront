@@ -490,6 +490,19 @@ export default function Header(props) {
                           <Menu.Item>
                             {({ active }) => (
                               <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                나의 캐시 <strong>{props.userCash}</strong>캐시
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
                                 href="/card/setting"
                                 className={classNames(
                                   active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',

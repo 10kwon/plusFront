@@ -10,7 +10,7 @@ export const SupportPage = (props) => {
 
   return (
     <div className="dark:bg-gray-800 dark:text-white">
-        <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin} />
+        <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin}  userCash={props.userCash} />
         <div class="mx-auto w-full max-w-screen-xl">
         <main
 		class="my-1 pt-2 pb-2 px-4 md:px-10 flex-1 rounded-l-lg

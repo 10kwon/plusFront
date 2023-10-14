@@ -76,7 +76,7 @@ export const HomePage = (props) => {
         </button>
       </div>
     </div>
-        <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin} />
+        <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin}  userCash={props.userCash} />
         <Swiper
         spaceBetween={30}
         centeredSlides={true}

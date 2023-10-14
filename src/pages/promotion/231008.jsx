@@ -23,7 +23,7 @@ export const Event231008Page = (props) => {
   return (
     <div>
       
-        <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin} />
+        <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin}  userCash={props.userCash} />
         <div class="relative flex items-center justify-center h-screen overflow-hidden">
   <div
     class="relative flex items-center justify-center h-screen overflow-hidden z-30 w-full bg-black/50"

@@ -14,7 +14,7 @@ import useDarkSide from '../../components/useDarkSide';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
-export const SekaiIssuePage = (props) => {
+export const PayPage = (props) => {
   if (props.isLogin == 0){
     //window.location.href="/signin";
   }
@@ -44,18 +44,48 @@ export const SekaiIssuePage = (props) => {
     }
   };
 
-  const handleSekaiChange = (event) => {
-    const value = event.target.value;
-    setSekaiValue(value);
+  const handleSekaiChange = () => {
+    const value = sekaiValue;
 
     // 유효성 검사를 수행하고 조건에 따라 '다음' 버튼 활성화 여부 업데이트
-    if (value.length !== 11 || !/^[A-Za-z0-9]+$/.test(value)) {
-      setSekaiError("영/숫자 11자로 입력하세요.");
+    if (!/^[0-9]+$/.test(value)) {
+      setSekaiError("숫자만 입력해주세요.");
       setIsNextButtonDisabled(true); // 유효하지 않은 경우 버튼 비활성화
-    } else {
+    }
+    else if (Number(value) >= 500000 ){
+      setSekaiError("500,000원 이하만 결제할 수 있어요.");
+      setIsNextButtonDisabled(true); // 유효하지 않은 경우 버튼 비활성화
+    } 
+    else {
       setSekaiError(""); // 유효성 검사 통과 시 경고 메시지 초기화
       setIsNextButtonDisabled(false); // 유효한 경우 버튼 활성화
     }
+  };
+
+  const add1kMoney = () => {
+    handleSekaiChange();
+    setSekaiValue(Number(sekaiValue) + 1000);
+  };
+  const add5kMoney = () => {
+    handleSekaiChange();
+    setSekaiValue(Number(sekaiValue) + 5000);
+  };
+  const add10kMoney = () => {
+    handleSekaiChange();
+    setSekaiValue(Number(sekaiValue) + 10000);
+  };
+
+  const sub1kMoney = () => {
+    handleSekaiChange();
+    setSekaiValue(Number(sekaiValue) - 1000);
+  };
+  const sub5kMoney = () => {
+    handleSekaiChange();
+    setSekaiValue(Number(sekaiValue) - 5000);
+  };
+  const sub10kMoney = () => {
+    handleSekaiChange();
+    setSekaiValue(Number(sekaiValue) - 10000);
   };
 
   const handleRadioChange = (event) => {
@@ -122,37 +152,46 @@ export const SekaiIssuePage = (props) => {
             alt="Plus"
           />
           </button>
-      <h1 className="text-3xl font-bold my-4">우리, 함께, 플코해!<br/>PlusCoin 시작하기</h1>
+      <h1 className="text-3xl font-bold my-4">캐시를 충전하고<br/>아이템 구매에 활용하세요</h1>
       <p className="dark:text-gray-300 text-gray-700 mb-4">
-        다양한 곳에서 모으고 사용하는 포인트,<br/>PlusCoin을 만나보세요.
+        Plus 캐시를 충전하면 PlusCoin 전환부터 시즌패스+ 등 유료 아이템에까지 활용할 수 있어요.
       </p>
-      <img
-            className="h-84 mt-16 mx-auto"
-            src="/onboarding/image 3.png"
-            alt="등록카드 Example"
-          />
     </div>
     <div className={`${currentStep == 2 ? 'block' : 'hidden'} py-8 px-5`}>
           <button  onClick={() => setCurrentStep(currentStep - 1)}>
             <ChevronLeftIcon className="h-6"/>
           </button>
-      <h1 className="text-3xl font-bold my-4">Sekai 번호<br/>지정하기</h1>
+      <h1 className="text-3xl font-bold my-4">결제 금액<br/>지정하기</h1>
       <p className="dark:text-gray-300 text-gray-700 mb-4">
-        PlusCoin을 주고 받는데 사용하는 Sekai 번호를 입력하세요.
+        결제할 금액을 선택하세요.
       </p>
 
       <input
                 type="text"
-                name="sekai"
-                id="sekai"
+                name="amount"
+                id="amount"
                 value={sekaiValue}
                 onChange={handleSekaiChange}
-                placeholder="영/숫자 11자"
+                placeholder="금액 입력"
                 className={`block w-full rounded-xl text-3xl border-0 px-3.5 py-2 text-gray-900 dark:bg-gray-900 dark:text-gray-300 ring-1 ring-inset ring-gray-300 dark:ring-gray-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:focus:ring-blue-500 sm:leading-6 transform ease-in duration-100 active:scale-95 ${sekaiError ? 'border-red-500' : ''}`}
                  />
                       {sekaiError && (
           <p className="text-red-500 text-sm mt-1">{sekaiError}</p>
         )}
+        <div className="flex mt-4">
+        <button onClick={add1kMoney} className="mr-2 text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 rounded-xl py-1.5 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-300 dark:hover:bg-gray-600">+ 1,000원</button>
+        
+        <button onClick={add5kMoney} className="mr-2 text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 rounded-xl py-1.5 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-300 dark:hover:bg-gray-600">+ 5,000원</button>
+        
+        <button onClick={add10kMoney} className="mr-2 text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 rounded-xl py-1.5 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-300 dark:hover:bg-gray-600">+ 10,000원</button>
+        </div>
+        <div className="flex mt-4">
+        <button onClick={sub1kMoney} className="mr-2 text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 rounded-xl py-1.5 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-300 dark:hover:bg-gray-600">- 1,000원</button>
+        
+        <button onClick={sub5kMoney} className="mr-2 text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 rounded-xl py-1.5 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-300 dark:hover:bg-gray-600">- 5,000원</button>
+        
+        <button onClick={sub10kMoney} className="mr-2 text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 rounded-xl py-1.5 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-300 dark:hover:bg-gray-600">- 10,000원</button>
+        </div>
     </div>
     <div className={`${currentStep == 3 ? 'block' : 'hidden'} py-8 px-5`}>
           <button  onClick={() => setCurrentStep(currentStep - 1)}>
@@ -228,7 +267,7 @@ export const SekaiIssuePage = (props) => {
         이제 PlusCoin을 이용할 수 있어요.
       </p>
       <div class="flex flex-col items-center">
-<img src="/congrats_sekai.png" alt="축하 캐릭터" class="h-64"/>
+<img src="/congrats_sekai.png" alt="축하 캐릭터" class="h-96"/>
 </div>
     </div>
     <div class={`max-w-md mx-auto ${currentStep == 5 ? "hidden" : ""} px-4 bottom-8 fixed w-full `}>
@@ -248,7 +287,6 @@ class={`${isNextButtonDisabled == true ? "opacity-50" : ""} mt-3 px-3 ${currentS
 {currentStep !== 4 ? "다음" : "완료하기"}
 </button>
 </div>
-<button onClick={() => navigate('/')} class={`${currentStep !== 1 ? "opacity-0 -mb-64" : ""} text-blue-500 w-full py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transform ease-in duration-100 active:scale-95`}>나중에 가입하기</button>
 </div>
    </div>
    

@@ -66,7 +66,7 @@ export const Event230804Page = (props) => {
   return (
     <div>
       
-        <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin} />
+        <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin}  userCash={props.userCash} />
         <div class="bg-gray-800 bg-center bg-fixed bg-no-repeat bg-center bg-cover h-1/2 relative py-16" style={{ backgroundImage: `url('/idea-concept-with-light-bulb.jpg')` }}>
 		<div class="flex items-center justify-center">
 			<div class="mx-2 text-center">

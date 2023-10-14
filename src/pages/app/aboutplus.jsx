@@ -41,7 +41,7 @@ export const AboutpPage = (props) => {
   return (
     <div>
       
-        <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin} />
+        <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin}  userCash={props.userCash} />
         <div className="bg-white dark:bg-gray-900">
 
       <div className="relative isolate px-6 pt-14 lg:px-8">
