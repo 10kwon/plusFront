@@ -96,7 +96,7 @@ export const CoinPage = (props) => {
 					class="flex items-center md:px-4 text-3xl font-bold
 					capitalize dark:text-gray-300">
             
-					<span>{props.userCoin.toLocaleString()}코인</span>
+					<span>{Number(props.userCoin).toLocaleString()}코인</span>
 				</h3>
 
 
@@ -119,7 +119,7 @@ export const CoinPage = (props) => {
                   </div>
                 </div>
                 <div className="shrink-0 flex flex-col items-end">
-                  <p className={`${Number(transaction.price) > 0 ? 'text-blue-500 dark:text-blue-300' : 'text-gray-500 dark:text-gray-300'} leading-6 font-bold`}>{Number(transaction.price) * -1}코인</p>
+                  <p className={`${Number(transaction.price) < 0 ? 'text-blue-500 dark:text-blue-300' : 'text-gray-500 dark:text-gray-300'} leading-6 font-bold`}>{Number(transaction.price) * -1}코인</p>
                 </div>
               </li>
               ))}
