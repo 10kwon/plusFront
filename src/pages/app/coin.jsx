@@ -85,7 +85,7 @@ export const CoinPage = (props) => {
     <div className="dark:bg-gray-800 dark:text-white">
       
         <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin}  userCash={props.userCash} />
-        <div class="mx-auto w-full max-w-screen-xl">
+        <div class="mx-auto w-full max-w-screen-md">
         <main
 		class="my-1 pt-2 pb-2 px-4 md:px-10 flex-1 rounded-l-lg
 		transition duration-500 ease-in-out overflow-y-auto">
@@ -98,9 +98,19 @@ export const CoinPage = (props) => {
             
 					<span>{Number(props.userCoin).toLocaleString()}코인</span>
 				</h3>
-
-
-
+        <p class="flex items-center pb-2 pt-2 md:px-4 text-lg
+					capitalize dark:text-gray-300 text-gray-500">
+{Number(props.userCash).toLocaleString()}캐시</p>
+<div className="flex">
+<button             
+class="bg-opacity-50 mt-3 px-3 mr-2 w-1/2 font-bold bg-gray-300 hover:bg-gray-400 text-black text-center m-auto py-2 rounded-xl transform ease-in duration-100 active:scale-95 ">
+캐시 충전하기
+</button>
+<button             
+class={`bg-opacity-50 mt-3 px-3 w-1/2 bg-blue-500 font-bold text-white text-center m-auto py-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-blue-700`}>
+코인 보내기
+</button>
+</div>
         <h2
 					class="flex items-center pt-8 pb-1 md:px-4 text-2xl font-bold
 					capitalize dark:text-gray-300">
@@ -110,7 +120,7 @@ export const CoinPage = (props) => {
 <ul className="divide-y divide-gray-200 dark:divide-gray-700">
 
               {transactions.map((transaction, index) => (
-                <li key={index} className="rounded-xl flex justify-between gap-x-6 transform ease-in duration-100 active:scale-95 py-5 hover:bg-gray-200 dark:hover:bg-gray-700">
+                <li key={index} className="flex justify-between gap-x-6 transform ease-in duration-100 active:scale-95 py-5 hover:bg-gray-200 dark:hover:bg-gray-700">
                 <div className="flex min-w-0 gap-x-4">
                   <img className="hidden h-12 w-12 flex-none rounded-full bg-gray-50" src={`${transaction.legacyLogSource !== null ? "" : ""}`} alt="" />
                   <div className="min-w-0 flex-auto">
