@@ -14,7 +14,7 @@ function Footer(props) {
                   <img src="/Plus.svg" class="h-8 mr-3" alt="" />
                   <span class="self-center text-2xl text-gray-500 font-semibold whitespace-nowrap dark:text-white">
                       Plus</span>               <span class="self-center text-xl text-gray-500 font-semibold whitespace-nowrap dark:text-white">
-                      with Sqlare</span>
+                      &nbsp;with Sqlare</span>
               
               </a>
           </div>
