@@ -42,7 +42,7 @@ export const AuthPage = (props) => {
       </span>
   </button>
   </a>
-            <a href="https://discordapp.com/api/oauth2/authorize?client_id=1028652743440736317&redirect_uri=https%3A%2F%2Fmapi.pcor.me%2Foauth%2Fdiscord.php&response_type=code&scope=identify">
+            <a href="https://discordapp.com/api/oauth2/authorize?client_id=1028652743440736317&redirect_uri=https%3A%2F%2Fnmapi.pcor.me%2Foauth%2Fdiscord.php&response_type=code&scope=identify">
   <button
     className="w-full text-white bg-indigo-500 text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
   >
@@ -53,7 +53,7 @@ export const AuthPage = (props) => {
           /> Discord로 로그인하기
   </button>
   </a>
-  <a href="https://mapi.pcor.me/oauth/kakao.php?action=login">
+  <a href="https://nmapi.pcor.me/oauth/kakao.php?action=login">
   <button
     className="w-full text-black bg-[#FEE500] text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
   >
@@ -64,7 +64,7 @@ export const AuthPage = (props) => {
           /> 카카오로 로그인하기
   </button>
   </a>
-  <a href="https://mapi.pcor.me/oauth/google.php?action=login">
+  <a href="https://nmapi.pcor.me/oauth/google.php?action=login">
   <button
     className="w-full text-black bg-gray-100 text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
   >
@@ -75,7 +75,7 @@ export const AuthPage = (props) => {
           /> Google으로 로그인하기
   </button>
   </a>
-  <a href="https://mapi.pcor.me/oauth/twitter.php?action=login">
+  <a href="https://nmapi.pcor.me/oauth/twitter.php?action=login">
   <button
     className="w-full text-white bg-black text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
   >
@@ -84,7 +84,7 @@ export const AuthPage = (props) => {
 </svg> X로 로그인하기
   </button>
   </a>
-  <a href="https://mapi.pcor.me/oauth/ip.php?action=login">
+  <a href="https://nmapi.pcor.me/oauth/ip.php?action=login">
   <button
     className="w-full text-black border-2 border-black bg-white text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-xl m-auto py-2 font-bold pl-4"
   >
