@@ -32,7 +32,7 @@ if (props.isLogin == 0){
         <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin}  userCash={props.userCash} />
 
 <div class="min-h-screen">
-        <Iframe url="https://nmapi.pcor.me/profilecard.php"
+        <Iframe url="https://nmapi.pcor.me/profilecard"
         id="iframeId"
         className="w-full h-screen"
         display="block"

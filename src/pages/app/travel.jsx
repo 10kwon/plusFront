@@ -8,7 +8,7 @@ import axios from 'axios';
 export const TravelPage = (props) => {
   const [boardData, setBoardData] = useState([]);
   useEffect(() => {
-    axios.get('https://nmapi.pcor.me/api/board/list.php?id=58&page=1')
+    axios.get('https://nmapi.pcor.me/api/board/list?id=58&page=1')
       .then(response => setBoardData(response.data))
       .catch(error => console.log(error));
   }, []);
@@ -47,7 +47,7 @@ export const TravelPage = (props) => {
 
           {/* 글들을 표시하는 로직 추가 */}
           {boardData.posts && boardData.posts.map(post => (
-<Card href={`https://nmapi.pcor.me/view.php?id=${post.postid}`} className="mb-2" key={post.postid}>
+<Card href={`https://nmapi.pcor.me/view?id=${post.postid}`} className="mb-2" key={post.postid}>
 <h5 className="truncate md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 {post.title}
 </h5>

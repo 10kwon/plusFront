@@ -22,7 +22,7 @@ export const Event230804Page = (props) => {
   const [shopfData, setShopfData] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null); // Add this line
   useEffect(() => {
-    axios.get('https://nmapi.pcor.me/api/board/shopList.php')
+    axios.get('https://nmapi.pcor.me/api/board/shopList')
       .then(response => setShopfData(response.data))
       .catch(error => console.log(error));
   }, []);
@@ -145,7 +145,7 @@ export const Event230804Page = (props) => {
                주의: 한번 구매한 상품은 환불할 수 없어요.
                </div>
                <div className="bg-gray-50 px-4 pt-3 pb-16 sm:flex sm:flex-row-reverse sm:px-6">
-                 <a href={`https://nmapi.pcor.me/form/buy.php?iid=${selectedProduct.iid}`}>
+                 <a href={`https://nmapi.pcor.me/form/buy?iid=${selectedProduct.iid}`}>
                  <button
                    type="button"
                    className="inline-flex w-full justify-center rounded-xl bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"

@@ -12,7 +12,7 @@ export const CoinPage = (props) => {
 
   useEffect(() => {
     // Make an Axios request to fetch the transactions
-    axios.get('https://nmapi.pcor.me/api/auth/payment/coin.php',{
+    axios.get('https://nmapi.pcor.me/api/auth/payment/coin',{
       withCredentials: true, // withCredentials를 true로 설정
       credentials: "same-origin", // credentials를 'same-origin'으로 설정
     }) // Replace with your API endpoint
@@ -38,7 +38,7 @@ export const CoinPage = (props) => {
       if (!isLoading) {
         setIsLoading(true);
         // 여기에서 API 요청을 보내어 새 데이터를 가져옵니다.
-        axios.get(`https://nmapi.pcor.me/api/auth/payment/coin.php?page=${page + 1}`,{
+        axios.get(`https://nmapi.pcor.me/api/auth/payment/coin?page=${page + 1}`,{
           withCredentials: true, // withCredentials를 true로 설정
           credentials: "same-origin", // credentials를 'same-origin'으로 설정
         })

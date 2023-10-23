@@ -51,7 +51,7 @@ function App() {
   //Requesting on http://localhost:5000/auth/login/success and getting users data.
   useEffect(() => {
     const token = cookies.sessionID;
-    Axios.get("https://nmapi.pcor.me/api/auth/login/success.php?sessionID="+token, {
+    Axios.get("https://nmapi.pcor.me/api/auth/login/success?sessionID="+token, {
       withCredentials: true,
       credentials: 'same-origin',
     })

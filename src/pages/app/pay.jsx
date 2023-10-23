@@ -97,7 +97,7 @@ export const PayPage = (props) => {
   const handleFormSubmit = async () => {
     try {
       // 데이터를 PHP 서버로 전송
-      const response = await axios.post("https://nmapi.pcor.me/api/auth/sekai/issue.php", {
+      const response = await axios.post("https://nmapi.pcor.me/api/auth/sekai/issue", {
         sekaiValue,
         selectedItem
       },

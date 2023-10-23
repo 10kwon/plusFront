@@ -33,7 +33,7 @@ export const SupportPage = (props) => {
 				</h3>
 
 
-        <Iframe url="https://nmapi.pcor.me/faq.php"
+        <Iframe url="https://nmapi.pcor.me/faq"
         id=""
         className="w-full mx-auto h-screen"
         display="block"

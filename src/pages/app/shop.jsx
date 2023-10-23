@@ -15,14 +15,14 @@ import 'react-medium-image-zoom/dist/styles.css'
 export const ShopPage = (props) => {
   const [shopData, setShopData] = useState([]);
   useEffect(() => {
-    axios.get('https://nmapi.pcor.me/api/board/shopPopular.php')
+    axios.get('https://nmapi.pcor.me/api/board/shopPopular')
       .then(response => setShopData(response.data))
       .catch(error => console.log(error));
   }, []);
 
   const [shopiData, setShopiData] = useState(null); // null로 초기화
   useEffect(() => {
-    axios.get('https://nmapi.pcor.me/api/board/shopInventory.php', {
+    axios.get('https://nmapi.pcor.me/api/board/shopInventory', {
       withCredentials: true,
       credentials: 'same-origin',
     })
@@ -42,7 +42,7 @@ export const ShopPage = (props) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('https://nmapi.pcor.me/api/board/shopList.php')
+    axios.get('https://nmapi.pcor.me/api/board/shopList')
       .then(response => setShopfData(response.data))
       //.then(response => setFilteredProducts(response.data))
       .catch(error => console.log(error));
@@ -360,7 +360,7 @@ class="mt-3 px-3 w-full bg-blue-500 font-bold text-white text-center m-auto py-2
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                   {isPopupOpen && (
-                  <Iframe url={`https://nmapi.pcor.me/form/buy.php?iid=${selectedProduct.iid}`}
+                  <Iframe url={`https://nmapi.pcor.me/form/buy?iid=${selectedProduct.iid}`}
         id=""
         className="w-full h-128 mt-8"
         display="block"

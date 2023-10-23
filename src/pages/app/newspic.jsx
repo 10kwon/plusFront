@@ -15,14 +15,14 @@ import 'react-medium-image-zoom/dist/styles.css'
 export const NewsPicPage = (props) => {
   const [shopData, setShopData] = useState([]);
   useEffect(() => {
-    axios.get('https://nmapi.pcor.me/api/board/newsPopular.php')
+    axios.get('https://nmapi.pcor.me/api/board/newsPopular')
       .then(response => setShopData(response.data))
       .catch(error => console.log(error));
   }, []);
 
   const [shopiData, setShopiData] = useState(null); // null로 초기화
   useEffect(() => {
-    axios.get('https://nmapi.pcor.me/api/board/shopInventory.php', {
+    axios.get('https://nmapi.pcor.me/api/board/shopInventory', {
       withCredentials: true,
       credentials: 'same-origin',
     })
@@ -42,7 +42,7 @@ export const NewsPicPage = (props) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('https://nmapi.pcor.me/api/board/newsList.php')
+    axios.get('https://nmapi.pcor.me/api/board/newsList')
       .then(response => setShopfData(response.data))
       //.then(response => setFilteredProducts(response.data))
       .catch(error => console.log(error));
@@ -201,7 +201,7 @@ export const NewsPicPage = (props) => {
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                   {wopen && (
-                  <Iframe url={`https://nmapi.pcor.me/form/open_news.php?postid=${selectedProduct.postid}`}
+                  <Iframe url={`https://nmapi.pcor.me/form/open_news?postid=${selectedProduct.postid}`}
         id=""
         className="w-full h-128 mt-8"
         display="block"

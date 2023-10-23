@@ -30,21 +30,21 @@ export const HomePage = (props) => {
   const navigate = useNavigate()
   const [bannerData, setBannerData] = useState([]);
   useEffect(() => {
-    axios.get('https://nmapi.pcor.me/api/banner/index.php')
+    axios.get('https://nmapi.pcor.me/api/banner/index')
       .then(response => setBannerData(response.data))
       .catch(error => console.log(error));
   }, []);
 
   const [shopData, setShopData] = useState([]);
   useEffect(() => {
-    axios.get('https://nmapi.pcor.me/api/board/shopPopular.php')
+    axios.get('https://nmapi.pcor.me/api/board/shopPopular')
       .then(response => setShopData(response.data))
       .catch(error => console.log(error));
   }, []);
 
   const [newsData, setNewsData] = useState([]);
   useEffect(() => {
-    axios.get('https://nmapi.pcor.me/api/board/newsPopular.php')
+    axios.get('https://nmapi.pcor.me/api/board/newsPopular')
       .then(response => setNewsData(response.data))
       .catch(error => console.log(error));
   }, []);
