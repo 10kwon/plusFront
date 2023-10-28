@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { Dialog, Popover, Tab, Transition, Menu } from '@headlessui/react'
 import { GiftIcon, Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon, HomeIcon, PlusCircleIcon, ArrowSmallUpIcon, NewspaperIcon} from '@heroicons/react/24/outline'
 import nl2br from "react-nl2br";
-import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
+import { ArrowUpRightIcon, ChevronLeftIcon } from '@heroicons/react/20/solid';
 
 import useDarkSide from '../useDarkSide';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
@@ -185,29 +185,18 @@ export default function Header(props) {
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-100 lg:hidden" onClose={setOpen}>
-          <Transition.Child
-            as={Fragment}
-            enter="transition-opacity ease-linear duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="transition-opacity ease-linear duration-300"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-black bg-opacity-25" />
-          </Transition.Child>
 
           <div className="fixed inset-0 z-100 flex">
             <Transition.Child
               as={Fragment}
-              enter="transition ease-in-out duration-300 transform"
-              enterFrom="-translate-x-full"
-              enterTo="translate-x-0"
-              leave="transition ease-in-out duration-300 transform"
-              leaveFrom="translate-x-0"
-              leaveTo="-translate-x-full"
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 translate-x-4 md:translate-y-0 md:scale-95"
+              enterTo="opacity-100 translate-x-0 md:scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 translate-x-0 md:scale-100"
+              leaveTo="opacity-0 translate-x-4 md:translate-y-0 md:scale-95"
             >
-              <Dialog.Panel className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
+              <Dialog.Panel className="relative flex w-full flex-col overflow-y-auto bg-white dark:bg-gray-800 dark:text-white pb-12 shadow-xl">
                 <div className="flex px-4 pb-2 pt-5">
                   <button
                     type="button"
@@ -216,20 +205,58 @@ export default function Header(props) {
                   >
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Close menu</span>
-                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                    <ChevronLeftIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
-
+                {/*MyTab*/}
+                <div className="">
+                <section className="rounded-b-xl py-6 bg-gray-100 dark:bg-gray-800 px-6">
+      <div className="mx-auto max-w-2xl lg:max-w-4xl">
+      {
+                props.isLogin ? 
+        <figure>
+        <figcaption>
+            <img
+              className="mx-auto h-16 w-16 rounded-full bg-gray-200 dark:bg-gray-600"
+              src={props.userImage}
+              alt=""
+            />
+            <div className="mt-4 text-center">
+              <div className="font-bold text-xl text-gray-900 dark:text-gray-100">{props.userName}님</div>
+              <div className="text-gray-600 dark:text-gray-100"><a href="https://mapi.pcor.me/oauth/ip.php?action=logout">로그아웃</a></div>
+            </div>
+          </figcaption>
+        </figure>
+        :
+        <figure>
+        <figcaption>
+              <div className="font-bold text-2xl text-gray-900 dark:text-gray-100">
+              지금 로그인하고<br/>Plus의 모든 서비스를 이용하세요
+              </div>
+              <div className="text-gray-600 dark:text-gray-100 mt-2">
+              <button
+                          onClick={() => navigate('/signin')}
+                          className="flex rounded-xl py-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-white">
+                              <span>로그인</span>
+                              <span aria-hidden="true">&nbsp;&rarr;</span>
+                              </button>
+                              </div>
+          </figcaption>
+        </figure>
+      }
+      </div>
+    </section>
+    </div>
                 {/* Links */}
                 <Tab.Group as="div" className="mt-2">
-                  <div className="border-b border-gray-200">
-                    <Tab.List className="-mb-px flex space-x-8 px-4 overflow-x-scroll">
+                  <div className="border-b border-gray-200 dark:border-gray-700">
+                    <Tab.List className="top-0 w-full sticky -mb-px flex space-x-8 px-4 overflow-x-scroll">
                       {navigation.categories.map((category) => (
                         <Tab
                           key={category.name}
                           className={({ selected }) =>
                             classNames(
-                              selected ? 'border-blue-500 text-blue-500' : 'border-transparent text-gray-900',
+                              selected ? 'border-blue-500 text-blue-500 dark:border-blue-300 dark:text-blue-300' : 'border-transparent text-gray-900 dark:text-gray-100',
                               'flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium'
                             )
                           }
@@ -239,16 +266,17 @@ export default function Header(props) {
                       ))}
                     </Tab.List>
                   </div>
+                  
                   <Tab.Panels as={Fragment}>
                     {navigation.categories.map((category) => (
-                      <Tab.Panel key={category.name} className="space-y-10 px-4 pb-8 pt-10">
+                      <Tab.Panel key={category.name} className="space-y-10 px-4">
                         <div className="">
                           {category.featured.map((item) => (
-                            <div key={item.name} className="group relative text-sm">
+                            <div key={item.name} className="group relative text-sm  pb-8 pt-10">
                               <div className="aspect-h-1 aspect-w-2 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
                                 <img src={item.imageSrc} alt={item.imageAlt} className="object-cover object-center" />
                               </div>
-                              <a href={item.href} className="mt-6 block font-medium text-gray-900">
+                              <a href={item.href} className="mt-6 block font-medium text-gray-900 dark:text-gray-100">
                                 <span className="absolute inset-0 z-10" aria-hidden="true" />
                                 {nl2br(item.name)}
                               </a>
@@ -260,7 +288,7 @@ export default function Header(props) {
                         </div>
                         {category.sections.map((section) => (
                           <div key={section.name}>
-                            <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-900">
+                            <p id={`${category.id}-${section.id}-heading-mobile`} className="font-bold text-xl text-gray-900 dark:text-gray-100">
                               {section.name}
                             </p>
                             <ul
@@ -270,7 +298,7 @@ export default function Header(props) {
                             >
                               {section.items.map((item) => (
                                 <li key={item.name} className="flow-root">
-                                  <a href={item.href} className="-m-2 block p-2 text-gray-500">
+                                  <a href={item.href} className="-m-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-300 dark:hover:bg-gray-700 rounded-xl block p-2 text-gray-600 dark:text-gray-300">
                                     {item.name}
                                   </a>
                                 </li>
@@ -283,17 +311,17 @@ export default function Header(props) {
                   </Tab.Panels>
                 </Tab.Group>
 
-                <div className="space-y-6 border-t border-gray-200 px-4 py-6">
+                <div className="space-y-6 px-4 py-6">
                   {navigation.pages.map((page) => (
                     <div key={page.name} className="flow-root">
-                      <button onClick={() => navigate(page.href)} className="-m-2 block p-2 font-medium text-gray-900">
+                      <button onClick={() => navigate(page.href)} className="-m-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-xl block p-2 text-gray-600 dark:text-gray-300">
                         {page.name}
                       </button>
                     </div>
                   ))}
                   {navigation.linkedpages.map((page) => (
                     <div key={page.name} className="flow-root">
-                      <a href={page.href} className="-m-2 block p-2 font-medium text-gray-900">
+                      <a href={page.href} className="-m-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-xl block p-2 text-gray-600 dark:text-gray-300">
                         {page.name}<ArrowUpRightIcon className="h-4 inline-block"/>
                       </a>
                     </div>
@@ -433,21 +461,14 @@ export default function Header(props) {
 
               <div className="ml-auto flex items-center">
                 <div className="flex lg:flex-1 lg:items-center lg:justify-end space-x-6">
-                <button
-        type="button"
-        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-      >
-        <span className="sr-only">다크 모드 토글하기</span>
-        <DarkModeSwitch checked={darkSide} onChange={toggleDarkMode} className="h-6" />
-      </button>
                 {
                 props.isLogin ? 
                 <Menu>
                 <div>
                     <Menu.Button
-                    className="flex rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:text-white">
+                    className="hidden md:flex rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:text-white">
                     <img className="rounded-full h-6 w-6 object-cover mr-2" src={props.userImage} alt="프로필 이미지"/>
-                        <h1 className="hidden md:block font-bold"><span >{props.userName}</span>님</h1>
+                        <h1 className="font-bold"><span >{props.userName}</span>님</h1>
                         </Menu.Button>
                 </div>
                       <Transition
@@ -534,7 +555,7 @@ export default function Header(props) {
                     <div>
                     <button
                           onClick={() => navigate('/signin')}
-                          className="flex rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-white">
+                          className="hidden md:flex rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-white">
                               <h1><span className="font-bold">로그인</span></h1>
                               <span aria-hidden="true">&nbsp;&rarr;</span>
                               </button>
@@ -553,11 +574,6 @@ export default function Header(props) {
 
 <div
 			class="md:hidden fixed z-50 w-full bottom-0 p-5 px-6 flex items-center justify-between backdrop-blur-lg bg-white/70 dark:bg-black/70 shadow-3xl text-gray-900 dark:text-gray-100 cursor-pointer">
-			<div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
-      <button  onClick={() => setOpen(true)}>
-                <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-                </button>
-			</div>
       <div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
       <button onClick={() => navigate('/')}>
       <HomeIcon className="h-6 w-6" aria-hidden="true" />
@@ -583,7 +599,16 @@ export default function Header(props) {
                 </button>  
 			</div>
 
-      
+			<div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
+      <button  onClick={() => setOpen(true)}>
+      {
+                props.isLogin ? 
+                    <img className="rounded-full h-6 w-6 object-cover mr-2 bg-gray-200 dark:bg-gray-600" src={props.userImage} alt="프로필 이미지"/>
+                    :
+                    <img className="rounded-full h-6 w-6 object-cover mr-2" src="/favicon-96x96.png" alt="프로필 이미지"/>
+}
+                </button>
+			</div>
 			
 			</div>
 

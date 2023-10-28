@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Header from '../../components/header/header.prod.jsx';
 import Footer from '../../components/footer/footer.prod.jsx';
+import ShopTab from '../../components/shopTypes.jsx';
 import nl2br from "react-nl2br";
 import {Card, Avatar, Tabs, Breadcrumb} from 'flowbite-react';
 import { HomeIcon, ChevronRightIcon, XMarkIcon, ExclamationCircleIcon } from '@heroicons/react/20/solid'
@@ -93,6 +94,7 @@ export const ShopPage = (props) => {
     <div className="dark:bg-gray-800 dark:text-white">
       
         <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin}  userCash={props.userCash} />
+        <ShopTab/>
         <div class="mx-auto w-full max-w-screen-xl">
         <main
 		class="my-1 pt-2 pb-2 px-4 md:px-10 flex-1 rounded-l-lg
@@ -111,11 +113,8 @@ export const ShopPage = (props) => {
 					class="flex items-center pt-6 md:px-4 text-3xl font-bold
 					capitalize dark:text-gray-300">
             
-					<span>상점</span>
+					<span>코인 상점</span>
 				</h3>
-
-
-
 
         <h2
 					class="flex items-center pt-8 pb-1 md:px-4 text-2xl font-bold
@@ -350,7 +349,7 @@ class="mt-3 px-3 w-full bg-blue-500 font-bold text-white text-center m-auto py-2
               leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
             >
               <Dialog.Panel className="flex w-full transform text-left text-base transition md:my-8 md:max-w-2xl md:px-4 lg:max-w-4xl">
-                <div className="md:rounded-xl relative flex w-full items-center overflow-hidden bg-white ">
+                <div className="md:rounded-xl relative flex w-full items-center overflow-hidden bg-white dark:bg-gray-800">
                   <button
                     type="button"
                     className="z-100 absolute right-4 top-4 text-gray-400 hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
