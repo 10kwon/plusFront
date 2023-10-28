@@ -82,7 +82,7 @@ export const SekaiChangePage = (props) => {
           window.location.href = "/";
         } else {
           // 오류 응답에 오류 메시지가 없는 경우 기본 오류 메시지 출력
-          setCurrentStep(5);
+          setCurrentStep(3);
         }
         // 전송이 성공하면 가입 축하 화면으로 이동하거나 작업을 수행하세요.
          // 예시로 5단계로 설정
