@@ -50,14 +50,7 @@ const navigation = {
             { name: 'Sekai 발급받기', href: '/coin/sekai' },
             { name: '잔액', href: '/coin' },
           ],
-        },
-        {
-          id: 'pluscoinChange',
-          name: '전환하기',
-          items: [
-            { name: '디젯/미라클 포인트 전환하기', href: 'https://djet.kr' },
-          ],
-        },
+        }
       ],
     },
     {

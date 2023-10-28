@@ -125,7 +125,7 @@ class={`bg-opacity-50 mt-3 px-3 w-1/2 bg-blue-500 font-bold text-white text-cent
               {transactions.map((transaction, index) => (
                 <li key={index} className="flex justify-between gap-x-6 transform ease-in duration-100 active:scale-95 py-5 hover:bg-gray-200 dark:hover:bg-gray-700">
                 <div className="flex min-w-0 gap-x-4">
-                  <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={`${transaction.legacyLogSource == "miracle" ? "/resources/images/legacy_miracle.png" : "/resources/images/legacy_djet.png"}`} alt="" />
+                  <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={`${transaction.legacyLogSource == "miracle" ? "/resources/images/legacy_miracle.png" : transaction.legacyLogSource == "diet" ? "/resources/images/legacy_djet.png" : "/favicon-96x96.png"}`} alt="" />
                   <div className="min-w-0 flex-auto">
                     <p className="font-semibold leading-6">{transaction.product}</p>
                     <p className="truncate text-sm leading-5 text-gray-500 dark:text-gray-200">{transaction.timestamp}</p>
