@@ -16,6 +16,7 @@ import { ShopPage } from "./pages/app/shop";
 import { CardPage } from "./pages/app/card";
 import { SupportPage } from "./pages/app/support";
 import { SekaiIssuePage } from "./pages/app/sekai";
+import { SekaiChangePage } from "./pages/app/sekaiChange";
 import { PayPage } from "./pages/app/pay";
 import { NewsPicPage } from "./pages/app/newspic";
 
@@ -102,6 +103,7 @@ function App() {
         <Route path="/event/pl1008act" element={<Event231008Page isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
 
         <Route path="/coin/sekai" element={<SekaiIssuePage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
+        <Route path="/coin/sekai/change" element={<SekaiChangePage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
         <Route path="/coin" element={<CoinPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} userSekai={userSekai} />} />
         <Route path="/cash/pay" element={<PayPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
         

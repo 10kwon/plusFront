@@ -2,14 +2,16 @@ import React, { useRef, useState, useEffect } from "react";
 import Header from '../../components/header/header.prod.jsx';
 import Footer from '../../components/footer/footer.prod.jsx';
 import {Card, Avatar, Tabs, Breadcrumb} from 'flowbite-react';
-import { HomeIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
+import { PencilIcon,HomeIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import axios from 'axios';
+import {  PencilSquareIcon } from "@heroicons/react/24/outline";
+import { useNavigate } from "react-router";
 
 export const CoinPage = (props) => {
   const [transactions, setTransactions] = useState([]);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-
+  const navigate = useNavigate()
   useEffect(() => {
     // Make an Axios request to fetch the transactions
     axios.get('https://mapi.pcor.me/api/auth/payment/coin.php',{
@@ -91,7 +93,8 @@ export const CoinPage = (props) => {
 		transition duration-500 ease-in-out overflow-y-auto">
 <p class="flex items-center pt-12 pb-2 md:px-4 font-semibold text-lg
 					capitalize dark:text-gray-300 text-gray-500 underline">
-           <button className="rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-600" onClick={() => handleCopyClipBoard('Sekai 번호 '+props.userSekai)}>Sekai 계좌 {props.userSekai}</button> </p>
+           <button className="rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-600" onClick={() => handleCopyClipBoard('Sekai 번호 '+props.userSekai)}>Sekai 계좌 {props.userSekai}</button>
+           <button className="ml-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-600" onClick={() => navigate('/coin/sekai/change')}><PencilIcon className="h-4"/></button></p>
 <h3
 					class="flex items-center md:px-4 text-3xl font-bold
 					capitalize dark:text-gray-300">
@@ -122,7 +125,7 @@ class={`bg-opacity-50 mt-3 px-3 w-1/2 bg-blue-500 font-bold text-white text-cent
               {transactions.map((transaction, index) => (
                 <li key={index} className="flex justify-between gap-x-6 transform ease-in duration-100 active:scale-95 py-5 hover:bg-gray-200 dark:hover:bg-gray-700">
                 <div className="flex min-w-0 gap-x-4">
-                  <img className="hidden h-12 w-12 flex-none rounded-full bg-gray-50" src={`${transaction.legacyLogSource !== null ? "" : ""}`} alt="" />
+                  <img className="hidden h-12 w-12 flex-none rounded-full bg-gray-50" src={`${transaction.legacyLogSource == "miracle" ? "/resources/images/legacy_miracle.png" : "/resources/images/legacy_djet.png"}`} alt="" />
                   <div className="min-w-0 flex-auto">
                     <p className="font-semibold leading-6">{transaction.product}</p>
                     <p className="truncate text-sm leading-5 text-gray-500 dark:text-gray-200">{transaction.timestamp}</p>
