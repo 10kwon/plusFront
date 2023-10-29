@@ -193,7 +193,7 @@ export default function Header(props) {
                 <div className="flex px-4 pb-2 pt-5">
                   <button
                     type="button"
-                    className="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
+                    className="relative -m-2 inline-flex items-center justify-center border-transparent p-2 text-gray-400"
                     onClick={() => setOpen(false)}
                   >
                     <span className="absolute -inset-0.5" />
