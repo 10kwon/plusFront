@@ -190,11 +190,11 @@ export const NewsPicPage = (props) => {
               leaveFrom="opacity-100 translate-y-0 md:scale-100"
               leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
             >
-              <Dialog.Panel className="flex w-full transform text-left text-base transition md:my-8 md:max-w-2xl md:px-4 lg:max-w-4xl">
-                <div className="md:rounded-xl relative flex w-full items-center overflow-hidden bg-white ">
+              <Dialog.Panel className="flex w-full transform text-left text-base transition w-screen">
+                <div className="relative flex w-full items-center overflow-hidden bg-white ">
                   <button
                     type="button"
-                    className="z-100 absolute right-4 top-4 text-gray-400 hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
+                    className="z-100 absolute right-4 top-4 text-white hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
                     onClick={() => setWOpen(false)}
                   >
                     <span className="sr-only">Close</span>
@@ -203,7 +203,7 @@ export const NewsPicPage = (props) => {
                   {wopen && (
                   <Iframe url={`https://mapi.pcor.me/form/open_news.php?postid=${selectedProduct.postid}`}
         id=""
-        className="w-full h-128 mt-8"
+        className="w-screen h-screen"
         display="block"
         position="relative"/>
                   )}

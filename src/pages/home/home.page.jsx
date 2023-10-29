@@ -188,7 +188,7 @@ export const HomePage = (props) => {
         <div className="mx-auto w-full md:max-w-2xl px-4 pb-16 sm:px-6 sm:pb-24 lg:max-w-7xl lg:px-8">
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10">
             {newsData.map((item, index) => (
-              <a href="/reward/news">
+              <a href="/reward">
               <div key={item.postid} className="group relative rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800">
 
               <div className="mt-4 flex justify-between">
