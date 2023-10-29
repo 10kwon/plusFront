@@ -15,7 +15,7 @@ export const AuthPage = (props) => {
 
     const navigate = useNavigate()
     return(
-        <div className="dark:bg-gray-800 dark:text-white">
+        <div className="dark:bg-gray-800 dark:text-white min-h-screen">
   <div className="flex min-h-screen flex-1 flex-col justify-center px-6 py-24 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <button  onClick={() => navigate('/')}>

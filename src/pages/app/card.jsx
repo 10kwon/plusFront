@@ -27,7 +27,7 @@ if (props.isLogin == 0){
 }
 
   return (
-    <div className="dark:bg-gray-800 dark:text-white">
+    <div className="dark:bg-gray-800 dark:text-white min-h-screen">
       
         <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin}  userCash={props.userCash} />
 
