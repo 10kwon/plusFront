@@ -205,7 +205,7 @@ export const CoinSendPage = (props) => {
           </button>
           <div class="flex flex-col items-center">
           <img
-  src={`https://ticketplus.injeonmetro.co.kr/plusCard/${currentStep === 3 ? sekaiValue : "adminofplco"}_card.png`}
+  src={`https://ticketplus.injeonmetro.co.kr/plusCard/${currentStep === 4 ? sekaiValue : "adminofplco"}_card.png`}
   alt="받는 사람 등록카드"
   class="h-24 my-8"
   onError={handleImageError}
