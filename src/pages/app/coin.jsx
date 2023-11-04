@@ -89,7 +89,7 @@ export const CoinPage = (props) => {
               } else {
                 const newTransactions = response.data.data;
               setTransactionc([...transactionc, ...newTransactions]);
-              setPage(page + 1);
+              //setPage(page + 1);
               setIsLoading(false);
               }
               
