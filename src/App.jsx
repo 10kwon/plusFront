@@ -13,6 +13,7 @@ import { AboutgPage } from "./pages/app/aboutgplus";
 import { CoinPage } from "./pages/app/coin";
 
 import { ShopPage } from "./pages/app/shop";
+import { CashShopPage } from "./pages/app/shop_cash";
 import { CardPage } from "./pages/app/card";
 import { SupportPage } from "./pages/app/support";
 import { SekaiIssuePage } from "./pages/app/sekai";
@@ -95,6 +96,8 @@ function App() {
         <Route path="/todayTravel" element={<TravelPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
         
         <Route path="/shop" element={<ShopPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
+        <Route path="/shop/cash" element={<CashShopPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
+        
         <Route path="/card/setting" element={<CardPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
         <Route path="/support" element={<SupportPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
         
