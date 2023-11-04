@@ -9,7 +9,9 @@ import Iframe from 'react-iframe';
 
 export const CardPage = (props) => {
   const [iframeHeight, setIframeHeight] = useState(0);
-
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
   useEffect(() => {
     const iframe = document.getElementById("iframeId"); // Replace "iframeId" with the actual ID of the iframe
     if (iframe) {
