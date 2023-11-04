@@ -197,7 +197,7 @@ export const CashShopPage = (props) => {
                       <span aria-hidden="true" className="absolute inset-0" />
                       {item.product}
                   </h3>
-                  <p className="text-lg font-bold text-gray-900 dark:text-gray-100">{item.price.toLocaleString()+"코인"}</p>
+                  <p className="text-lg font-bold text-gray-900 dark:text-gray-100">{item.price.toLocaleString()+"원"}</p>
                 </div>
                 <div className="lg:hidden w-24 h-24 overflow-hidden rounded-xl bg-gray-200 group-hover:opacity-75 lg:h-60 lg:w-60">
                 <img
