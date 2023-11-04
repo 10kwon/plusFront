@@ -30,6 +30,7 @@ export const PayPage = (props) => {
 
   const [price, setPrice] = useState(0);
   const [sekaiError, setSekaiError] = useState(""); // 경고 메시지 상태
+  const [senderName, setSenderName] = useState(""); // 경고 메시지 상태
   const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(false); // '다음' 버튼 활성화 여부 상태
   const [selectedItem, setSelectedItem] = useState("");
 
@@ -87,8 +88,8 @@ export const PayPage = (props) => {
           alert(response.data.error);
           window.location.href = "/";
         } else {
-          // 오류 응답에 오류 메시지가 없는 경우 기본 오류 메시지 출력
-          setCurrentStep(3);
+          setSenderName(response.data.sendername);
+          setCurrentStep(4);
         }
         // 전송이 성공하면 가입 축하 화면으로 이동하거나 작업을 수행하세요.
          // 예시로 5단계로 설정
@@ -155,8 +156,15 @@ export const PayPage = (props) => {
           </button>
           <div class="flex flex-col items-center"></div>
           <h1 className="text-3xl font-bold my-4 text-center">{price}원을<br/>정말로 충전하시겠어요?</h1>
-          <p className="dark:text-gray-300 text-gray-700 mt-4 text-center">
-        기존 거래가 종료되지 않았다면 충전할 수 없어요.
+          <p className="dark:text-gray-300 text-gray-700 mt-5">
+          <strong>충전 이전에 확인하세요!</strong><br/>
+        1. 토스아이디를 통한 입금이 진행돼요.<br/>
+        2. '충전하기' 버튼을 누르면 만 19세 이상 또는 법정대리인이 거래에 대한 책임을 지고 충전한다는 데에 동의해요.<br/>
+        3. 기존 거래가 종료되지 않았다면 충전할 수 없어요.<br/>
+        4. 아이템 구매에 캐시를 사용했다면 환불이 어려워요.<br/>
+        5. 미성년자의 거래 시 미성년자 또는 법정 대리인에 의해 plus@sqlare.com으로 계정의 닉네임 또는 ID와 송금확인증을 보내면 아이템 비활성화 및 감가상각을 조건으로 환불받을 수 있어요.<br/>
+        6. 송금 이후 전산 반영까지 1~10분이 소요될 수 있어요.
+
       </p>
     </div>
     <div className={`${currentStep == 4 ? 'block' : 'hidden'} py-8 px-5`}>
@@ -167,10 +175,32 @@ export const PayPage = (props) => {
             alt="Plus"
           />
           </button>
-      <h1 className="text-3xl font-bold my-4 text-center">송금 완료</h1>
-      <p className="dark:text-gray-300 text-gray-700 mb-4 text-center">
-        이제 새로운 Sekai 번호를 이용하세요.
-      </p>
+      <h1 className="text-3xl font-bold my-4 text-center mb-8">입금을 진행해주세요</h1>
+      <div className="border-b py-4">
+        <p>
+        <span class="bg-blue-500 mr-2 rounded-full py-2 px-3.5 font-bold">1</span>
+        <strong>토스아이디 송금 링크를 방문해 주세요</strong>
+        </p>
+        <div class="bg-gray-300 dark:bg-gray-600 py-2 rounded-xl text-center mt-4">
+          <a href={`https://toss.me/plusp/${price}`} target="_blank"><h3 className="text-xl font-bold">https://toss.me/plusp/{price}</h3></a>
+          <p>👆 클릭하면 바로 갈 수 있어요</p>
+        </div>
+      </div>
+      <div className="border-b py-4">
+        <p>
+        <span class="bg-blue-500 mr-2 rounded-full py-2 px-3.5 font-bold">2</span>
+        <span class="bg-blue-500 rounded-lg px-4 py-2 mr-2">익명 송금하기</span><strong>를 눌러 주세요</strong>
+        </p>
+      </div>
+      <div className="border-b py-4">
+        <p>
+        <span class="bg-blue-500 mr-2 rounded-full py-2 px-3.5 font-bold">3</span>
+        <strong>아래 이름으로 돈을 보내 주세요</strong>
+        </p>
+        <div class="bg-gray-300 dark:bg-gray-600 py-2 rounded-xl text-center mt-4">
+          <h3 className="text-2xl font-bold">{senderName}</h3>
+        </div>
+      </div>
     </div>
     <div class={`max-w-md mx-auto ${currentStep == 4 ? "hidden" : ""} px-4 bottom-8 fixed w-full `}>
     <div class={`${currentStep >= 2 ? "gap-4 flex" : "mb-2 "}`}>
