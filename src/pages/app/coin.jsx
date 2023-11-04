@@ -16,7 +16,7 @@ export const CoinPage = (props) => {
   const navigate = useNavigate()
   useEffect(() => {
     // Make an Axios request to fetch the transactions
-    axios.get('https://mapi.pcor.me/api/auth/payment/coin.php',{
+    axios.get('https://mapi.pcor.me/api/auth/payment/cㅌoin.php',{
       withCredentials: true, // withCredentials를 true로 설정
       credentials: "same-origin", // credentials를 'same-origin'으로 설정
     }) // Replace with your API endpoint
@@ -206,12 +206,21 @@ class="mt-3 px-3 w-1/2 bg-blue-500 font-bold text-white text-center m-auto py-2 
   <li key={index} className="flex justify-between gap-x-6 transform ease-in duration-100 active:scale-95 py-5 hover:bg-gray-200 dark:hover:bg-gray-700">
   <div className="flex min-w-0 gap-x-4">
     <div className="min-w-0 flex-auto">
-      <p className="font-semibold leading-6">{transaction.senderDisplayName}</p>
-      <p className="truncate text-sm leading-5 text-gray-500 dark:text-gray-200">{transaction.transferedTs == "null" ? <span class="text-red-500 font-bold">입금되지 않음</span> : `${transaction.transferedTs}`} | {transaction.created_at}</p>
+      <p className="leading-6">입금자명: <span className="font-semibold">{transaction.senderDisplayName}</span></p>
+      <p className="truncate text-sm leading-5 text-gray-500 dark:text-gray-200">{transaction.transferedTs == null ? <span class="text-red-500 font-bold">입금되지 않음</span> : `${transaction.transferedTs}`} | {transaction.created_at}</p>
     </div>
   </div>
   <div className="shrink-0 flex flex-col items-end">
     <p className={`${Number(transaction.amount) > 0 ? 'text-blue-500 dark:text-blue-300' : 'text-gray-500 dark:text-gray-300'} leading-6 font-bold`}>{Number(transaction.amount)}원</p>
+    {
+      transaction.transferedTs == null ?
+      <p className="truncate text-sm leading-5 text-gray-500 dark:text-gray-200">입금 완료</p>
+      :
+      <a href={`https://toss.me/plusp/${transaction.amount}`}>
+      <p className="truncate text-sm leading-5 text-gray-500 dark:text-gray-200">지금 입금하기</p>
+      </a>
+    }
+    
   </div>
 </li>
 ))}

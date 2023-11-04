@@ -195,7 +195,7 @@ export const PayPage = (props) => {
       <div className="border-b py-4">
         <p>
         <span class="bg-blue-500 mr-2 rounded-full py-2 px-3.5 font-bold">3</span>
-        <strong>아래 이름으로 돈을 보내 주세요</strong>
+        <strong>아래 이름으로 {price}원을 보내 주세요</strong>
         </p>
         <div class="bg-gray-300 dark:bg-gray-600 py-2 rounded-xl text-center mt-4">
           <h3 className="text-2xl font-bold">{senderName}</h3>
