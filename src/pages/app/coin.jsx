@@ -4,7 +4,7 @@ import Footer from '../../components/footer/footer.prod.jsx';
 import {Card, Avatar, Tabs, Breadcrumb} from 'flowbite-react';
 import { PencilIcon,HomeIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import axios from 'axios';
-import {  PencilSquareIcon } from "@heroicons/react/24/outline";
+import {  BanknotesIcon, PaperAirplaneIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router";
 import { Tab } from '@headlessui/react';
 
@@ -41,8 +41,6 @@ export const CoinPage = (props) => {
     }) // Replace with your API endpoint
       .then((response) => {
         if (response.data.status == "fail") {
-          alert("로그인해 주세요.");
-          window.location.href = "/";
         } else {
         setTransactionc(response.data.data);
         }
@@ -88,8 +86,6 @@ export const CoinPage = (props) => {
           })
             .then((response) => {
               if (response.data.status == "fail") {
-                alert("로그인해 주세요.");
-                window.location.href = "/";
               } else {
                 const newTransactions = response.data.data;
               setTransactionc([...transactionc, ...newTransactions]);
@@ -149,12 +145,16 @@ export const CoinPage = (props) => {
 					capitalize dark:text-gray-300 text-gray-500">
 {Number(props.userCash).toLocaleString()}원</p>
 <div className="flex">
-<button             
-class="bg-opacity-50 mt-3 px-3 mr-2 w-1/2 font-bold bg-gray-300 hover:bg-gray-400 text-black text-center m-auto py-2 rounded-xl transform ease-in duration-100 active:scale-95 ">
+<button
+onClick={() => navigate('/cash/pay')}             
+class="mt-3 px-3 mr-2 w-1/2 font-bold bg-gray-300 hover:bg-gray-400 text-black text-center m-auto py-2 rounded-xl transform ease-in duration-100 active:scale-95 ">
+<BanknotesIcon className="h-4 inline-block mr-2"/>
 캐시 충전하기
 </button>
 <button             
-class={`bg-opacity-50 mt-3 px-3 w-1/2 bg-blue-500 font-bold text-white text-center m-auto py-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-blue-700`}>
+onClick={() => navigate('/coin/send')}
+class="mt-3 px-3 w-1/2 bg-blue-500 font-bold text-white text-center m-auto py-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-blue-700">
+<PaperAirplaneIcon className="h-4 inline-block mr-2"/>
 코인 보내기
 </button>
 </div>
@@ -207,7 +207,7 @@ class={`bg-opacity-50 mt-3 px-3 w-1/2 bg-blue-500 font-bold text-white text-cent
   <div className="flex min-w-0 gap-x-4">
     <div className="min-w-0 flex-auto">
       <p className="font-semibold leading-6">{transaction.senderDisplayName}</p>
-      <p className="truncate text-sm leading-5 text-gray-500 dark:text-gray-200">{transaction.transferedTs == "" ? <span class="text-red-500 font-bold">입금되지 않음</span> : `${transaction.transferedTs}`} | {transaction.created_at}</p>
+      <p className="truncate text-sm leading-5 text-gray-500 dark:text-gray-200">{transaction.transferedTs == "null" ? <span class="text-red-500 font-bold">입금되지 않음</span> : `${transaction.transferedTs}`} | {transaction.created_at}</p>
     </div>
   </div>
   <div className="shrink-0 flex flex-col items-end">

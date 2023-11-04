@@ -39,7 +39,7 @@ export const CoinSendPage = (props) => {
     setCurrentStep(currentStep + 1);
     setIsNextButtonDisabled(true);
 
-    if (currentStep == 1 || currentStep == 0){
+    if (currentStep == 2 || currentStep == 0){
       setIsNextButtonDisabled(false);
     }
   };
@@ -58,6 +58,26 @@ export const CoinSendPage = (props) => {
     }
   };
 
+  const handleNumChange = (event) => {
+    const value = event.target.value;
+    setPrice(value);
+
+    // 유효성 검사를 수행하고 조건에 따라 '다음' 버튼 활성화 여부 업데이트
+    if (!/^(0|[1-9][0-9]*)$/.test(value)) {
+      setSekaiError("소수점, 음수 등을 포함하지 않은 정수를 입력하세요.");
+      setIsNextButtonDisabled(true); // 유효하지 않은 경우 버튼 비활성화
+    } else {
+      if (value == 0){
+        setSekaiError("1코인부터 보낼 수 있어요.");
+        setIsNextButtonDisabled(true); // 유효하지 않은 경우 버튼 비활성화
+      }
+      else{
+        setSekaiError(""); // 유효성 검사 통과 시 경고 메시지 초기화
+        setIsNextButtonDisabled(false); // 유효한 경우 버튼 활성화
+      }
+    }
+  };
+
   const handleRadioChange = (event) => {
     const value = event.target.value;
     setSelectedItem(value);
@@ -68,7 +88,8 @@ export const CoinSendPage = (props) => {
     try {
       // 데이터를 PHP 서버로 전송
       const response = await axios.post("https://mapi.pcor.me/api/auth/payment/send.php", {
-        sekaiValue
+        sekaiValue,
+        price
       },
       {
         withCredentials: true, // withCredentials를 true로 설정
@@ -82,7 +103,7 @@ export const CoinSendPage = (props) => {
           window.location.href = "/";
         } else {
           // 오류 응답에 오류 메시지가 없는 경우 기본 오류 메시지 출력
-          setCurrentStep(3);
+          setCurrentStep(4);
         }
         // 전송이 성공하면 가입 축하 화면으로 이동하거나 작업을 수행하세요.
          // 예시로 5단계로 설정
@@ -98,7 +119,10 @@ export const CoinSendPage = (props) => {
       console.error("오류 발생", error);
     }
   };
-  
+  function handleImageError() {
+    alert('올바르지 않은 Sekai 번호에요.');
+    window.location.href = '/coin/send';
+  }
   const navigate = useNavigate()
   return (
 
@@ -144,25 +168,32 @@ export const CoinSendPage = (props) => {
         코인 보내기
       </p>
       <h1 className="text-3xl font-bold my-4">얼마를 보낼까요?</h1>
-      <Keypad onKeypadClick={(value) => setPrice(value)} />
+      <input
+                type="number"
+                name="price"
+                id="price"
+                value={price}
+                onChange={handleNumChange}
+                placeholder="금액"
+                min="1"
+                className={`block w-full rounded-xl text-3xl border-0 px-3.5 py-2 text-gray-900 dark:bg-gray-900 dark:text-gray-300 ring-1 ring-inset ring-gray-300 dark:ring-gray-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:focus:ring-blue-500 sm:leading-6 transform ease-in duration-100 active:scale-95 ${sekaiError ? 'border-red-500' : ''}`}
+                 />
+                    {sekaiError && (
+          <p className="text-red-500 text-sm mt-1">{sekaiError}</p>
+        )}
     </div>
     <div className={`${currentStep == 3 ? 'block' : 'hidden'} py-8 px-5`}>
           <button  onClick={() => navigate("/")}>
             <ChevronLeftIcon className="h-6"/>
           </button>
-          <h1 className="text-3xl font-bold my-4 text-center">정말로 보낼까요?</h1>
-      <div className="mt-6 border-t border-gray-100 dark:border-gray-700">
-        <dl className="divide-y divide-gray-100 dark:divide-gray-700">
-          <div className="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-bold leading-6 text-gray-900 dark:text-gray-100">받는 사람</dt>
-            <dd className="mt-1 leading-6 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">{sekaiValue}</dd>
-          </div>
-          <div className="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-bold leading-6 text-gray-900 dark:text-gray-100">금액</dt>
-            <dd className="mt-1 leading-6 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">{price}</dd>
-          </div>
-        </dl>
-      </div>
+          <div class="flex flex-col items-center">
+          <img
+  src={`https://ticketplus.injeonmetro.co.kr/plusCard/${currentStep === 3 ? sekaiValue : "adminofplco"}_card.png`}
+  alt="받는 사람 등록카드"
+  class="h-24 my-8"
+  onError={handleImageError}
+/></div>
+          <h1 className="text-3xl font-bold my-4 text-center">{sekaiValue}에게<br/>{price}코인을<br/>정말로 보낼까요?</h1>
     </div>
     <div className={`${currentStep == 4 ? 'block' : 'hidden'} py-8 px-5`}>
     <button  onClick={() => navigate('/')}>
@@ -172,15 +203,16 @@ export const CoinSendPage = (props) => {
             alt="Plus"
           />
           </button>
-      <h1 className="text-3xl font-bold my-4 text-center">송금 완료</h1>
-      <p className="dark:text-gray-300 text-gray-700 mb-4 text-center">
-        이제 새로운 Sekai 번호를 이용하세요.
-      </p>
-      <div class="flex flex-col items-center">
-<img src="/congrats_sekai.png" alt="축하 캐릭터" class="h-64"/>
-</div>
+          <div class="flex flex-col items-center">
+          <img
+  src={`https://ticketplus.injeonmetro.co.kr/plusCard/${currentStep === 3 ? sekaiValue : "adminofplco"}_card.png`}
+  alt="받는 사람 등록카드"
+  class="h-24 my-8"
+  onError={handleImageError}
+/></div>
+          <h1 className="text-3xl font-bold my-4 text-center">{sekaiValue}에게<br/>{price}코인을<br/>보냈어요</h1>
     </div>
-    <div class={`max-w-md mx-auto ${currentStep == 3 ? "hidden" : ""} px-4 bottom-8 fixed w-full `}>
+    <div class={`max-w-md mx-auto ${currentStep == 4 ? "hidden" : ""} px-4 bottom-8 fixed w-full `}>
     <div class={`${currentStep >= 2 ? "gap-4 flex" : "mb-2 "}`}>
     {currentStep >= 2 ?
     <button             
@@ -193,7 +225,7 @@ class="mt-3 px-3 w-1/2 font-bold bg-gray-300 hover:bg-gray-400 text-black text-c
                 onClick={currentStep !== 3 ? handleNextStep  : handleFormSubmit}
                 disabled={isNextButtonDisabled}
 class={`${isNextButtonDisabled == true ? "opacity-50" : ""} mt-3 px-3 w-full bg-blue-500 font-bold text-white text-center m-auto py-3 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-blue-700`}>
-{currentStep == 2 ? "보내기" : "다음"}
+{currentStep == 3 ? "보내기" : "다음"}
 </button>
 </div>
 </div>
