@@ -51,7 +51,7 @@ export const SupportPage = (props) => {
               메일로 문의해보세요.
             </p>
             <div className="mt-6 flex max-w-md gap-x-4">
-            <a href="mailto:support@pcor.me"
+            <a href="mailto:plus@sqlare.com"
 class="mt-3 px-3 bg-blue-500 font-bold text-white text-center py-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-blue-600">
 문의하기
 </a>
