@@ -51,6 +51,8 @@ export const HomePage = (props) => {
   useEffect(() => {
     AOS.init();
   })
+
+  alert('항상 저희 Plus 서비스를 이용해 주셔서 감사합니다. Discord의 인증 서버 오류로 인하여 Discord 봇 및 로그인에 속도 제한 (rate-limit)이 적용되어 있습니다. Plus의 문제가 아니므로 불필요한 오류 신고를 자제하여 주시기 바랍니다. 감사합니다.');
   return (
     <div className="dark:bg-gray-800 dark:text-white min-h-screen">
         <Header isLogin={props.isLogin} userName={props.userName} userEmail={props.userEmail} userImage={props.userImage} userCoin={props.userCoin}  userCash={props.userCash} />
