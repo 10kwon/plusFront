@@ -26,6 +26,7 @@ import { NewsPicPage } from "./pages/app/newspic";
 import { Event230804Page } from "./pages/promotion/230804";
 import { Event231008Page } from "./pages/promotion/231008";
 import { Event231105Page } from "./pages/promotion/231105";
+import { BoxPage } from "./pages/promotion/231107_box";
 
 import { Routes, Route, useSearchParams, useNavigate } from "react-router-dom";
 import { HomePage } from "./pages/home/home.page";
@@ -107,6 +108,7 @@ function App() {
         <Route path="/event/pl0804act" element={<Event230804Page isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
         <Route path="/event/pl1008act" element={<Event231008Page isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
         <Route path="/event/pl1105act" element={<Event231105Page isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
+        <Route path="/event/box/1107" element={<BoxPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
 
         <Route path="/coin/sekai" element={<SekaiIssuePage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
         <Route path="/coin/sekai/change" element={<SekaiChangePage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
