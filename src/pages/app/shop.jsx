@@ -113,7 +113,7 @@ export const ShopPage = (props) => {
 					class="flex items-center pt-6 md:px-4 text-3xl font-bold
 					capitalize dark:text-gray-300">
             
-					<span>코인 상점</span>
+					<span>상점</span>
 				</h3>
 
         <h2
@@ -138,7 +138,7 @@ export const ShopPage = (props) => {
                     </h4>
                     <div class="flex pt-4  text-sm text-gray-300">
                       <div class="flex items-center font-medium text-white ">
-                      {item.price}코인
+                      {item.price}{item.isCash == 1 ? "원" : "코인"}
                       </div>
                     </div>
                   </div>
@@ -197,7 +197,7 @@ export const ShopPage = (props) => {
                       <span aria-hidden="true" className="absolute inset-0" />
                       {item.product}
                   </h3>
-                  <p className="text-lg font-bold text-gray-900 dark:text-gray-100">{item.price.toLocaleString()+"코인"}</p>
+                  <p className="text-lg font-bold text-gray-900 dark:text-gray-100">{item.price.toLocaleString()}{item.isCash == 1 ? "원" : "코인"}</p>
                 </div>
                 <div className="lg:hidden w-24 h-24 overflow-hidden rounded-xl bg-gray-200 group-hover:opacity-75 lg:h-60 lg:w-60">
                 <img
@@ -289,13 +289,18 @@ export const ShopPage = (props) => {
                   <h4 class="text-gray-500">{selectedProduct.purchaseCount}회 구매 | 1인 구매 한도 {selectedProduct.purchaseLimit}개</h4>
                   </div>
                   <div class="py-2 border-b">
-                  <h3 class="font-bold text-2xl text-blue-500 dark:text-blue-300">{selectedProduct.price.toLocaleString()}코인</h3>
+                  <h3 class="font-bold text-2xl text-blue-500 dark:text-blue-300">{selectedProduct.price.toLocaleString()}{selectedProduct.isCash == 1 ? "원" : "코인"}</h3>
                   </div>
                   <div class="py-2 border-b dark:text-white ">
                   
                   <div class="bg-red-100 dark:bg-red-950 dark:text-white rounded-xl px-2 py-2 text-center mb-4">
-                    <ExclamationCircleIcon class="h-6 w-6 text-red-500 dark:text-red-300 inline-block mr-1"/> PlusCoin 상점에서 판매하는 모든 상품은 유료로 결제되지 않았다면 <span class="text-red-500 dark:text-red-300">환불할 수 없어요</span>.
-                  </div>
+                    {
+                    selectedProduct.isCash == 1 ?
+                    <div><ExclamationCircleIcon class="h-6 w-6 text-red-500 dark:text-red-300 inline-block mr-1"/> PlusCoin 상점에서 판매하는 모든 상품은 유료로 결제되지 않았다면 <span class="text-red-500 dark:text-red-300">환불할 수 없어요</span>.</div>
+                    :
+                    <div><ExclamationCircleIcon class="h-6 w-6 text-red-500 dark:text-red-300 inline-block mr-1"/> 미성년자의 거래 시 미성년자 또는 법정 대리인에 의해 plus@sqlare.com으로 계정의 닉네임 또는 ID와 송금확인증을 보내면 아이템 비활성화 및 감가상각을 조건으로 환불받을 수 있어요.</div>
+                    }
+                    </div>
 
                   {nl2br(selectedProduct.productDescription)}
                   </div>
@@ -359,7 +364,7 @@ class="mt-3 px-3 w-full bg-blue-500 font-bold text-white text-center m-auto py-2
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                   {isPopupOpen && (
-                  <Iframe url={`https://mapi.pcor.me/form/buy.php?iid=${selectedProduct.iid}`}
+                  <Iframe url={`https://mapi.pcor.me/form/buy${selectedProduct.isCash == 1 ? "_cash" : ""}.php?iid=${selectedProduct.iid}`}
         id=""
         className="w-full h-128 mt-8"
         display="block"

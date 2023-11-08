@@ -146,7 +146,7 @@ export const HomePage = (props) => {
 
         <div class="grid m-0  grid-cols-2  space-x-4 overflow-x-scroll flex justify-center items-center w-full ">
         {shopData.map((item, index) => (
-          <a href="/shop">
+          <a href={item.isCash == 1 ? "/shop" : "/shop"}>
         				<div class="relative flex flex-col justify-between bg-blue-900 shadow-md rounded-xl transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center shadow-md h-64 my-2"
                 style={{ backgroundImage: `url(${item.thumbnail})` }}
                 key={index}>
@@ -161,7 +161,7 @@ export const HomePage = (props) => {
                     </h4>
                     <div class="flex pt-4  text-sm text-gray-300">
                       <div class="flex items-center font-medium text-white ">
-                      {item.price}코인
+                      {item.price}{item.isCash == 1 ? "원" : "캐시"}
                       </div>
                     </div>
                   </div>
