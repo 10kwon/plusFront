@@ -23,6 +23,7 @@ const navigation = {
   const navigate = useNavigate()
     return(
         <>
+            {/*
     <div className="bg-white dark:bg-gray-800 top-0 sticky w-full z-50 relative isolate flex items-center gap-x-6">
     <Tab.Group className="mx-auto">
     <div className="border-b border-transparent max-w-screen-xl">
@@ -45,7 +46,7 @@ const navigation = {
                   </div>
                   
     </Tab.Group>
-    </div>
+    </div>*/}
         </>
     )
 }
