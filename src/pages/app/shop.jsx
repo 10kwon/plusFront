@@ -295,7 +295,7 @@ export const ShopPage = (props) => {
                   
                   <div class="bg-red-100 dark:bg-red-950 dark:text-white rounded-xl px-2 py-2 text-center mb-4">
                     {
-                    selectedProduct.isCash == 1 ?
+                    selectedProduct.isCash == 0 ?
                     <div><ExclamationCircleIcon class="h-6 w-6 text-red-500 dark:text-red-300 inline-block mr-1"/> PlusCoin 상점에서 판매하는 모든 상품은 유료로 결제되지 않았다면 <span class="text-red-500 dark:text-red-300">환불할 수 없어요</span>.</div>
                     :
                     <div><ExclamationCircleIcon class="h-6 w-6 text-red-500 dark:text-red-300 inline-block mr-1"/> 미성년자의 거래 시 미성년자 또는 법정 대리인에 의해 plus@sqlare.com으로 계정의 닉네임 또는 ID와 송금확인증을 보내면 아이템 비활성화 및 감가상각을 조건으로 환불받을 수 있어요.</div>
