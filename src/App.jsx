@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import './index.css';
+import "./index.css";
 import { AuthPage } from "./pages/Auth/AuthPage";
 import { ErrorPage } from "./pages/Error/errorPage";
 import { TravelPage } from "./pages/app/travel";
@@ -34,8 +34,8 @@ import { useCookies } from "react-cookie";
 import Axios from "axios";
 
 function App() {
-  const navigate = useNavigate()
-  const [cookies, setCookie, removeCookie] = useCookies(['sessionID']);
+  const navigate = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies(["sessionID"]);
 
   const [user, setUser] = useState(null);
   let [searchParams, setSearchParams] = useSearchParams();
@@ -46,20 +46,25 @@ function App() {
   let [userSekai, setUserSekai] = useState("");
   let [userCash, setUserCash] = useState("");
 
-  useEffect(() => {if (searchParams.get("sessionID") !== null) {
-    removeCookie('sessionID');
-    setCookie('sessionID', searchParams.get("sessionID"));
-    navigate('/');
-    window.location.reload();
-  }});
+  useEffect(() => {
+    if (searchParams.get("sessionID") !== null) {
+      removeCookie("sessionID");
+      setCookie("sessionID", searchParams.get("sessionID"));
+      navigate("/");
+      window.location.reload();
+    }
+  });
 
   //Requesting on http://localhost:5000/auth/login/success and getting users data.
   useEffect(() => {
     const token = cookies.sessionID;
-    Axios.get("https://mapi.pcor.me/api/auth/login/success.php?sessionID="+token, {
-      withCredentials: true,
-      credentials: 'same-origin',
-    })
+    Axios.get(
+      "https://mapi.pcor.me/api/auth/login/success.php?sessionID=" + token,
+      {
+        withCredentials: true,
+        credentials: "same-origin",
+      }
+    )
       .then((res) => {
         if (res.data.status == "success") {
           setUserName(res.data.user[0]);
@@ -79,9 +84,7 @@ function App() {
     const token = cookies.sessionID;
     Axios.get("https://imnyang.xyz/api")
       .then((res) => {
-        
-          console.log(res.data);
-        
+        console.log(res.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -89,35 +92,301 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/signin" element={<AuthPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path="/aboutPlus" element={<AboutpPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path="/metroPlus" element={<AboutmPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path="/classPlus" element={<AboutcPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path="/virtualPlus" element={<AboutvPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path="/gamingPlus" element={<AboutgPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path="/todayTravel" element={<TravelPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        
-        <Route path="/shop" element={<ShopPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path="/shop/cash" element={<CashShopPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        
-        <Route path="/card/setting" element={<CardPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path="/support" element={<SupportPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        
-        <Route path="/reward" element={<NewsPicPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
+        <Route
+          path="/signin"
+          element={
+            <AuthPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/aboutPlus"
+          element={
+            <AboutpPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/metroPlus"
+          element={
+            <AboutmPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/classPlus"
+          element={
+            <AboutcPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/virtualPlus"
+          element={
+            <AboutvPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/gamingPlus"
+          element={
+            <AboutgPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/todayTravel"
+          element={
+            <TravelPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
 
-        <Route path="/event/pl0804act" element={<Event230804Page isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path="/event/pl1008act" element={<Event231008Page isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path="/event/pl1105act" element={<Event231105Page isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path="/event/box/1107" element={<BoxPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
+        <Route
+          path="/shop"
+          element={
+            <ShopPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/shop/cash"
+          element={
+            <CashShopPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
 
-        <Route path="/coin/sekai" element={<SekaiIssuePage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path="/coin/sekai/change" element={<SekaiChangePage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path="/coin" element={<CoinPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} userSekai={userSekai} />} />
-        <Route path="/coin/send" element={<CoinSendPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} userSekai={userSekai} />} />
-        <Route path="/cash/pay" element={<PayPage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        
-        <Route path="/" element={<HomePage isLogin={userName.length > 0 ? true:false} userName={userName} userEmail={userEmail} userImage={userImg} userCoin={userCoin} userCash={userCash} />} />
-        <Route path='*' element={<ErrorPage />}/>
+        <Route
+          path="/card/setting"
+          element={
+            <CardPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/support"
+          element={
+            <SupportPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+
+        <Route
+          path="/reward"
+          element={
+            <NewsPicPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+
+        <Route
+          path="/event/pl0804act"
+          element={
+            <Event230804Page
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/event/pl1008act"
+          element={
+            <Event231008Page
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/event/pl1105act"
+          element={
+            <Event231105Page
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/event/box/1107"
+          element={
+            <BoxPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+
+        <Route
+          path="/coin/sekai"
+          element={
+            <SekaiIssuePage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/coin/sekai/change"
+          element={
+            <SekaiChangePage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/coin"
+          element={
+            <CoinPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+              userSekai={userSekai}
+            />
+          }
+        />
+        <Route
+          path="/coin/send"
+          element={
+            <CoinSendPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+              userSekai={userSekai}
+            />
+          }
+        />
+        <Route
+          path="/cash/pay"
+          element={
+            <PayPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+
+        <Route
+          path="/"
+          element={
+            <HomePage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
   );
