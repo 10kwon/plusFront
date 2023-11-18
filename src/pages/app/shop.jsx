@@ -18,6 +18,14 @@ import Iframe from "react-iframe";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export const ShopPage = (props) => {
   const [shopData, setShopData] = useState([]);
   useEffect(() => {
@@ -39,7 +47,7 @@ export const ShopPage = (props) => {
   }, []);
 
   const [wopen, setWOpen] = useState(false);
-
+  const [isPay, setPay] = useState(false);
   const [shopfData, setShopfData] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null); // Add this line
 
@@ -49,11 +57,11 @@ export const ShopPage = (props) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
+
   useEffect(() => {
     axios
       .get("https://mapi.pcor.me/api/board/shopList.php")
       .then((response) => setShopfData(response.data))
-      //.then(response => setFilteredProducts(response.data))
       .catch((error) => console.log(error));
   }, []);
 
@@ -99,6 +107,11 @@ export const ShopPage = (props) => {
     setSelectedItemId(iid);
   };
 
+  useEffect(() => {
+    AOS.init();
+    setFilteredProducts(shopfData);
+  })
+
   return (
     <div className="dark:bg-gray-800 dark:text-white min-h-screen">
       <Header
@@ -109,68 +122,59 @@ export const ShopPage = (props) => {
         userCoin={props.userCoin}
         userCash={props.userCash}
       />
-      <ShopTab />
+            <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: true,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        {shopData.map((item, index) => (
+          <SwiperSlide key={index}>
+              <div
+                class="h-64 lg:h-96 p-4 bg-cover bg-center"
+                style={{ backgroundImage: `url(${item.feature_Bg})` }}
+                onClick={() => handleProductClick(item)}
+              >
+                <div class="absolute bg-black/50 inset-0 z-0"></div>
+                <div class="relative flex items-end max-w-screen-xl mx-auto">
+                  <div class="md:p-6 rounded-xl h-full flex justify-between w-full z-10 " >
+                 <div className="lg:w-1/2" data-aos="fade-right" data-aos-duration="1000">
+                  <p class="text-lg md:text-2xl mt-4 my-auto flex items-center text-white">
+                    {nl2br(item.merchant)}
+                    </p>
+                    <p class="font-semibold text-lg md:text-2xl my-auto flex items-center text-white">
+                    {nl2br(item.product)}
+                    </p>
+                    <h2 class="text-3xl md:text-5xl mt-4 my-auto flex items-center text-white font-bold">
+                      {nl2br(item.feature_Title)}
+                    </h2>
+                    <p class="text-lg md:text-2xl mt-4 my-auto flex items-center text-white">
+                    {item.price.toLocaleString()}{item.isCash == 1 ? "원" : "코인"}
+                    </p>
+                    </div> 
+                    <div className="aspect-square hidden lg:block items-end" data-aos="fade-left" data-aos-duration="1000">
+                    <img src={item.thumbnail} className=" h-72"/>
+                    </div> 
+
+                  </div>
+                </div>
+              </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
       <div class="mx-auto w-full max-w-screen-xl">
         <main
           class="my-1 pt-2 pb-2 px-4 md:px-10 flex-1 rounded-l-lg
 		transition duration-500 ease-in-out overflow-y-auto"
         >
-          <Breadcrumb
-            class="pt-6 md:px-4"
-            aria-label="Default breadcrumb example"
-          >
-            <Breadcrumb.Item>메인</Breadcrumb.Item>
-            <Breadcrumb.Item>상점</Breadcrumb.Item>
-          </Breadcrumb>
-          <h3
-            class="flex items-center pt-6 md:px-4 text-3xl font-bold
-					capitalize dark:text-gray-300"
-          >
-            <span>상점</span>
-          </h3>
-
-          <h2
-            class="flex items-center pt-8 pb-1 md:px-4 text-2xl font-bold
-					capitalize dark:text-gray-300"
-          >
-            <span>추천 상품</span>
-          </h2>
-
-          <div class="grid m-0  grid-cols-2  space-x-4 overflow-x-scroll flex justify-center items-center w-full ">
-            {shopData.map((item, index) => (
-              <div
-                class="relative flex flex-col justify-between bg-blue-900 shadow-md rounded-xl transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center shadow-md h-64 my-2"
-                style={{ backgroundImage: `url(${item.thumbnail})` }}
-                key={index}
-                onClick={() => handleProductClick(item)}
-              >
-                <div class="absolute bg-gradient-to-b from-transparent to-black  opacity-50 inset-0 z-0"></div>
-                <div class="relative flex flex-row items-end  h-72 w-full ">
-                  <div class="p-6 rounded-xl  flex flex-col w-full z-10 ">
-                    <h2 class="text-sm flex items-center text-white font-normal">
-                      {item.merchant}
-                    </h2>
-                    <h4 class="mt-1 text-white text-xl font-bold leading-tight truncate">
-                      {item.product}
-                    </h4>
-                    <div class="flex pt-4  text-sm text-gray-300">
-                      <div class="flex items-center font-medium text-white ">
-                        {item.price}
-                        {item.isCash == 1 ? "원" : "코인"}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <h2
-            class="flex items-center pt-8 pb-1 md:px-4 text-2xl font-bold
-					capitalize dark:text-gray-300"
-          >
-            <span>전체 상품</span>
-          </h2>
           <select
             value={selectedCategory}
             className="rounded-xl mt-2 lg:ml-2 text-black"
@@ -207,7 +211,7 @@ export const ShopPage = (props) => {
                       <img
                         src={item.thumbnail}
                         alt="상품 미리보기 이미지"
-                        className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                        className="dark:bg-gray-900 h-full w-full object-cover object-center lg:h-full lg:w-full"
                       />
                     </div>
                     <div className="mt-4 flex justify-between">
@@ -231,7 +235,7 @@ export const ShopPage = (props) => {
                         <img
                           src={item.thumbnail}
                           alt="상품 미리보기 이미지"
-                          className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                          className="dark:bg-gray-900 h-full w-full object-cover object-center lg:h-full lg:w-full"
                         />
                       </div>
                     </div>
@@ -299,7 +303,6 @@ export const ShopPage = (props) => {
                       </div>
                       {isPopupOpen && (
                         <>
-<<<<<<< HEAD
                       <div className="relative mt-6 flex-1 px-4 sm:px-6">
                       <div className="w-full overflow-hidden rounded-xl bg-gray-200">
                       <Zoom>
@@ -328,64 +331,9 @@ export const ShopPage = (props) => {
                     :
                     <div><ExclamationCircleIcon class="h-6 w-6 text-red-500 dark:text-red-300 inline-block mr-1"/> 미성년자의 거래 시 미성년자 또는 법정 대리인에 의해 plus@sqlare.com으로 계정의 닉네임 또는 ID와 송금확인증을 보내면 아이템 비활성화 및 감가상각을 조건으로 환불받을 수 있어요.</div>
                     }
-=======
-                          <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                            <div className="w-full overflow-hidden rounded-xl bg-gray-200">
-                              <Zoom>
-                                <img
-                                  src={selectedProduct.thumbnail}
-                                  alt="상품 미리보기 이미지"
-                                  className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                                />
-                              </Zoom>
+                              
                             </div>
-                            <p class="text-gray-500 text-xs text-center">
-                              이미지를 클릭하면 크게 볼 수 있어요
-                            </p>
-                            <div class="pt-4">
-                              <h4 class="dark:text-white">
-                                {selectedProduct.merchant}
-                              </h4>
-                              <h3 class="font-bold text-2xl dark:text-white">
-                                {selectedProduct.product}
-                              </h3>
-                              <h4 class="text-gray-500">
-                                {selectedProduct.purchaseCount}회 구매 | 1인
-                                구매 한도 {selectedProduct.purchaseLimit}개
-                              </h4>
-                            </div>
-                            <div class="py-2 border-b">
-                              <h3 class="font-bold text-2xl text-blue-500 dark:text-blue-300">
-                                {selectedProduct.price.toLocaleString()}
-                                {selectedProduct.isCash == 1 ? "원" : "코인"}
-                              </h3>
-                            </div>
-                            <div class="py-2 border-b dark:text-white ">
-                              <div class="bg-red-100 dark:bg-red-950 dark:text-white rounded-xl px-2 py-2 text-center mb-4">
-                                {selectedProduct.isCash == 1 ? (
-                                  <div>
-                                    <ExclamationCircleIcon class="h-6 w-6 text-red-500 dark:text-red-300 inline-block mr-1" />{" "}
-                                    PlusCoin 상점에서 판매하는 모든 상품은
-                                    유료로 결제되지 않았다면{" "}
-                                    <span class="text-red-500 dark:text-red-300">
-                                      환불할 수 없어요
-                                    </span>
-                                    .
-                                  </div>
-                                ) : (
-                                  <div>
-                                    <ExclamationCircleIcon class="h-6 w-6 text-red-500 dark:text-red-300 inline-block mr-1" />{" "}
-                                    미성년자의 거래 시 미성년자 또는 법정
-                                    대리인에 의해 plus@sqlare.com으로 계정의
-                                    닉네임 또는 ID와 송금확인증을 보내면 아이템
-                                    비활성화 및 감가상각을 조건으로 환불받을 수
-                                    있어요.
-                                  </div>
-                                )}
-                              </div>
-
-                              {nl2br(selectedProduct.productDescription)}
-                            </div>
+                            {nl2br(selectedProduct.productDescription)}
                           </div>
                           <div class="px-4 bottom-0 sticky w-full">
                             <button
@@ -395,9 +343,9 @@ export const ShopPage = (props) => {
                               구매하기
                             </button>
                           </div>
+                          </div>
                         </>
                       )}
->>>>>>> 7c3fa08 (Prettier 찍먹 (좆같은 코드만 일단 실행해둠))
                     </div>
                   </Dialog.Panel>
                 </Transition.Child>
@@ -432,8 +380,8 @@ export const ShopPage = (props) => {
                 leaveFrom="opacity-100 translate-y-0 md:scale-100"
                 leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
               >
-                <Dialog.Panel className="flex w-full transform text-left text-base transition md:my-8 md:max-w-2xl md:px-4 lg:max-w-4xl">
-                  <div className="md:rounded-xl relative flex w-full items-center overflow-hidden bg-white dark:bg-gray-800">
+                <Dialog.Panel className="flex w-full transform text-left text-base transition md:my-8 md:max-w-2xl lg:max-w-screen-sm">
+                  <div className="md:rounded-xl relative flex w-full items-center bg-white dark:bg-gray-800">
                     <button
                       type="button"
                       className="z-100 absolute right-4 top-4 text-gray-400 hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
@@ -442,7 +390,7 @@ export const ShopPage = (props) => {
                       <span className="sr-only">Close</span>
                       <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                     </button>
-                    {isPopupOpen && (
+                    {isPay && (
                       <Iframe
                         url={`https://mapi.pcor.me/form/buy${
                           selectedProduct.isCash == 1 ? "_cash" : ""
@@ -452,20 +400,47 @@ export const ShopPage = (props) => {
                         display="block"
                         position="relative"
                       />
-                    )}
-                    {/*
-                  <div class="w-full h-128 mt-8 relative block">
+                      )}
+                    {
+                      isPopupOpen && (
+                  <div class="w-full h-128 mt-8 relative block dark:text-white">
                   <div class="px-6 py-8 md:px-16 md:py-16">
-                  <h3 class="text-xl md:text-2xl font-semibold">결제할 상품의 이름</h3>
-                  <h3 class="text-3xl md:text-4xl font-bold">697,400,400 코인</h3>
+                  <div className="text-center">
+                  <h3 class="text-xl md:text-2xl font-semibold">{selectedProduct.merchant}</h3>
+                  <h3 class="text-xl md:text-3xl font-bold mb-4">{selectedProduct.product}</h3>
+                  <h3 class="text-3xl md:text-4xl font-bold">{selectedProduct.price.toLocaleString()}{selectedProduct.isCash == 1 ? "원" : "코인"}</h3>
+                  </div>
+                  <div class="py-2 border-b dark:border-gray-500"></div>
+                  <div class="bg-gray-100 dark:bg-gray-700 rounded-xl px-2 py-2 mt-4">
+                  <strong class="text-lg">{selectedProduct.isCash == 1 ? "캐시를 출금할 계정의 Sekai" : "코인을 출금할 Sekai"}</strong><br/>
+                  {props.userSekai}
+                  </div>
+
+                  <div class="bg-gray-100 dark:bg-gray-700 rounded-xl px-2 py-2 mt-4">
+                  <strong class="text-lg">결제 예정 금액</strong><br/>
+                  결제 이전 : {selectedProduct.isCash == 1 ? props.userCash+"원" : props.userCoin+"코인"}<br/>
+                  상품 금액 : {selectedProduct.price.toLocaleString()}{selectedProduct.isCash == 1 ? "원" : "코인"}<br/>
+                  결제 이후 : {selectedProduct.isCash == 1 ? props.userCash - selectedProduct.price : props.userCoin - selectedProduct.price}{selectedProduct.isCash == 1 ? "원" : "코인"}
+                  </div>
                   
-                  <div class="py-2 border-b"></div>
-                  <div class="bg-gray-100 rounded-xl px-2 py-2 mt-4">
-                  <strong class="text-lg">PlusCoin Sekai 계좌</strong><br/>
-                  10kwonadmin
+                  <div class="py-2 border-b dark:border-gray-500"></div>
+                  <p className="text-center py-4">결제 후에는 환불이 어려워요.<br/>구매를 계속할까요?</p>
+                  <a
+  href={`https://mapi.pcor.me/form/buy${
+    selectedProduct.isCash == 1 ? "_cash" : ""
+  }.php?iid=${selectedProduct.iid}`}
+  target="_blank"
+  onClick={() => setWOpen(false)}
+  class="w-full mt-3 px-3 bg-blue-500 font-bold text-white text-center m-auto py-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-blue-700"
+>
+  {selectedProduct.price.toLocaleString()}
+  {selectedProduct.isCash == 1 ? "원" : "코인"} 결제
+</a>
+
+
                   </div>
                   </div>
-                  </div>*/}
+                  )}
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

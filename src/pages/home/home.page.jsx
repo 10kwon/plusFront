@@ -191,14 +191,6 @@ export const HomePage = (props) => {
                         <h2 class="text-sm flex items-center text-white font-normal">
                           {item.merchant}
                         </h2>
-<<<<<<< HEAD
-                    <h4 class="mt-1 text-white text-xl font-bold leading-tight truncate">
-                    {item.product}
-                    </h4>
-                    <div class="flex pt-4  text-sm text-gray-300">
-                      <div class="flex items-center font-medium text-white ">
-                      {item.price}{item.isCash == 1 ? "원" : "코인"}
-=======
                         <h4 class="mt-1 text-white text-xl font-bold leading-tight truncate">
                           {item.product}
                         </h4>
@@ -208,7 +200,6 @@ export const HomePage = (props) => {
                             {item.isCash == 1 ? "원" : "캐시"}
                           </div>
                         </div>
->>>>>>> 7c3fa08 (Prettier 찍먹 (좆같은 코드만 일단 실행해둠))
                       </div>
                     </div>
                   </div>
