@@ -391,7 +391,7 @@ export const ShopPage = (props) => {
                     <span className="sr-only">Close</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
-                  {isPopupOpen && (
+                  {wopen && (
                   <Iframe url={`https://mapi.pcor.me/form/buy${selectedProduct.isCash == 1 ? "_cash" : ""}.php?iid=${selectedProduct.iid}`}
         id=""
         className="w-full h-128 mt-8"
