@@ -354,102 +354,70 @@ export const ShopPage = (props) => {
           </div>
         </Dialog>
       </Transition.Root>
+     
 
       <Transition.Root show={wopen} as={Fragment}>
-        <Dialog as="div" className="relative z-100" onClose={setWOpen}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity md:block" />
-          </Transition.Child>
+      <Dialog as="div" className="relative z-100" onClose={setWOpen}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity md:block" />
+        </Transition.Child>
 
-          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div className="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
-                enterTo="opacity-100 translate-y-0 md:scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 translate-y-0 md:scale-100"
-                leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
-              >
-                <Dialog.Panel className="flex w-full transform text-left text-base transition md:my-8 md:max-w-2xl lg:max-w-screen-sm">
-                  <div className="md:rounded-xl relative flex w-full items-center bg-white dark:bg-gray-800">
-                    <button
-                      type="button"
-                      className="z-100 absolute right-4 top-4 text-gray-400 hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
-                      onClick={() => setWOpen(false)}
-                    >
-                      <span className="sr-only">Close</span>
-                      <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                    </button>
-                    {isPay && (
-                      <Iframe
-                        url={`https://mapi.pcor.me/form/buy${
-                          selectedProduct.isCash == 1 ? "_cash" : ""
-                        }.php?iid=${selectedProduct.iid}`}
-                        id=""
-                        className="w-full h-128 mt-8"
-                        display="block"
-                        position="relative"
-                      />
-                      )}
-                    {
-                      isPopupOpen && (
-                  <div class="w-full h-128 mt-8 relative block dark:text-white">
-                  <div class="px-6 py-8 md:px-16 md:py-16">
-                  <div className="text-center">
-                  <h3 class="text-xl md:text-2xl font-semibold">{selectedProduct.merchant}</h3>
-                  <h3 class="text-xl md:text-3xl font-bold mb-4">{selectedProduct.product}</h3>
-                  <h3 class="text-3xl md:text-4xl font-bold">{selectedProduct.price.toLocaleString()}{selectedProduct.isCash == 1 ? "원" : "코인"}</h3>
-                  </div>
-                  <div class="py-2 border-b dark:border-gray-500"></div>
-                  <div class="bg-gray-100 dark:bg-gray-700 rounded-xl px-2 py-2 mt-4">
-                  <strong class="text-lg">{selectedProduct.isCash == 1 ? "캐시를 출금할 계정의 Sekai" : "코인을 출금할 Sekai"}</strong><br/>
-                  {props.userSekai}
-                  </div>
-
-                  <div class="bg-gray-100 dark:bg-gray-700 rounded-xl px-2 py-2 mt-4">
-                  <strong class="text-lg">결제 예정 금액</strong><br/>
-                  결제 이전 : {selectedProduct.isCash == 1 ? props.userCash+"원" : props.userCoin+"코인"}<br/>
-                  상품 금액 : {selectedProduct.price.toLocaleString()}{selectedProduct.isCash == 1 ? "원" : "코인"}<br/>
-                  결제 이후 : {selectedProduct.isCash == 1 ? props.userCash - selectedProduct.price : props.userCoin - selectedProduct.price}{selectedProduct.isCash == 1 ? "원" : "코인"}
-                  </div>
-                  
-                  <div class="py-2 border-b dark:border-gray-500"></div>
-                  <p className="text-center py-4">결제 후에는 환불이 어려워요.<br/>구매를 계속할까요?</p>
-                  <a
-  href={`https://mapi.pcor.me/form/buy${
-    selectedProduct.isCash == 1 ? "_cash" : ""
-  }.php?iid=${selectedProduct.iid}`}
-  target="_blank"
-  onClick={() => setWOpen(false)}
-  class="w-full mt-3 px-3 bg-blue-500 font-bold text-white text-center m-auto py-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-blue-700"
->
-  {selectedProduct.price.toLocaleString()}
-  {selectedProduct.isCash == 1 ? "원" : "코인"} 결제
-</a>
-
-
-                  </div>
-                  </div>
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
+              enterTo="opacity-100 translate-y-0 md:scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 translate-y-0 md:scale-100"
+              leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
+            >
+              <Dialog.Panel className="flex w-full transform text-left text-base transition md:my-8 md:max-w-2xl md:px-4 lg:max-w-4xl">
+                <div className="md:rounded-xl relative flex w-full items-center overflow-hidden bg-white dark:bg-gray-800">
+                  <button
+                    type="button"
+                    className="z-100 absolute right-4 top-4 text-gray-400 hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
+                    onClick={() => setWOpen(false)}
+                  >
+                    <span className="sr-only">Close</span>
+                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                  </button>
+                  {isPopupOpen && (
+                  <Iframe url={`https://mapi.pcor.me/form/buy${selectedProduct.isCash == 1 ? "_cash" : ""}.php?iid=${selectedProduct.iid}`}
+        id=""
+        className="w-full h-128 mt-8"
+        display="block"
+        position="relative"/>
                   )}
+                  {/*
+                  <div class="w-full h-128 mt-8 relative block">
+                  <div class="px-6 py-8 md:px-16 md:py-16">
+                  <h3 class="text-xl md:text-2xl font-semibold">결제할 상품의 이름</h3>
+                  <h3 class="text-3xl md:text-4xl font-bold">697,400,400 코인</h3>
+                  
+                  <div class="py-2 border-b"></div>
+                  <div class="bg-gray-100 rounded-xl px-2 py-2 mt-4">
+                  <strong class="text-lg">PlusCoin Sekai 계좌</strong><br/>
+                  10kwonadmin
                   </div>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
+                  </div>
+                  </div>*/}
+                </div>
+              </Dialog.Panel>
+            </Transition.Child>
           </div>
-        </Dialog>
-      </Transition.Root>
-
-      <Footer />
+        </div>
+      </Dialog>
+    </Transition.Root><Footer />
     </div>
   );
 };
