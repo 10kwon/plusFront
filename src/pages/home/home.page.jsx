@@ -197,7 +197,7 @@ export const HomePage = (props) => {
                         <div class="flex pt-4  text-sm text-gray-300">
                           <div class="flex items-center font-medium text-white ">
                             {item.price}
-                            {item.isCash == 1 ? "원" : "캐시"}
+                            {item.isCash == 1 ? "원" : "코인"}
                           </div>
                         </div>
                       </div>
