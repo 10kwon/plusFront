@@ -205,12 +205,6 @@ export const CoinPage = (props) => {
               코인 보내기
             </button>
           </div>
-          <h2
-            class="flex items-center pt-8 pb-1 md:px-4 text-2xl font-bold
-					capitalize dark:text-gray-300"
-          >
-            <span>최근 거래 내역</span>
-          </h2>
           <div class="border-b border-transparent pt-1 pb-1 md:px-4">
             <Tab.Group>
               <Tab.List className="w-full -mb-px flex space-x-8 ">
@@ -224,7 +218,7 @@ export const CoinPage = (props) => {
                     )
                   }
                 >
-                  코인
+                  코인 사용 내역
                 </Tab>
                 <Tab
                   className={({ selected }) =>
@@ -236,7 +230,7 @@ export const CoinPage = (props) => {
                     )
                   }
                 >
-                  캐시
+                  캐시 충전 내역
                 </Tab>
               </Tab.List>
               <Tab.Panels>

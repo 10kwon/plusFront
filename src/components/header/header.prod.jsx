@@ -185,9 +185,9 @@ export default function Header(props) {
                                                         </div>
                                                       </div>
                                                       <div className="border-b py-2 mb-2 border-gray-200 dark:border-gray-600"></div>
-                                                      <img src="https://coin.pcor.me/resources/images/pluscoin.svg" className="h-4 w-4 inline-block mr-1"/>{props.userCoin}코인
+                                                      <img src="https://coin.pcor.me/resources/images/pluscoin.svg" className="h-4 w-4 inline-block mr-1"/>{props.userCoin.toLocaleString()}코인
                                                       <span className="text-gray-200 dark:text-gray-600 px-1">|</span>
-                                                      <BanknotesIcon className="h-4 w-4 inline-block mr-1"/>{props.userCash}원
+                                                      <BanknotesIcon className="h-4 w-4 inline-block mr-1"/>{props.userCash.toLocaleString()}원
                                                       <span className="text-gray-200 dark:text-gray-600 px-1">|</span>
                                                       <a href="https://mapi.pcor.me/oauth/ip.php?action=logout">로그아웃</a>
                                                     </figcaption>

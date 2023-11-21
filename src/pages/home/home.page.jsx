@@ -75,8 +75,9 @@ export const HomePage = (props) => {
 
 <div class="mx-3 mt-8 mb-6 flex lg:hidden">
           {props.isLogin ? (
-                        <a href="https://ps.pcor.me/pass">
+                        
                         <div className="flex rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
+                          <a href="https://ps.pcor.me/pass">
                         <div className="ml-2 my-auto">
                         <img src="/resources/images/pass.svg" className="h-8 inline-block mr-1"/>
                         </div>
@@ -95,8 +96,8 @@ export const HomePage = (props) => {
                         시즌패스 특별가 600원에 얻기<span class="hidden md:visible">.</span>
                         </span>
                         </div>
+                        </a>
                       </div>
-                      </a>
           ) : (
             <div className="flex rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
               <div className="ml-2 my-auto">
