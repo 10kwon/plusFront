@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 
 import useDarkSide from '../../components/useDarkSide';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
-import { ChevronLeftIcon } from "@heroicons/react/24/outline";
+import { ChevronLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export const SekaiChangePage = (props) => {
   if (props.isLogin == 0){
@@ -154,11 +154,7 @@ export const SekaiChangePage = (props) => {
     </div>
     <div className={`${currentStep == 3 ? 'block' : 'hidden'} py-8 px-5`}>
     <button  onClick={() => navigate('/')}>
-          <img
-            className="h-10 w-auto"
-            src="/Plus.svg"
-            alt="Plus"
-          />
+    <XMarkIcon  className="h-6"/>
           </button>
       <h1 className="text-3xl font-bold my-4 text-center">변경했어요</h1>
       <p className="dark:text-gray-300 text-gray-700 mb-4 text-center">

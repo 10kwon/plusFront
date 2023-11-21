@@ -35,14 +35,6 @@ export const SupportPage = (props) => {
           >
             <span>고객센터</span>
           </h3>
-
-          <Iframe
-            url="https://mapi.pcor.me/faq.php"
-            id=""
-            className="w-full mx-auto h-screen"
-            display="block"
-            position="relative"
-          />
         </main>
       </div>
       <div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">

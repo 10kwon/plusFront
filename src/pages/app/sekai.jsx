@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 
 import useDarkSide from '../../components/useDarkSide';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
-import { ChevronLeftIcon } from "@heroicons/react/24/outline";
+import { ChevronLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export const SekaiIssuePage = (props) => {
   if (props.isLogin == 0){
@@ -184,14 +184,6 @@ export const SekaiIssuePage = (props) => {
             <span class="text-gray-500 text-sm">PlusCoin을 얻으면 상점에서 사용할 수 있어요</span>
             </label>
         </div>
-        <div class="flex items-center mt-4">
-            <input id="benefit3" type="radio" name="benefit" value="pass" checked={selectedItem === "pass"}
-              onChange={handleRadioChange} class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-500 text-blue-600 dark:text-blue-600 bg-gray-100"/>
-            <label class="text-xl ml-2 block">
-            시즌패스+<br/>
-            <span class="text-gray-500 text-sm">매주 새로운 등록카드를 1달동안 받을 수 있어요</span>
-            </label>
-        </div>
     </fieldset>
     </div>
     <div className={`${currentStep == 4 ? 'block' : 'hidden'} py-8 px-5`}>
@@ -217,11 +209,7 @@ export const SekaiIssuePage = (props) => {
     </div>
     <div className={`${currentStep == 5 ? 'block' : 'hidden'} py-8 px-5`}>
     <button  onClick={() => navigate('/')}>
-          <img
-            className="h-10 w-auto"
-            src="/Plus.svg"
-            alt="Plus"
-          />
+          <XMarkIcon  className="h-6"/>
           </button>
       <h1 className="text-3xl font-bold my-4 text-center">가입을 축하해요!</h1>
       <p className="dark:text-gray-300 text-gray-700 mb-4 text-center">

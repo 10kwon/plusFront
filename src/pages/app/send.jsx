@@ -207,8 +207,8 @@ export const CoinSendPage = (props) => {
         </h1>
       </div>
       <div className={`${currentStep == 4 ? "block" : "hidden"} py-8 px-5`}>
-        <button onClick={() => navigate("/")}>
-          <img className="h-10 w-auto" src="/Plus.svg" alt="Plus" />
+        <button onClick={() => navigate("/coin")}>
+        <ChevronLeftIcon className="h-6" />
         </button>
         <div class="flex flex-col items-center">
           <img
