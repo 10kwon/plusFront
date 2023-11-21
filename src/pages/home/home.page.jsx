@@ -9,8 +9,7 @@ import "aos/dist/aos.css";
 
 import Header from "../../components/header/header.prod.jsx";
 import Footer from "../../components/footer/footer.prod.jsx";
-import { Autoplay, Pagination, Navigation } from "swiper";
-
+import { EffectCoverflow, Autoplay, Pagination, Navigation } from "swiper";
 import { Card, Avatar, Tabs } from "flowbite-react";
 
 import { useNavigate } from "react-router-dom";
@@ -18,6 +17,7 @@ import { Link } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import 'swiper/css/effect-coverflow';
 import "swiper/css/pagination";
 
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -72,34 +72,101 @@ export const HomePage = (props) => {
         userCoin={props.userCoin}
         userCash={props.userCash}
       />
+
+<div class="mx-3 mt-8 mb-6 flex lg:hidden">
+          {props.isLogin ? (
+                        <a href="https://ps.pcor.me/pass">
+                        <div className="flex rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
+                        <div className="ml-2 my-auto">
+                        <img src="/resources/images/pass.svg" className="h-8 inline-block mr-1"/>
+                        </div>
+                        <div className="ml-2">
+                        <span
+                          style={{
+                            animationDelay: "0.15s",
+                            animationFillMode: "forwards",
+                          }}
+                          class="text-lg animate-fade-up"
+                        >
+                          {props.userName}님을 위한 소식{" "}
+                        </span>
+                        <br class="md:hidden block" />
+                        <span class="text-xl font-bold">
+                        시즌패스 특별가 600원에 얻기<span class="hidden md:visible">.</span>
+                        </span>
+                        </div>
+                      </div>
+                      </a>
+          ) : (
+            <div className="flex rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
+              <div className="ml-2 my-auto">
+              <img src="https://coin.pcor.me/resources/images/pluscoin.svg" className="h-8 inline-block mr-1"/>
+              </div>
+              <div className="ml-2">
+              <span
+                style={{
+                  animationDelay: "0.15s",
+                  animationFillMode: "forwards",
+                }}
+                class="text-lg animate-fade-up"
+              >
+                Plus가 처음이라면?{" "}
+              </span>
+              <br class="md:hidden block" />
+              <span class="text-xl font-bold">
+                코인 받고 시작하세요<span class="hidden md:visible">.</span>
+              </span>
+              </div>
+              <div className="ml-auto my-auto justify-end">
+              <button
+                  onClick={() => navigate("/signin")}
+                  class="mr-3 px-3 bg-blue-500 text-white text-center py-2 rounded-lg transform ease-in duration-100 active:scale-95 hover:bg-blue-600"
+                >
+                  로그인
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
+    <div className="lg:p-0">
       <Swiper
-        spaceBetween={30}
+        spaceBetween={5}
         centeredSlides={true}
+        slidesPerView={1.05}
+        effect={'coverflow'}
         loop={true}
         autoplay={{
           delay: 5000,
           disableOnInteraction: true,
         }}
+        coverflowEffect={{
+          rotate: 5,
+          stretch: 0,
+          depth: 5,
+          modifier: 1,
+          slideShadows: true,
+        }}
         pagination={{
           clickable: true,
         }}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
+        modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
+        className="mySwiper lg:rounded-t-none"
       >
         {bannerData.map((item, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide className="" key={index}>
             <a href={item.link}>
               <div
-                class="h-64 lg:h-96 p-4 bg-cover bg-center"
+                class="rounded-xl h-48 lg:h-96 p-4 bg-cover bg-center"
                 style={{ backgroundImage: `url(${item.url})` }}
               >
-                <div class="absolute bg-black/50 inset-0 z-0"></div>
+                <div class="rounded-xl absolute bg-black/50 inset-0 z-0"></div>
                 <div class="relative flex flex-row items-end max-w-screen-xl mx-auto">
                   <div class="md:p-6 rounded-xl h-full flex flex-col w-full z-10 ">
-                    <h2 class="text-3xl md:text-4xl mt-4 my-auto flex items-center text-white font-bold">
+                    <h2 data-aos="fade-left" data-aos-duration="400" data-aos-delay="200" class="text-2xl md:text-4xl mt-2 my-auto flex items-center text-white font-bold">
                       {nl2br(item.title)}
                     </h2>
-                    <p class="text-lg md:text-2xl mt-4 my-auto flex items-center text-white">
+                    <p data-aos="fade-left" data-aos-duration="700" data-aos-delay="500" class="text-md md:text-2xl mt-2 my-auto flex items-center text-white">
                       바로가기 →
                     </p>
                   </div>
@@ -109,62 +176,12 @@ export const HomePage = (props) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div
-        className="md:hidden relative isolate px-6 pt-14 lg:px-8"
-        data-aos="fade-down-right"
-        data-aos-duration="1000"
-      >
-        <div
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-          aria-hidden="true"
-        >
-          <div
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#80b3ff] to-[#89fca6] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-            style={{
-              clipPath:
-                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-            }}
-          />
-        </div>
-        <div
-          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-          aria-hidden="true"
-        >
-          <div
-            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#80b3ff] to-[#89fca6] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-            style={{
-              clipPath:
-                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-            }}
-          />
-        </div>
       </div>
 
       <main
         class="my-1 md:pt-16 pb-2 px-4 md:px-10 flex-1 rounded-l-lg
 		transition duration-500 ease-in-out overflow-y-auto max-w-screen-lg xl:max-w-screen-xl mx-auto"
       >
-        <div class="md:ml-4 mt-2 flex text-3xl">
-          {props.isLogin ? (
-            <span class="font-semibold">{props.userName}님, 반가워요!</span>
-          ) : (
-            <span>
-              <span
-                style={{
-                  animationDelay: "0.15s",
-                  animationFillMode: "forwards",
-                }}
-                class="animate-fade-up"
-              >
-                어서 오세요!{" "}
-              </span>
-              <br class="md:hidden block" />
-              <span class="font-bold">
-                로그인 후 이용해 주세요<span class="hidden md:visible">.</span>
-              </span>
-            </span>
-          )}
-        </div>
         <div class="md:grid md:grid-cols-2">
           <div class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col rounded-xl">
             <h3
@@ -260,54 +277,6 @@ export const HomePage = (props) => {
                   </a>
                 ))}
               </div>
-            </div>
-          </div>
-          <div class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col rounded-xl">
-            <h3
-              class="flex items-center pt-1 pb-1 md:px-4 text-lg font-semibold
-					capitalize dark:text-gray-300"
-            >
-              <span>내 Plus ID</span>
-              <button class="ml-2">
-                <UserCircleIcon className="h-5 w-5" aria-hidden="true" />
-              </button>
-            </h3>
-
-            <div>
-              {props.isLogin ? (
-                <h3
-                  class="flex items-center pt-4 pb-1 text-lg font-semibold
-        capitalize dark:text-gray-300"
-                >
-                  <img
-                    src="https://coin.pcor.me/resources/images/pluscoin.svg"
-                    class="h-6 mr-2"
-                    alt="Coin"
-                  />
-                  <span>내 PlusCoin {props.userCoin}코인</span>
-                  <button class="ml-2">
-                    <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
-                  </button>
-                </h3>
-              ) : (
-                <div class="mx-3 mt-1 mb-2 px-2 py-6 flex rounded-xl border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800 flex-col hover:bg-gray-100 dark:hover:bg-gray-700 mb-2">
-                  <p class="text-center">
-                    지금 로그인하고 Plus의 모든 서비스를 이용하세요
-                  </p>
-                  <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
-                    <div>
-                      <button
-                        onClick={() => navigate("/signin")}
-                        class="mt-3 px-3 w-full bg-blue-500 font-bold text-white text-center m-auto py-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-blue-700"
-                      >
-                        로그인
-                      </button>
-                    </div>
-
-                    <p className="mt-10 text-center text-sm text-gray-500"></p>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>

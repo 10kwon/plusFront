@@ -26,9 +26,10 @@ import {
   PlusCircleIcon,
   ArrowSmallUpIcon,
   NewspaperIcon,
+  WalletIcon,
 } from "@heroicons/react/24/outline";
 import nl2br from "react-nl2br";
-import { ArrowUpRightIcon, ChevronLeftIcon } from "@heroicons/react/20/solid";
+import { ArrowUpRightIcon, BanknotesIcon, ChevronLeftIcon, PaperAirplaneIcon } from "@heroicons/react/20/solid";
 
 import useDarkSide from "../useDarkSide";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
@@ -62,55 +63,6 @@ const navigation = {
       ],
     },
     {
-      id: "classplus",
-      name: "Class+",
-      featured: [],
-      sections: [
-        {
-          id: "classplusApp",
-          name: "실행하기",
-          items: [
-            {
-              name: "Android",
-              href: "https://play.google.com/store/apps/details?id=com.cplus.app",
-            },
-            { name: "Web/iOS", href: "https://classplus.pcor.me" },
-          ],
-        },
-        {
-          id: "classplusAccess",
-          name: "사용하기",
-          items: [
-            { name: "1:1 고객센터", href: "https://classplus.channel.io/home" },
-            {
-              name: "사용 신청 폼",
-              href: "https://docs.google.com/forms/d/e/1FAIpQLSc_j2Vj6gKleyCC4E7q5ODI0kWN9poJ3UazBLkVhtU9R2bWYw/viewform?usp=sf_link",
-            },
-          ],
-        },
-        {
-          id: "classplusIntro",
-          name: "소개",
-          items: [{ name: "Class+란?", href: "/classPlus" }],
-        },
-      ],
-    },
-    {
-      id: "metroplus",
-      name: "Metro+",
-      featured: [],
-      sections: [
-        {
-          id: "metroplusDiscord",
-          name: "참여하기",
-          items: [
-            { name: "Metro+란?", href: "/metroPlus" },
-            { name: "Discord 서버", href: "https://discord.gg/dZnuCADSRZ" },
-          ],
-        },
-      ],
-    },
-    {
       id: "support",
       name: "고객센터",
       featured: [],
@@ -120,11 +72,7 @@ const navigation = {
           name: "고객센터",
           items: [
             { name: "자주 묻는 질문", href: "/support" },
-            {
-              name: "Class+ 1:1 상담",
-              href: "https://classplus.channel.io/home",
-            },
-            { name: "이메일 상담", href: "mailto:support@pcor.me" },
+            { name: "이메일 상담", href: "mailto:plus@sqlare.com" },
           ],
         },
         {
@@ -221,47 +169,48 @@ export default function Header(props) {
                   </div>
                   {/*MyTab*/}
                   <div className="">
-                    <section className="rounded-b-xl py-6 bg-gray-100 dark:bg-gray-800 px-6">
+                    <section className="py-6 bg-gray-100 dark:bg-gray-700 px-6">
                       <div className="mx-auto max-w-2xl lg:max-w-4xl">
                         {props.isLogin ? (
-                          <figure>
-                            <figcaption>
-                              <img
-                                className="mx-auto h-16 w-16 rounded-full bg-gray-200 dark:bg-gray-600"
-                                src={props.userImage}
-                                alt=""
-                              />
-                              <div className="mt-4 text-center">
-                                <div className="font-bold text-xl text-gray-900 dark:text-gray-100">
-                                  {props.userName}님
-                                </div>
-                                <div className="text-gray-600 dark:text-gray-100">
-                                  <a href="https://mapi.pcor.me/oauth/ip.php?action=logout">
-                                    로그아웃
-                                  </a>
-                                </div>
-                              </div>
-                            </figcaption>
-                          </figure>
+                                                    <figure>
+                                                    <figcaption>
+                                                      <div className="flex">
+                                                      <img
+                                                        className="h-8 w-8 rounded-full bg-gray-200 dark:bg-gray-600"
+                                                        src={props.userImage}
+                                                        alt="Account Image"
+                                                      />
+                                                        <div className="ml-3 py-0.5 font-bold text-xl text-gray-900 dark:text-gray-100">
+                                                        {props.userName}님
+                                                        </div>
+                                                      </div>
+                                                      <div className="border-b py-2 mb-2 border-gray-200 dark:border-gray-600"></div>
+                                                      <img src="https://coin.pcor.me/resources/images/pluscoin.svg" className="h-4 w-4 inline-block mr-1"/>{props.userCoin}코인
+                                                      <span className="text-gray-200 dark:text-gray-600 px-1">|</span>
+                                                      <BanknotesIcon className="h-4 w-4 inline-block mr-1"/>{props.userCash}원
+                                                      <span className="text-gray-200 dark:text-gray-600 px-1">|</span>
+                                                      <a href="https://mapi.pcor.me/oauth/ip.php?action=logout">로그아웃</a>
+                                                    </figcaption>
+                                                  </figure>
                         ) : (
                           <figure>
-                            <figcaption>
-                              <div className="font-bold text-2xl text-gray-900 dark:text-gray-100">
-                                지금 로그인하고
-                                <br />
-                                Plus의 모든 서비스를 이용하세요
+                          <figcaption>
+                            <div className="flex" onClick={() => navigate("/signin")}>
+                            <img
+                              className="h-8 w-8 rounded-full bg-gray-200 dark:bg-gray-600"
+                              src="/apple-icon-precomposed.png"
+                              alt="Account Image"
+                            />
+                              <div className="ml-3 py-0.5 font-bold text-xl text-gray-900 dark:text-gray-100">
+                                로그인 / 계정 등록
                               </div>
-                              <div className="text-gray-600 dark:text-gray-100 mt-2">
-                                <button
-                                  onClick={() => navigate("/signin")}
-                                  className="flex rounded-xl py-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-white"
-                                >
-                                  <span>로그인</span>
-                                  <span aria-hidden="true">&nbsp;&rarr;</span>
-                                </button>
-                              </div>
-                            </figcaption>
-                          </figure>
+                            </div>
+                            <div className="border-b py-2 mb-2 border-gray-200 dark:border-gray-600"></div>
+                            <img src="https://coin.pcor.me/resources/images/pluscoin.svg" className="h-4 w-4 inline-block mr-1"/><span className="blur-sm">69,740</span>코인
+                            <span className="text-gray-200 dark:text-gray-600 px-1">|</span>
+                            <BanknotesIcon className="h-4 w-4 inline-block mr-1"/><span className="blur-sm">6,974</span>원
+                          </figcaption>
+                        </figure>
                         )}
                       </div>
                     </section>
@@ -392,9 +341,12 @@ export default function Header(props) {
               <div className="flex h-16 md:h-20 items-center">
                 {/* Logo */}
                 <div className="md:ml-4 flex lg:ml-0 mr-0 lg:mr-4">
-                  <button onClick={() => navigate("/")}>
+                  <button className="flex" onClick={() => navigate("/")}>
                     <span className="sr-only">Plus</span>
-                    <img className="h-8 w-auto" src="/Plus.svg" alt="Plus" />
+                    <img className="h-8 w-auto" src="/Plus.svg" alt="Logo" />
+                    <svg className="h-8 py-1.5 ml-2 w-auto dark:text-gray-300 text-gray-700" width="126" height="48" viewBox="0 0 126 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.590881 47V0.454529H9.31818H18.0455C21.6212 0.454529 24.6212 1.12119 27.0455 2.45452C29.4849 3.78786 31.3258 5.62119 32.5682 7.95452C33.8258 10.2727 34.4545 12.9091 34.4545 15.8636C34.4545 18.8485 33.8258 21.5 32.5682 23.8182C31.3106 26.1364 29.4545 27.9621 27 29.2955C24.5455 30.6136 21.5227 31.2727 17.9318 31.2727H13.9999L9.0227 24.3409H16.7955C18.8864 24.3409 20.5985 23.9773 21.9318 23.25C23.2652 22.5227 24.25 21.5227 24.8864 20.25C25.5379 18.9773 25.8636 17.5152 25.8636 15.8636C25.8636 14.2121 25.5379 12.7576 24.8864 11.5C24.25 10.2424 23.2576 9.26513 21.9091 8.56816C20.5758 7.85604 18.8561 7.49998 16.75 7.49998H9.0227V47H0.590881ZM49.642 0.454529V47H41.4148V0.454529H49.642ZM80.3523 32.0682L80.2386 12.0909H88.5795V47H80.6023V40.7955H80.2386C79.4508 42.75 78.1553 44.3485 76.3523 45.5909C74.5644 46.8333 72.3598 47.4545 69.7386 47.4545C67.4508 47.4545 65.428 46.947 63.6705 45.9318C61.928 44.9015 60.5644 43.4091 59.5795 41.4545C58.5947 39.4848 58.1023 37.1061 58.1023 34.3182V12.0909H66.3295V33.0455C66.3295 35.2576 66.9356 37.0152 68.1477 38.3182C69.3598 39.6212 70.9508 40.2727 72.9205 40.2727C74.1326 40.2727 74.8636 39.5909 76 39C77.1363 38.4091 77.7728 37.8712 78.5 36.7045C79.2425 35.5227 80.3523 33.8409 80.3523 32.0682ZM124.631 21.3182L117.131 22.1364C116.919 21.3788 116.547 20.6667 116.017 20C115.502 19.3333 114.805 18.7955 113.926 18.3864C113.047 17.9773 111.972 17.7727 110.699 17.7727C108.987 17.7727 107.547 18.1439 106.381 18.8864C105.229 19.6288 104.661 20.5909 104.676 21.7727C104.661 22.7879 105.032 23.6136 105.79 24.25C106.563 24.8864 107.835 25.4091 109.608 25.8182L115.562 27.0909C118.866 27.803 121.32 28.9318 122.926 30.4773C124.547 32.0227 125.366 34.0455 125.381 36.5455C125.366 38.7424 124.722 40.6818 123.449 42.3636C122.191 44.0303 120.441 45.3333 118.199 46.2727C115.956 47.2121 113.381 47.6818 110.472 47.6818C106.199 47.6818 102.759 46.7879 100.153 45C97.5473 43.197 95.9943 40.6894 95.4943 37.4773L103.517 36.7045C103.881 38.2803 104.653 39.4697 105.835 40.2727C107.017 41.0758 108.555 41.4773 110.449 41.4773C112.403 41.4773 113.972 41.0758 115.153 40.2727C116.35 39.4697 116.949 38.4773 116.949 37.2955C116.949 36.2955 116.563 35.4697 115.79 34.8182C115.032 34.1667 113.85 33.6667 112.244 33.3182L106.29 32.0682C102.941 31.3712 100.464 30.197 98.858 28.5455C97.2519 26.8788 96.4564 24.7727 96.4716 22.2273C96.4564 20.0758 97.0398 18.2121 98.2216 16.6364C99.4186 15.0455 101.078 13.8182 103.199 12.9545C105.335 12.0758 107.797 11.6364 110.585 11.6364C114.676 11.6364 117.896 12.5076 120.244 14.25C122.608 15.9924 124.07 18.3485 124.631 21.3182Z" fill="currentColor"/>
+                    </svg>
                   </button>
                 </div>
 
@@ -597,7 +549,7 @@ export default function Header(props) {
                                     )}
                                   >
                                     나의 캐시 <strong>{props.userCash}</strong>
-                                    캐시
+                                    원
                                   </a>
                                 )}
                               </Menu.Item>
@@ -656,32 +608,36 @@ export default function Header(props) {
         </header>
       </div>
 
-      <div class="md:hidden fixed z-50 w-full bottom-0 p-5 px-6 flex items-center justify-between backdrop-blur-lg bg-white/70 dark:bg-black/70 shadow-3xl text-gray-900 dark:text-gray-100 cursor-pointer">
-        <div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
+      <div class="md:hidden fixed z-50 w-full bottom-0 rounded-t-xl py-2 px-6 flex items-center justify-between backdrop-blur-lg bg-white/70 dark:bg-black/70 shadow-3xl text-gray-900 dark:text-gray-100 cursor-pointer">
+        <div class="flex flex-col items-center transition ease-in duration-100 hover:text-blue-500 dark:hover:text-blue-300 ">
           <button onClick={() => navigate("/")}>
             <HomeIcon className="h-6 w-6" aria-hidden="true" />
           </button>
+          <span className="text-xs text-center mt-0.5">홈</span>
         </div>
 
-        <div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
+        <div class="flex flex-col items-center transition ease-in duration-100 hover:text-blue-500 dark:hover:text-blue-300 ">
           <button onClick={() => navigate("/coin")}>
-            <PlusCircleIcon className="h-6 w-6" aria-hidden="true" />
+            <WalletIcon className="h-6 w-6" aria-hidden="true" />
           </button>
+          <span className="text-xs text-center mt-0.5">월렛</span>
         </div>
 
-        <div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
+        <div class="flex flex-col items-center transition ease-in duration-100 hover:text-blue-500 dark:hover:text-blue-300 ">
           <button onClick={() => navigate("/reward")}>
             <GiftIcon className="h-6 w-6" aria-hidden="true" />
           </button>
+          <span className="text-xs text-center mt-0.5">리워드</span>
         </div>
 
-        <div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
+        <div class="flex flex-col items-center transition ease-in duration-100 hover:text-blue-500 dark:hover:text-blue-300 ">
           <button onClick={() => navigate("/shop")}>
             <ShoppingBagIcon className="h-6 w-6" aria-hidden="true" />
           </button>
+          <span className="text-xs text-center mt-0.5">상점</span>
         </div>
 
-        <div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-500 ">
+        <div class="flex flex-col items-center transition ease-in duration-100 hover:text-blue-500 dark:hover:text-blue-300 ">
           <button onClick={() => setOpen(true)}>
             {props.isLogin ? (
               <img
@@ -697,9 +653,11 @@ export default function Header(props) {
               />
             )}
           </button>
+          <span className="text-xs text-center -ml-1.5 mt-0.5">MY</span>
         </div>
       </div>
 
+      
       <a href="#">
         <button class="hidden md:block transform ease-in duration-100 active:scale-95 fixed z-100 bottom-8 right-8 bg-blue-500 w-16 h-16 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-blue-600 hover:shadow-lg">
           <ArrowSmallUpIcon className="h-6 w-full" />
