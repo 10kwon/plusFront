@@ -180,77 +180,68 @@ export const HomePage = (props) => {
       </div>
 
       <main
-        class="my-1 md:pt-16 pb-2 px-4 md:px-10 flex-1 rounded-l-lg
+        class="my-1 md:pt-16 pb-2 px-3 md:px-10 flex-1 rounded-l-lg
 		transition duration-500 ease-in-out overflow-y-auto max-w-screen-lg xl:max-w-screen-xl mx-auto"
       >
         <div class="md:grid md:grid-cols-2">
-          <div class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col rounded-xl">
+          <div class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col rounded-xl bg-gray-200 dark:bg-gray-700"
+          >
             <h3
-              class="flex items-center pt-1 pb-1 md:px-4 text-lg font-semibold
-					capitalize dark:text-gray-300"
+              class="flex items-center py-2 px-3 md:px-4 text-2xl font-bold dark:text-gray-300"
             >
-              <span>상점 인기 상품</span>
-              <button class="ml-2">
-                <ShoppingBagIcon className="h-5 w-5" aria-hidden="true" />
-              </button>
+              {props.isLogin ? <span>{props.userName}님을 위한 아이템</span> : <span>인기 아이템</span>}
             </h3>
 
-            <div class="grid m-0  grid-cols-2  space-x-4 overflow-x-scroll flex justify-center items-center w-full ">
+
+            <div class="w-full divide-y divide-gray-300 dark:divide-gray-600">
               {shopData.map((item, index) => (
-                <a href={item.isCash == 1 ? "/shop" : "/shop"}>
-                  <div
-                    class="relative flex flex-col justify-between bg-blue-900 shadow-md rounded-xl transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center shadow-md h-64 my-2"
-                    style={{ backgroundImage: `url(${item.thumbnail})` }}
-                    key={index}
-                  >
-                    <div class="absolute bg-gradient-to-b from-transparent to-black  opacity-50 inset-0 z-0"></div>
-                    <div class="relative flex flex-row items-end  h-72 w-full ">
-                      <div class="p-6 rounded-xl  flex flex-col w-full z-10 ">
-                        <h2 class="text-sm flex items-center text-white font-normal">
-                          {item.merchant}
-                        </h2>
-                        <h4 class="mt-1 text-white text-xl font-bold leading-tight truncate">
-                          {item.product}
-                        </h4>
-                        <div class="flex pt-4  text-sm text-gray-300">
-                          <div class="flex items-center font-medium text-white ">
-                            {item.price}
+            <div className="px-5 py-4 flex w-full transform ease-in duration-100 active:scale-95 py-5"
+            onClick={() => navigate("/shop")}>
+              <div className="">
+              <span
+                class="font-semibold"
+              >
+                {item.price}
                             {item.isCash == 1 ? "원" : "코인"}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
+              </span>
+              <br/>
+              <span class="">
+              {item.product}
+              </span>
+              <br/>
+              <span class="text-gray-500 dark:text-gray-300">
+              {item.purchaseCount}명이 구매했어요
+              </span>
+              </div>
+              <div className="rounded-xl h-16 w-16 bg-gray-500 ml-auto my-auto justify-end">
+              <div style={{ backgroundImage: `url(${item.thumbnail})` }}
+              className="rounded-xl h-full w-full object-cover object-center bg-cover"/>
+              </div>
+            </div>
               ))}
             </div>
           </div>
 
-          <div class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col rounded-xl">
+          <div class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col rounded-xl bg-gray-200 dark:bg-gray-700">
             <h3
-              class="flex items-center pt-1 pb-1 md:px-4 text-lg font-semibold
-					capitalize dark:text-gray-300"
+              class="flex items-center py-2 px-3 md:px-4 text-2xl font-bold dark:text-gray-300"
             >
-              <span>혜택 참여하기</span>
-              <button class="ml-2">
-                <GiftIcon className="h-5 w-5" aria-hidden="true" />
-              </button>
+              <span>리워드</span>
             </h3>
 
-            <div className="mx-auto w-full md:max-w-2xl px-4 pb-16 sm:px-6 sm:pb-24 lg:max-w-7xl lg:px-8">
-              <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10">
+            <div className="mx-auto w-full md:max-w-2xl lg:max-w-7xl lg:px-8">
+              <div className="w-full divide-y divide-gray-300 dark:divide-gray-600">
                 {newsData.map((item, index) => (
-                  <a href="/reward">
                     <div
                       key={item.postid}
-                      className="group relative rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800"
-                    >
-                      <div className="mt-4 flex justify-between">
+                      className="group relative transform ease-in duration-100 active:scale-95"
+                      onClick={() => navigate("/reward")}>
+                      <div className="px-5 py-5 flex justify-between">
                         <div>
-                          <p className="mt-1 text-sm text-gray-500">
+                          <p className="mt-1 text-gray-500 dark:text-gray-300">
                             {item.author}
                           </p>
-                          <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
+                          <h3 className="font-semibold text-gray-900 dark:text-gray-100">
                             <span
                               aria-hidden="true"
                               className="absolute inset-0"
@@ -266,7 +257,7 @@ export const HomePage = (props) => {
                             {item.reward.toLocaleString() + "코인 지급"}
                           </p>
                         </div>
-                        <div className="justify-end aspect-square w-24 h-24 overflow-hidden rounded-xl bg-gray-200 group-hover:opacity-75">
+                        <div className="justify-end aspect-square w-16 w-16 bg-gray-500 overflow-hidden rounded-xl bg-gray-200 group-hover:opacity-75">
                           <img
                             src={item.thumbnail}
                             alt="상품 미리보기 이미지"
@@ -275,7 +266,6 @@ export const HomePage = (props) => {
                         </div>
                       </div>
                     </div>
-                  </a>
                 ))}
               </div>
             </div>

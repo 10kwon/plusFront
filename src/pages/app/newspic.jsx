@@ -89,7 +89,7 @@ export const NewsPicPage = (props) => {
         <h2
 					class="flex items-center pt-8 pb-1 md:px-4 text-2xl font-bold
 					capitalize dark:text-gray-300">
-					<span>추천 리워드</span>
+					<span>인기 많은 리워드</span>
 				</h2>
         <div class="md:flex overflow-x-scroll md:justify-center md:items-center">
         {shopData.map((item, index) => (
