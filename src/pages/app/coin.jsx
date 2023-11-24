@@ -31,8 +31,8 @@ export const CoinPage = (props) => {
       }) // Replace with your API endpoint
       .then((response) => {
         if (response.data.status == "fail") {
-          alert("로그인해 주세요.");
-          window.location.href = "/";
+          //alert("로그인해 주세요.");
+          //window.location.href = "/";
         } else {
           setTransactions(response.data.data);
         }
@@ -83,8 +83,8 @@ export const CoinPage = (props) => {
           )
           .then((response) => {
             if (response.data.status == "fail") {
-              alert("로그인해 주세요.");
-              window.location.href = "/";
+              //alert("로그인해 주세요.");
+              //window.location.href = "/";
             } else {
               const newTransactions = response.data.data;
               setTransactions([...transactions, ...newTransactions]);
@@ -245,10 +245,22 @@ export const CoinPage = (props) => {
                           <img
                             className="h-12 w-12 flex-none rounded-full bg-gray-50"
                             src={`${
-                              transaction.legacyLogSource == "miracle"
+                              transaction.type == "miracle"
                                 ? "/resources/images/legacy_miracle.png"
-                                : transaction.legacyLogSource == "diet"
+                                : transaction.type == "diet"
                                 ? "/resources/images/legacy_djet.png"
+                                : transaction.type == "chat_discord"
+                                ? "/resources/brands/chat_discord.png"
+                                : transaction.type == "luckycard"
+                                ? "/resources/brands/luckycard.png"
+                                : transaction.type == "reward"
+                                ? "/resources/brands/reward.png"
+                                : transaction.type == "transfer"
+                                ? "/resources/brands/transfer.png"
+                                : transaction.type == "welcome"
+                                ? "/resources/brands/welcome.png"
+                                : transaction.type == "rename"
+                                ? "/resources/brands/rename.png"
                                 : "/favicon-96x96.png"
                             }`}
                             alt=""
@@ -275,6 +287,37 @@ export const CoinPage = (props) => {
                         </div>
                       </li>
                     ))}
+
+                    {
+                  isLoading ?
+<li
+                        className="flex justify-between gap-x-6 transform ease-in duration-100 active:scale-95 py-5 hover:bg-gray-200 dark:hover:bg-gray-700"
+                      >
+                        <div className="flex min-w-0 gap-x-4">
+                          <img
+                            className="h-12 w-12 flex-none rounded-full bg-gray-500"
+                            alt=""
+                          />
+                          <div className="min-w-0 flex-auto">
+                            <p className="rounded-lg font-semibold leading-6 bg-gray-500 text-gray-500 w-64">
+                              .
+                            </p>
+                            <p className="mt-1 rounded-lg bg-gray-500 text-gray-500 w-32 truncate text-sm leading-5">
+                              .
+                            </p>
+                          </div>
+                        </div>
+                        <div className="shrink-0 flex flex-col items-end">
+                          <p
+                            className={`w-16 rounded-lg bg-gray-500 text-gray-500 leading-6 font-bold`}
+                          >
+                            .
+                          </p>
+                        </div>
+                      </li>
+                  :
+                  <li></li>
+                  }
                   </ul>
                 </Tab.Panel>
                 <Tab.Panel>
@@ -344,6 +387,7 @@ export const CoinPage = (props) => {
                 </Tab.Panel>
               </Tab.Panels>
             </Tab.Group>
+            
           </div>
         </main>
       </div>
