@@ -77,9 +77,9 @@ export const HomePage = (props) => {
           {props.isLogin ? (
                         
                           (Math.floor(Math.random() * 2) == 0) ?
-                        <div onClick={() => navigate("/pspDiscord")} className="rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
+                        <div onClick={() => navigate("/pspDiscord")} className="flex rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
                         <div className="ml-2 my-auto">
-                        <img src="/resources/images/psp.svg" className="h-8 inline-block mr-1"/>
+                        <img src="/resources/psp.svg" className="h-8 inline-block mr-1"/>
                         </div>
                         <div className="ml-2">
                         <span
@@ -98,7 +98,7 @@ export const HomePage = (props) => {
                         </div>
                       </div>
                       :
-                      <div onClick={() => navigate("/shop")} className="rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
+                      <div onClick={() => navigate("/shop")} className="flex rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
                      <div className="ml-2 my-auto">
                      <img src="/resources/images/pass.svg" className="h-8 inline-block mr-1"/>
                      </div>
