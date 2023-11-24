@@ -76,10 +76,10 @@ export const HomePage = (props) => {
 <div class="mx-3 mt-8 mb-6 flex lg:hidden">
           {props.isLogin ? (
                         
-                        <div className="rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
-                          <a href="https://ps.pcor.me/pass" className="flex ">
+                          (Math.floor(Math.random() * 2) == 0) ?
+                        <div onClick={() => navigate("/pspDiscord")} className="rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
                         <div className="ml-2 my-auto">
-                        <img src="/resources/images/pass.svg" className="h-8 inline-block mr-1"/>
+                        <img src="/resources/images/psp.svg" className="h-8 inline-block mr-1"/>
                         </div>
                         <div className="ml-2">
                         <span
@@ -93,11 +93,32 @@ export const HomePage = (props) => {
                         </span>
                         <br class="md:hidden block" />
                         <span class="text-xl font-bold">
-                        시즌패스 특별가 600원에 얻기<span class="hidden md:visible">.</span>
+                        Metro+가 이제 PSP가 됐어요<span class="hidden md:visible">.</span>
                         </span>
                         </div>
-                        </a>
                       </div>
+                      :
+                      <div onClick={() => navigate("/shop")} className="rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
+                     <div className="ml-2 my-auto">
+                     <img src="/resources/images/pass.svg" className="h-8 inline-block mr-1"/>
+                     </div>
+                     <div className="ml-2">
+                     <span
+                       style={{
+                         animationDelay: "0.15s",
+                         animationFillMode: "forwards",
+                       }}
+                       class="text-lg animate-fade-up"
+                     >
+                       {props.userName}님을 위한 소식{" "}
+                     </span>
+                     <br class="md:hidden block" />
+                     <span class="text-xl font-bold">
+                     시즌패스 S1 정식 오픈!<span class="hidden md:visible">.</span>
+                     </span>
+                     </div>
+                   </div>
+                        
           ) : (
             <div className="flex rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
               <div className="ml-2 my-auto">
