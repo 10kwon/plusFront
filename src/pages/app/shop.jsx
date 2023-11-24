@@ -177,7 +177,7 @@ export const ShopPage = (props) => {
         >
           <select
             value={selectedCategory}
-            className="rounded-xl mt-2 lg:ml-2 text-black"
+            className="hidden rounded-xl mt-2 lg:ml-2 text-black"
             onChange={(e) => setSelectedCategory(e.target.value)}
           >
             <option value="">카테고리를 선택하세요</option>
@@ -318,6 +318,7 @@ export const ShopPage = (props) => {
                   <h4 class="dark:text-white">{selectedProduct.merchant}</h4>
                   <h3 class="font-bold text-2xl dark:text-white">{selectedProduct.product}</h3>
                   <h4 class="text-gray-500">{selectedProduct.purchaseCount}회 구매 | 1인 구매 한도 {selectedProduct.purchaseLimit}개</h4>
+	          <h4 class="text-gray-500">🚚 {selectedProduct.delivery_logis} | 배송비 {selectedProduct.delivery_fee.toLocaleString()}원 | {selectedProduct.delivery_eta}일 뒤 도착 예정</h4>
                   </div>
                   <div class="py-2 border-b">
                   <h3 class="font-bold text-2xl text-blue-500 dark:text-blue-300">{selectedProduct.price.toLocaleString()}{selectedProduct.isCash == 1 ? "원" : "코인"}</h3>
