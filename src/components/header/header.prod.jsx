@@ -27,9 +27,10 @@ import {
   ArrowSmallUpIcon,
   NewspaperIcon,
   WalletIcon,
+  
 } from "@heroicons/react/24/outline";
 import nl2br from "react-nl2br";
-import { ArrowUpRightIcon, BanknotesIcon, ChevronLeftIcon, PaperAirplaneIcon } from "@heroicons/react/20/solid";
+import { MegaphoneIcon, ArrowUpRightIcon, BanknotesIcon, ChevronLeftIcon, PaperAirplaneIcon, BellIcon } from "@heroicons/react/20/solid";
 
 import useDarkSide from "../useDarkSide";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
@@ -480,11 +481,30 @@ export default function Header(props) {
                 </Popover.Group>
 
                 <div className="ml-auto flex items-center">
-                  <div className="flex lg:flex-1 lg:items-center lg:justify-end space-x-6">
+                  <div className="flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                  <div>
+                        <a
+                        href="https://now.pcor.me"
+                        target="_blank"
+                        >
+                          <button className="dark:text-gray-300 text-gray-700 rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800">
+                          <MegaphoneIcon className="h-6"/>
+                          </button>
+                        </a>
+                        <span className="px-1"></span>
+                        <a
+                        href="https://mapi.pcor.me/notification.php"
+                        target="_blank"
+                        >
+                          <button className="dark:text-gray-300 text-gray-700 rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800">
+                          <BellIcon className="h-6"/>
+                          </button>
+                        </a>
+                      </div>
                     {props.isLogin ? (
                       <Menu>
                         <div>
-                          <Menu.Button className="hidden md:flex rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:text-white">
+                          <Menu.Button className="hidden md:flex rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-white">
                             <img
                               className="rounded-full h-6 w-6 object-cover mr-2"
                               src={props.userImage}
