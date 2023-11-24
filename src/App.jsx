@@ -119,7 +119,7 @@ function App() {
           }
         />
         <Route
-          path="/metroPlus"
+          path="/pspDiscord"
           element={
             <AboutmPage
               isLogin={userName.length > 0 ? true : false}

@@ -46,7 +46,7 @@ const navigation = {
           name: "모으기",
           items: [
             { name: "리워드 받기", href: "/reward" },
-            { name: "Metro+", href: "/metroPlus" },
+            { name: "PSP", href: "/pspDiscord" },
             { name: "리크봇", href: "https://leek.pcor.me" },
           ],
         },

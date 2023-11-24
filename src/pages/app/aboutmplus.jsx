@@ -22,45 +22,49 @@ export const AboutmPage = (props) => {
     메인
   </Breadcrumb.Item>
   <Breadcrumb.Item>
-  Metro+
+  PSP
   </Breadcrumb.Item>
 </Breadcrumb>
 <h3
 					class="flex items-center pt-6 md:px-4 text-3xl font-bold
 					capitalize dark:text-gray-300">
             
-					<span>Metro+</span>
+					<span>PSP</span>
 				</h3>
 <p class="flex items-center py-4 md:px-4 font-semibold text-lg
 					capitalize dark:text-gray-300">
-            이 세상 모-든 교통덕후를 이음, 메트로+.</p>
-            <a href="https://kr.dicoall.com/i/977198448266870824"
-class="mt-3 px-3 ml-4 bg-purple-500 font-bold text-white text-center m-auto py-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-purple-600">
+            모든 덕후를 하나로, with PSP</p>
+            <a href="https://discord.gg/GKpubCUmtu"
+class="mt-3 px-3 ml-4 bg-gradient-to-r from-indigo-500 to-pink-400 font-bold text-white text-center m-auto py-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-purple-600">
 서버 참여하기
-</a>
-<a href="https://kr.dicoall.com/server/977198448266870824"
-class="mt-3 px-3 ml-4 bg-gray-500 font-bold text-white text-center m-auto py-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-600">
-Dicoall
 </a>
 
 
 <div class="pt-12 pb-1 md:px-4">
 
-<div class="container mx-auto flex flex-col items-center py-2">
+<div class="container mx-auto flex flex-col py-2">
 <div class="max-w-screen-xl " id="ceoIntroduction">
-<div class="container mx-auto">
-<div class="block">
-<div class="">
-<div class="text-3xl text-blue-500 text-left leading-tight h-3">“</div>
-<img src="https://media.discordapp.net/attachments/936620635889729558/1078573800326713384/1cc5ccd7aa4e7d20.png" alt="이 세상 모든 교통덕후를 이음" class="h-12"></img>
-<div class="text-3xl text-blue-500 text-right leading-tight h-3">”</div>
-</div>
-</div>
-
+<div class="container">
 <p class="text-lg">
-  지난 2022년, 철도 동호인을 위한 디스코드 서버에서 출발한 메트로+는 이제 굿즈도 판매하고 이벤트도 운영하는 규모있는 플랫폼으로 발전했어요.<br/>
-  비록 지금은 시련을 맞이하고 있지만, 그 시련을 극복하기 위해 Plus의 일원이 되어 철도 동호인 뿐만 아닌 모든 교통 동호인을 환영하는 플랫폼으로 발전하려고 해요.<br/>
-  앞으로 생겨 날 교통 자료 공유, 가상 철도 홈페이지, 오프라인 미팅 캘린더는 그런 계획의 첫발을 내딛는 것이라고 생각해주세요.
+당신의 디스코드 생활에 Plus가 될 Plus Social Platforms!<br/>
+1년의 역사를 담은 교통 덕후 디스코드 Metro+를 계승한 PSP(Plus Social Platforms)는 Plus의 공식 커뮤니티로,
+<br/>“모든 덕후를 하나로” 잇는 종합 교통덕후/서브컬처/게임/IT 디스코드 서버에요.<br/>
+<br/>
+이런 분들 와 주세요!<br/>
+철덕, 버덕 등 교통덕후 모두 환영<br/>
+최애의 아이 덕후, 이파리 모두 환영<br/>
+트릭컬: 리바이브, 얼불춤, 프세카 플레이어 환영<br/>
+삼엽충, 앱등이, Google 팬 모두 환영<br/>
+<br/><br/>
+우리 서버에서는<br/>
+19금•정치 절대 사절<br/>
+적정선의 친목<br/>
+<br/><br/>
+진보된 관리 시스템<br/>
+Plus답게 깔끔한 서버 관리<br/>
+관리자 5명+a의 24시간 채팅 단속<br/>
+채팅 코인 PlusCoin을 통한 개인채널 구매
+
 </p>
 </div>
 </div>
