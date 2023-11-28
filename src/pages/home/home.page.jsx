@@ -149,6 +149,8 @@ export const HomePage = (props) => {
               </div>
             </div>
           )}
+        </div>
+        <div class="mx-3 mb-6 flex lg:hidden">
                       <div className="flex rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
               <div className="ml-2 my-auto">
               <img src="/Plus.svg" className="h-8 inline-block mr-1"/>
@@ -178,7 +180,6 @@ export const HomePage = (props) => {
               </div>
             </div>
         </div>
-
     <div className="lg:p-0">
       <Swiper
         spaceBetween={5}
