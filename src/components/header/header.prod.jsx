@@ -57,7 +57,7 @@ const navigation = {
           items: [
             { name: "상점", href: "/shop" },
             { name: "카드", href: "/card/setting" },
-            { name: "Sekai 발급받기", href: "/coin/sekai" },
+            { name: "Vault 발급받기", href: "/coin/sekai" },
             { name: "잔액", href: "/coin" },
           ],
         },

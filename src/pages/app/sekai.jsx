@@ -163,11 +163,11 @@ export const SekaiIssuePage = (props) => {
           <button  onClick={() => setCurrentStep(currentStep - 1)}>
             <ChevronLeftIcon className="h-6"/>
           </button>
-      <h1 className="text-3xl font-bold my-4">Sekai 코드<br/>지정하기</h1>
+      <h1 className="text-3xl font-bold my-4">Vault 코드<br/>지정하기</h1>
       <p className="dark:text-gray-300 text-gray-700 mb-4">
-        Plus 속 작은 세계, Sekai.<br/>
-        코인 송금, 프로필 카드에 사용될 Sekai를 입력하세요.<br/>
-        불건전 Sekai는 관리자에 의해 변경될 수 있어요.
+        Plus 속 작은 세계, Vault.<br/>
+        코인 송금, 프로필 카드에 사용될 Vault를 입력하세요.<br/>
+        불건전 Vault는 관리자에 의해 변경될 수 있어요.
       </p>
 
       <input
@@ -226,7 +226,7 @@ export const SekaiIssuePage = (props) => {
       <div className="mt-6 border-t border-gray-100 dark:border-gray-700">
         <dl className="divide-y divide-gray-100 dark:divide-gray-700">
           <div className="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-bold leading-6 text-gray-900 dark:text-gray-100">Sekai 번호</dt>
+            <dt className="font-bold leading-6 text-gray-900 dark:text-gray-100">Vault 번호</dt>
             <dd className="mt-1 leading-6 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">{sekaiValue}</dd>
           </div>
           <div className="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">

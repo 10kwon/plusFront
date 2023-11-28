@@ -373,7 +373,7 @@ class="mt-3 px-3 w-full bg-blue-500 font-bold text-white text-center m-auto py-2
                   
                   <div class="py-2 border-b"></div>
                   <div class="bg-gray-100 rounded-xl px-2 py-2 mt-4">
-                  <strong class="text-lg">PlusCoin Sekai 계좌</strong><br/>
+                  <strong class="text-lg">PlusCoin Vault 계좌</strong><br/>
                   10kwonadmin
                   </div>
                   </div>

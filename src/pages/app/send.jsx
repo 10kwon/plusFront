@@ -121,7 +121,7 @@ export const CoinSendPage = (props) => {
     }
   };
   function handleImageError() {
-    alert("올바르지 않은 Sekai 번호에요.");
+    alert("올바르지 않은 Vault 번호에요.");
     window.location.href = "/coin/send";
   }
   const navigate = useNavigate();
@@ -144,7 +144,7 @@ export const CoinSendPage = (props) => {
         <h1 className="text-3xl font-bold my-4">
           코인 받을 사람의
           <br />
-          Sekai를 입력하세요
+          Vault를 입력하세요
         </h1>
 
         <input

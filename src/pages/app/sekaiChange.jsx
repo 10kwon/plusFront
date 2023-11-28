@@ -117,9 +117,9 @@ export const SekaiChangePage = (props) => {
           <button  onClick={() => navigate("/")}>
             <ChevronLeftIcon className="h-6"/>
           </button>
-      <h1 className="text-3xl font-bold my-4">Sekai 번호<br/>변경하기</h1>
+      <h1 className="text-3xl font-bold my-4">Vault 번호<br/>변경하기</h1>
       <p className="dark:text-gray-300 text-gray-700 mb-4">
-        PlusCoin을 주고 받는데 사용하는 Sekai 번호를 입력하세요.
+        PlusCoin을 주고 받는데 사용하는 Vault 번호를 입력하세요.
       </p>
 
       <input
@@ -141,12 +141,12 @@ export const SekaiChangePage = (props) => {
           </button>
           <h1 className="text-3xl font-bold my-4 text-center">정말로 변경할까요?</h1>
       <p className="dark:text-gray-300 text-gray-700 mb-4 text-center">
-        Sekai를 수정하면 500코인이 차감돼요.
+        Vault를 수정하면 500코인이 차감돼요.
       </p>
       <div className="mt-6 border-t border-gray-100 dark:border-gray-700">
         <dl className="divide-y divide-gray-100 dark:divide-gray-700">
           <div className="px-2 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="font-bold leading-6 text-gray-900 dark:text-gray-100">새 Sekai 번호</dt>
+            <dt className="font-bold leading-6 text-gray-900 dark:text-gray-100">새 Vault 번호</dt>
             <dd className="mt-1 leading-6 text-gray-700 dark:text-gray-300 sm:col-span-2 sm:mt-0">{sekaiValue}</dd>
           </div>
         </dl>
@@ -158,7 +158,7 @@ export const SekaiChangePage = (props) => {
           </button>
       <h1 className="text-3xl font-bold my-4 text-center">변경했어요</h1>
       <p className="dark:text-gray-300 text-gray-700 mb-4 text-center">
-        이제 새로운 Sekai 번호를 이용하세요.
+        이제 새로운 Vault 번호를 이용하세요.
       </p>
       <div class="flex flex-col items-center">
 <img src="/congrats_sekai.png" alt="축하 캐릭터" class="h-64"/>

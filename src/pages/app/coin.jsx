@@ -165,10 +165,10 @@ export const CoinPage = (props) => {
             <button
               className="rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-600"
               onClick={() =>
-                handleCopyClipBoard("Sekai 번호 " + props.userSekai)
+                handleCopyClipBoard("Vault 번호 " + props.userSekai)
               }
             >
-              Sekai 계좌 {props.userSekai}
+              Vault 계좌 {props.userSekai}
             </button>
             <button
               className="ml-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-600"
