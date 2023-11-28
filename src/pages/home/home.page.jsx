@@ -149,6 +149,34 @@ export const HomePage = (props) => {
               </div>
             </div>
           )}
+                      <div className="flex rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
+              <div className="ml-2 my-auto">
+              <img src="/Plus.svg" className="h-8 inline-block mr-1"/>
+              </div>
+              <div className="ml-2">
+              <span
+                style={{
+                  animationDelay: "0.15s",
+                  animationFillMode: "forwards",
+                }}
+                class="text-lg animate-fade-up"
+              >
+                이번 주 금요일{" "}
+              </span>
+              <br class="md:hidden block" />
+              <span class="text-xl font-bold">
+                정기점검 안내<span class="hidden md:visible">.</span>
+              </span>
+              </div>
+              <div className="ml-auto my-auto justify-end">
+                <a href="https://cdn.discordapp.com/attachments/1138492750266900590/1178567379819704330/31_20231127142542.png?ex=65769d68&is=65642868&hm=3d3acb242d783eba51fdeddde016a26cdad1b0be5cc54f68c50fa0ea252d23a2&">
+              <button
+                  class="mr-3 px-3 bg-blue-500 text-white text-center py-2 rounded-lg transform ease-in duration-100 active:scale-95 hover:bg-blue-600"
+                >
+                 보러 가기
+                </button></a>
+              </div>
+            </div>
         </div>
 
     <div className="lg:p-0">
