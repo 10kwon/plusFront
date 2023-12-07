@@ -35,7 +35,7 @@ export const AuthPage = (props) => {
         <div className="mt-10 mx-auto w-full md:max-w-sm">
 
             <div className='grid grid-cols-4'>
-            <a href="https://discordapp.com/api/oauth2/authorize?client_id=1182357483021418616&redirect_uri=https%3A%2F%2Fmapi.pcor.me%2Foauth%2Fdiscord.php&response_type=code&scope=identify">
+            <a href="https://discordapp.com/api/oauth2/authorize?client_id=1182357439333531688&redirect_uri=https%3A%2F%2Fmapi.pcor.me%2Foauth%2Fdiscord.php&response_type=code&scope=identify">
   <button
     className="text-white bg-[#5865F2] text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-full m-auto p-4 font-bold"
   >
