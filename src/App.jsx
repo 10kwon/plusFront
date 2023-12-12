@@ -21,6 +21,7 @@ import { SekaiChangePage } from "./pages/app/sekaiChange";
 import { CoinSendPage } from "./pages/app/send";
 import { PayPage } from "./pages/app/pay";
 import { NewsPicPage } from "./pages/app/newspic";
+import { KkutuCommunity } from "./pages/app/kkutuCommunity";
 
 //행사 페이지
 import { Event230804Page } from "./pages/promotion/230804";
@@ -372,7 +373,13 @@ function App() {
             />
           }
         />
-
+        <Route
+          path="/plKkkutuCafe"
+          element={
+            <KkutuCommunity
+            />
+          }
+        />
         <Route
           path="/"
           element={
