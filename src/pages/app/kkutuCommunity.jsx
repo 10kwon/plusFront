@@ -13,7 +13,7 @@ export const KkutuCommunity = (props) => {
   const cancelButtonRef = useRef(null)
 
   return (
-    <>
+    <div className="overflow-x-hidden overflow-y-hidden">
     <div className="w-[1280px] h-[680px] bg-white justify-center items-start inline-flex">
   <div className="w-[118px] h-[680px] relative">
     <div className="w-[118px] h-[680px] left-0 top-0 absolute bg-white" />
@@ -189,6 +189,6 @@ export const KkutuCommunity = (props) => {
   </div>
 </Dialog>
 </Transition.Root>
-</>
+</div>
   );
 };
