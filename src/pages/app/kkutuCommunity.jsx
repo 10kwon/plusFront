@@ -89,7 +89,7 @@ export const KkutuCommunity = (props) => {
         leaveFrom="opacity-100 translate-y-0 sm:scale-100"
         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
       >
-        <Dialog.Panel className="relative transform overflow-hidden text-left transition-all sm:my-8 sm:w-full sm:max-w-lg">
+        <Dialog.Panel className="relative transform overflow-hidden text-left transition-all sm:my-8 ">
           <div className="">
                   <Timeline
           dataSource={{
@@ -97,14 +97,15 @@ export const KkutuCommunity = (props) => {
             screenName: 'PlusPlatforms'
           }}
           options={{
-            height: '400'
+            height: '540',
+            width: '800'
           }}
         />
           </div>
           <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
             <button
               type="button"
-              className="mt-3 inline-flex w-full justify-center rounded-full bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              className="mt-3 inline-flex w-full justify-center text-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
               onClick={() => setxOpen(false)}
               ref={cancelButtonRef}
             >
@@ -113,7 +114,7 @@ export const KkutuCommunity = (props) => {
             <a href="https://x.com/@PlusPlatforms" target="_blank">
           <button
               type="button"
-              className="mt-3 mr-2 inline-flex w-full justify-center rounded-full bg-black text-white px-3 py-2 text-sm font-bold shadow-sm ring-1 ring-inset ring-gray-900 hover:bg-gray-900 sm:mt-0 sm:w-auto"
+              className="mt-3 mr-2 inline-flex w-full justify-center text-xl bg-black text-white px-3 py-2 text-sm font-bold shadow-sm ring-1 ring-inset ring-gray-900 hover:bg-gray-900 sm:mt-0 sm:w-auto"
               onClick={() => setxOpen(false)}
             >
               X에서 자세히 알아보기
@@ -153,19 +154,19 @@ export const KkutuCommunity = (props) => {
         leaveFrom="opacity-100 translate-y-0 sm:scale-100"
         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
       >
-        <Dialog.Panel className="relative transform overflow-hidden text-left transition-all sm:my-8 sm:w-full sm:max-w-lg">
+        <Dialog.Panel className="relative transform overflow-hidden text-left transition-all sm:my-8 ">
           <div className="">
           <WidgetBot
     server="1144989383569715291"
     channel="1183794227684069487"
-    height="400"
-    width="512"
+    height="540"
+    width="800"
   />
           </div>
           <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
             <button
               type="button"
-              className="mt-3 inline-flex w-full justify-center rounded-full bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              className="mt-3 inline-flex w-full justify-center text-xl bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
               onClick={() => setdOpen(false)}
               ref={cancelButtonRef}
             >
@@ -174,7 +175,7 @@ export const KkutuCommunity = (props) => {
             <a href="https://discord.com/invite/GKpubCUmtu" target="_blank">
           <button
               type="button"
-              className="mt-3 mr-2 inline-flex w-full justify-center rounded-full bg-gradient-to-r from-indigo-500 to-pink-400 text-white px-3 py-2 text-sm font-bold shadow-sm ring-1 ring-inset ring-purple-500 hover:bg-gray-900 sm:mt-0 sm:w-auto"
+              className="mt-3 mr-2 inline-flex w-full justify-center text-xl bg-gradient-to-r from-indigo-500 to-pink-400 text-white px-3 py-2 text-sm font-bold shadow-sm ring-1 ring-inset ring-purple-500 hover:bg-gray-900 sm:mt-0 sm:w-auto"
               onClick={() => setdOpen(false)}
             >
               PSP 참여하기
