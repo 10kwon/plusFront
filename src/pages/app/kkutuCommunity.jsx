@@ -17,7 +17,7 @@ export const KkutuCommunity = (props) => {
     <div className="w-[1280px] h-[680px] bg-white justify-center items-start inline-flex">
   <div className="w-[118px] h-[680px] relative">
     <div className="w-[118px] h-[680px] left-0 top-0 absolute bg-white" />
-    <a href="javascript:alert('네이버카페 오픈 준비중입니다');">
+    <a href="https://cafe.naver.com/pluskkutu" target="_blank">
     <div className="w-[75px] h-[75px] pl-[10.65px] pr-[10.64px] pt-[9.38px] pb-[9.37px] left-[22px] top-[10px] absolute justify-center items-center inline-flex">
     <FontAwesomeIcon icon={faCoffee} className="w-[50px] h-[50px] text-[#2db400]"/>
     </div>
@@ -38,31 +38,29 @@ export const KkutuCommunity = (props) => {
     </div>
   </div>
 
-  <img className="w-[680px] h-[680px]" src="https://imagestorage.pcor.me/images/2023/12/12/Placehplder.png" />
+  <img className="w-[680px] h-[680px]" src="https://imagestorage.pcor.me/images/2023/12/15/image.png" />
 
   <div className="w-[482px] self-stretch relative">
+    <a href="https://cafe.naver.com/ca-fe/cafes/31109813/menus/13/articles/write?boardType=L" target="_blank">
     <div className="w-[482px] h-[170px] left-0 top-[510px] absolute">
-      <div className="w-[482px] h-[170px] left-0 top-0 absolute bg-blue-600" />
-      <div className="left-[26px] top-[40px] absolute text-white text-[40px] font-normal ">2023/12/12</div>
-      <div className="left-[26px] top-[83px] absolute text-white text-[40px] font-bold ">커뮤니티 기능 오픈</div>
-    </div>
-    <a href="https://www.youtube.com/watch?v=5H_tp1i10S4" target="_blank">
-    <div className="w-[482px] h-[170px] left-0 top-[340px] absolute">
-      <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://i3.ytimg.com/vi/5H_tp1i10S4/maxresdefault.jpg" />
-      <div className="left-[26px] top-[40px] absolute text-white text-[40px] font-normal ">두근두근 플러스끄투</div>
-      <div className="left-[26px] top-[83px] absolute text-white text-[40px] font-bold ">홍보 동영상</div>
+    <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2023/12/15/BugReport.png" />
     </div>
     </a>
-    <div className="w-[482px] h-[170px] left-0 top-0 absolute">
-      <div className="w-[482px] h-[170px] left-0 top-0 absolute bg-gray-900" />
-      <div className="left-[26px] top-[40px] absolute text-white text-[40px] font-normal ">컨텐츠 준비중입니다!</div>
-      <div className="left-[26px] top-[83px] absolute text-white text-[40px] font-bold ">많은 관심 부탁드립니다</div>
+    <a href="https://www.youtube.com/watch?v=5H_tp1i10S4" target="_blank">
+    <div className="w-[482px] h-[170px] left-0 top-[340px] absolute">
+      <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2023/12/15/Introduction.png" />
     </div>
-    <div className="w-[482px] h-[170px] left-0 top-[170px] absolute">
-    <div className="w-[482px] h-[170px] left-0 top-0 absolute bg-gray-900" />
-      <div className="left-[26px] top-[40px] absolute text-white text-[40px] font-normal ">컨텐츠 준비중입니다!</div>
-      <div className="left-[26px] top-[83px] absolute text-white text-[40px] font-bold ">많은 관심 부탁드립니다</div>
-    </div>
+    </a>
+    <a href="https://cafe.naver.com/pluskkutu/5" target="_blank">
+      <div className="w-[482px] h-[170px] left-0 top-0 absolute">
+      <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2023/12/15/Maintenance.png" />
+      </div>
+    </a>
+    <a href="https://cafe.naver.com/ArticleList.nhn?search.clubid=31109813&search.menuid=7&search.boardtype=L" target="_blank">
+      <div className="w-[482px] h-[170px] left-0 top-[170px] absolute">
+      <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2023/12/15/Notice.png" />
+      </div>
+    </a>
   </div>
 </div>
 
