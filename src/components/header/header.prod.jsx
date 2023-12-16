@@ -48,7 +48,7 @@ const navigation = {
           items: [
             { name: "리워드 받기", href: "/reward" },
             { name: "PSP", href: "/pspDiscord" },
-            { name: "리크봇", href: "https://leek.pcor.me" },
+            { name: "Vault 발급받기", href: "/coin/sekai" }
           ],
         },
         {
@@ -57,8 +57,8 @@ const navigation = {
           items: [
             { name: "상점", href: "/shop" },
             { name: "카드", href: "/card/setting" },
-            { name: "Vault 발급받기", href: "/coin/sekai" },
             { name: "잔액", href: "/coin" },
+            { name: "플러스끄투", href: "https://kkutu.pcor.me" }
           ],
         },
       ],
@@ -79,42 +79,15 @@ const navigation = {
         {
           id: "supportNotice",
           name: "새로운 소식",
-          items: [{ name: "Plus NOW 공지사항", href: "https://now.pcor.me/" }],
+          items: [{ name: "플러스끄투 공식카페", href: "https://cafe.naver.com/pluskkutu" }],
         },
       ],
-    },
-    {
-      id: "discord",
-      name: "디스코드 봇",
-      featured: [],
-      sections: [
-        {
-          id: "discord10k",
-          name: "마넌봇",
-          items: [
-            {
-              name: "초대하기",
-              href: "https://discord.com/api/oauth2/authorize?client_id=955793127308947478&permissions=8&scope=bot%20applications.commands",
-            },
-          ],
-        },
-        {
-          id: "discordLeek",
-          name: "리크봇",
-          items: [
-            { name: "소개", href: "https://leek.pcor.me" },
-            {
-              name: "초대하기",
-              href: "https://discord.com/api/oauth2/authorize?client_id=1148257484411240581&permissions=8&scope=bot%20applications.commands",
-            },
-          ],
-        },
-      ],
-    },
+    }
   ],
   pages: [],
   linkedpages: [
-    { name: "Plus NOW", href: "https://now.pcor.me" },
+    { name: "플러스끄투", href: "https://kkutu.pcor.me" },
+    { name: "블로그", href: "https://blog.sqlare.com" },
     { name: "Sqlare", href: "https://sqlare.com" },
   ],
 };
@@ -484,7 +457,7 @@ export default function Header(props) {
                   <div className="flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <div>
                         <a
-                        href="https://now.pcor.me"
+                        href="https://blog.sqlare.com"
                         target="_blank"
                         >
                           <button className="dark:text-gray-300 text-gray-700 rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800">
