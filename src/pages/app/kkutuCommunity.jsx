@@ -38,7 +38,7 @@ export const KkutuCommunity = (props) => {
     </div>
   </div>
 
-  <img className="w-[680px] h-[680px]" src="https://imagestorage.pcor.me/images/2023/12/15/image.png" />
+  <img className="w-[680px] h-[680px]" src="https://imagestorage.pcor.me/images/2023/12/16/newbgm.png" />
 
   <div className="w-[482px] self-stretch relative">
     <a href="https://cafe.naver.com/ca-fe/cafes/31109813/menus/13/articles/write?boardType=L" target="_blank">
