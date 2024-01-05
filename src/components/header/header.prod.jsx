@@ -73,13 +73,13 @@ const navigation = {
           name: "고객센터",
           items: [
             { name: "자주 묻는 질문", href: "/support" },
-            { name: "이메일 상담", href: "mailto:plus@sqlare.com" },
+            { name: "네이버 톡톡 상담", href: "https://talk.naver.com/ct/w5wx2v" },
           ],
         },
         {
           id: "supportNotice",
           name: "새로운 소식",
-          items: [{ name: "플러스끄투 공식카페", href: "https://cafe.naver.com/pluskkutu" }],
+          items: [{ name: "플러스끄투 카페", href: "https://cafe.naver.com/pluskkutu" }],
         },
       ],
     }

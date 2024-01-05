@@ -30,6 +30,9 @@ export const AuthPage = (props) => {
           <p className="mt-4 text-xl text-center tracking-tight text-gray-900 dark:text-gray-100">
           아래 로그인 수단 중 하나로 계속하세요
           </p>
+          <p className="mt-4 text-center tracking-tight text-gray-900 dark:text-gray-100">
+          X의 정책이 불안정함에 따라 X 로그인을 더 이상 지원하지 않아요
+          </p>
         </div>
 
         <div className="mt-10 mx-auto w-full md:max-w-sm">
@@ -68,13 +71,15 @@ export const AuthPage = (props) => {
           />
   </button>
   </a>
-  <a href="https://mapi.pcor.me/oauth/twitter.php?action=login">
+  <a href="https://mapi.pcor.me/oauth/naver.php?action=login">
   <button
-    className="text-white bg-black text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-full m-auto p-4 font-bold"
+    className="text-white bg-[#2DB400] text-center transform ease-in duration-100 active:scale-95 mt-2 items-center rounded-full m-auto p-4 font-bold"
   >
-    <svg className="w-8 h-8 text-white inline-block" fill="currentColor" viewBox="0 0 300 271" xmlns="http://www.w3.org/2000/svg">
- <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"/>
-</svg>
+    <img
+            className="h-8 w-auto inline-block"
+            src="/resources/images/naver.svg"
+            alt="Naver"
+          />
   </button>
   </a>
             </div>

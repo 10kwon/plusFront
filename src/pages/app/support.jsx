@@ -45,11 +45,11 @@ export const SupportPage = (props) => {
                 문제 해결이 되지 않나요?
               </h2>
               <p className="mt-4 text-lg leading-8 text-gray-300">
-                메일로 문의해보세요.
+                네이버 톡톡으로 문의하세요.
               </p>
               <div className="mt-6 flex max-w-md gap-x-4">
                 <a
-                  href="mailto:plus@sqlare.com"
+                  href="https://talk.naver.com/ct/w5wx2v"
                   class="mt-3 px-3 bg-blue-500 font-bold text-white text-center py-2 rounded-xl transform ease-in duration-100 active:scale-95 hover:bg-blue-600"
                 >
                   문의하기
