@@ -27,6 +27,7 @@ import {
   ArrowSmallUpIcon,
   NewspaperIcon,
   WalletIcon,
+  PuzzlePieceIcon,
   
 } from "@heroicons/react/24/outline";
 import nl2br from "react-nl2br";
@@ -617,10 +618,10 @@ export default function Header(props) {
         </div>
 
         <div class="flex flex-col items-center transition ease-in duration-100 hover:text-blue-500 dark:hover:text-blue-300 ">
-          <button onClick={() => navigate("/reward")}>
-            <GiftIcon className="h-6 w-6" aria-hidden="true" />
+          <button onClick={() => navigate("/game")}>
+            <PuzzlePieceIcon className="h-6 w-6" aria-hidden="true" />
           </button>
-          <span className="text-xs text-center mt-0.5">리워드</span>
+          <span className="text-xs text-center mt-0.5">게임</span>
         </div>
 
         <div class="flex flex-col items-center transition ease-in duration-100 hover:text-blue-500 dark:hover:text-blue-300 ">

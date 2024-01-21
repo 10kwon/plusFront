@@ -22,6 +22,8 @@ import { CoinSendPage } from "./pages/app/send";
 import { PayPage } from "./pages/app/pay";
 import { NewsPicPage } from "./pages/app/newspic";
 import { KkutuCommunity } from "./pages/app/kkutuCommunity";
+import { YouOnPage } from "./pages/app/youon";
+import { GamePage } from "./pages/app/game";
 
 //행사 페이지
 import { Event230804Page } from "./pages/promotion/230804";
@@ -184,7 +186,19 @@ function App() {
             />
           }
         />
-
+ <Route
+          path="/game"
+          element={
+            <GamePage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
         <Route
           path="/shop"
           element={
@@ -364,6 +378,19 @@ function App() {
           path="/cash/pay"
           element={
             <PayPage
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
+            />
+          }
+        />
+        <Route
+          path="/youon"
+          element={
+            <YouOnPage
               isLogin={userName.length > 0 ? true : false}
               userName={userName}
               userEmail={userEmail}
