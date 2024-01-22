@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-
+import { register } from 'swiper/element/bundle';
 import axios from "axios";
 import nl2br from "react-nl2br";
 
@@ -15,10 +14,6 @@ import { Card, Avatar, Tabs } from "flowbite-react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import 'swiper/css/effect-coverflow';
-import "swiper/css/pagination";
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import RotatingImage from "../../components/regCardSpin";
@@ -33,6 +28,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { motion } from "framer-motion";
 
+register();
 export const HomePage = (props) => {
   const navigate = useNavigate();
   const [bannerData, setBannerData] = useState([]);
@@ -151,7 +147,7 @@ export const HomePage = (props) => {
           )}
         </div>
     <div className="lg:p-0">
-      <Swiper
+      <swiper-container
         spaceBetween={5}
         centeredSlides={true}
         slidesPerView={1.05}
@@ -171,11 +167,10 @@ export const HomePage = (props) => {
         pagination={{
           clickable: true,
         }}
-        modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
         className="mySwiper lg:rounded-t-none"
       >
         {bannerData.map((item, index) => (
-          <SwiperSlide className="" key={index}>
+          <swiper-slide className="" key={index}>
             <a href={item.link}>
               <div
                 class="rounded-xl h-48 lg:h-96 p-4 bg-cover bg-center"
@@ -194,9 +189,9 @@ export const HomePage = (props) => {
                 </div>
               </div>
             </a>
-          </SwiperSlide>
+          </swiper-slide>
         ))}
-      </Swiper>
+      </swiper-container>
       </div>
 
       <main

@@ -5,6 +5,8 @@ import { faYoutube, faXTwitter, faDiscord } from '@fortawesome/free-brands-svg-i
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import { Timeline } from 'react-twitter-widgets'
+import { register } from 'swiper/element/bundle';
+
 import WidgetBot from '@widgetbot/react-embed'
 
 export const KkutuCommunity = (props) => {
@@ -37,9 +39,22 @@ export const KkutuCommunity = (props) => {
     <FontAwesomeIcon icon={faDiscord} className="w-[50px] h-[50px] text-[#7289da]"/>
     </div>
   </div>
-  <a href="https://cafe.naver.com/pluskkutu/45?tc=shared_link" target="_blank">
-  <img className="w-[680px] h-[680px]" src="https://imagestorage.pcor.me/images/2024/01/21/image26f6be73bb78647d.png" />
-  </a>
+
+
+<div className=" w-[680px] h-[680px]">
+  <swiper-container pagination={true} className="mySwiper"         autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }} >
+        <swiper-slide>  <a href="https://cafe.naver.com/pluskkutu/45?tc=shared_link" target="_blank">
+  <img src="https://imagestorage.pcor.me/images/2024/01/21/image26f6be73bb78647d.png" className="w-[680px] h-[680px]"/>
+  </a></swiper-slide>
+  <swiper-slide>  <a href="#" target="_blank">
+  <img src="https://imagestorage.pcor.me/images/2024/01/22/image.png" className="w-[680px] h-[680px]"/>
+  </a></swiper-slide>
+      </swiper-container>
+      </div>
+
   <div className="w-[482px] self-stretch relative">
     <a href="https://cafe.naver.com/ca-fe/cafes/31109813/menus/13/articles/write?boardType=L" target="_blank">
     <div className="w-[482px] h-[170px] left-0 top-[510px] absolute">

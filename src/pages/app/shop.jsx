@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { register } from 'swiper/element/bundle';
 import Header from "../../components/header/header.prod.jsx";
 import Footer from "../../components/footer/footer.prod.jsx";
 import ShopTab from "../../components/shopTypes.jsx";
@@ -18,11 +19,6 @@ import Iframe from "react-iframe";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -112,6 +108,7 @@ export const ShopPage = (props) => {
     setFilteredProducts(shopfData);
   })
 
+  register();
   return (
     <div className="dark:bg-gray-800 dark:text-white min-h-screen">
       <Header
@@ -122,7 +119,7 @@ export const ShopPage = (props) => {
         userCoin={props.userCoin}
         userCash={props.userCash}
       />
-            <Swiper
+            <swiper-container
         spaceBetween={30}
         centeredSlides={true}
         loop={true}
@@ -133,11 +130,10 @@ export const ShopPage = (props) => {
         pagination={{
           clickable: true,
         }}
-        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
         {shopData.map((item, index) => (
-          <SwiperSlide key={index}>
+          <swiper-slide key={index}>
               <div
                 class="h-64 lg:h-96 p-4 bg-cover bg-center"
                 style={{ backgroundImage: `url(${item.feature_Bg})` }}
@@ -167,9 +163,9 @@ export const ShopPage = (props) => {
                   </div>
                 </div>
               </div>
-          </SwiperSlide>
+          </swiper-slide>
         ))}
-      </Swiper>
+      </swiper-container>
       <div class="mx-auto w-full max-w-screen-xl">
         <main
           class="my-1 pt-2 pb-2 px-4 md:px-10 flex-1 rounded-l-lg
