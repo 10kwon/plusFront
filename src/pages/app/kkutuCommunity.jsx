@@ -66,9 +66,9 @@ export const KkutuCommunity = (props) => {
       <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2023/12/15/Introduction.png" />
     </div>
     </a>
-    <a href="https://cafe.naver.com/pluskkutu/5" target="_blank">
+    <a href="https://discord.gg/hmBgZ3nVSA" target="_blank">
       <div className="w-[482px] h-[170px] left-0 top-0 absolute">
-      <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2023/12/15/Maintenance.png" />
+      <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2024/01/25/1136_20240125002035.png" />
       </div>
     </a>
     <a href="https://cafe.naver.com/ArticleList.nhn?search.clubid=31109813&search.menuid=7&search.boardtype=L" target="_blank">
