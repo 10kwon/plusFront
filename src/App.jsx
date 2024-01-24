@@ -22,6 +22,7 @@ import { CoinSendPage } from "./pages/app/send";
 import { PayPage } from "./pages/app/pay";
 import { NewsPicPage } from "./pages/app/newspic";
 import { KkutuCommunity } from "./pages/app/kkutuCommunity";
+import { KkutuPing } from "./pages/app/pingShop";
 import { YouOnPage } from "./pages/app/youon";
 import { GamePage } from "./pages/app/game";
 
@@ -404,6 +405,19 @@ function App() {
           path="/plKkkutuCafe"
           element={
             <KkutuCommunity
+            />
+          }
+        />
+                <Route
+          path="/plKKuTuPingShop"
+          element={
+            <KkutuPing
+              isLogin={userName.length > 0 ? true : false}
+              userName={userName}
+              userEmail={userEmail}
+              userImage={userImg}
+              userCoin={userCoin}
+              userCash={userCash}
             />
           }
         />
