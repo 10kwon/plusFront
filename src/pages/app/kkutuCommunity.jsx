@@ -36,7 +36,7 @@ export const KkutuCommunity = (props) => {
     </a>
 
     <div onClick={() => setdOpen(true)} className="w-[75px] h-[75px] pl-[10.65px] pr-[10.64px] pt-[9.38px] pb-[9.37px] left-[22px] top-[265px] absolute justify-center items-center inline-flex">
-    <FontAwesomeIcon icon={faDiscord} className="w-[50px] h-[50px] text-[#7289da]"/>
+    <FontAwesomeIcon icon={faDiscord} className="w-[50px] h-[50px] text-[#5865f2]"/>
     </div>
   </div>
 
@@ -46,24 +46,24 @@ export const KkutuCommunity = (props) => {
           delay: 2500,
           disableOnInteraction: false,
         }} >
+          <swiper-slide>  <a href="https://cafe.naver.com/pluskkutu/58" target="_blank">
+  <img src="https://imagestorage.pcor.me/images/2024/02/07/welcomeEvent.png" className="w-[680px] h-[680px]"/>
+  </a></swiper-slide>
         <swiper-slide>  <a href="https://cafe.naver.com/pluskkutu/45?tc=shared_link" target="_blank">
   <img src="https://imagestorage.pcor.me/images/2024/01/21/image26f6be73bb78647d.png" className="w-[680px] h-[680px]"/>
-  </a></swiper-slide>
-  <swiper-slide>  <a href="#" target="_blank">
-  <img src="https://imagestorage.pcor.me/images/2024/01/22/image.png" className="w-[680px] h-[680px]"/>
   </a></swiper-slide>
       </swiper-container>
       </div>
 
   <div className="w-[482px] self-stretch relative">
-    <a href="https://cafe.naver.com/ca-fe/cafes/31109813/menus/13/articles/write?boardType=L" target="_blank">
+    <a href="https://cafe.naver.com/ArticleList.nhn?search.clubid=31109813&search.menuid=14&search.boardtype=L" target="_blank">
     <div className="w-[482px] h-[170px] left-0 top-[510px] absolute">
-    <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2023/12/15/BugReport.png" />
+    <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2024/02/07/BugReport.png" />
     </div>
     </a>
-    <a href="https://www.youtube.com/watch?v=5H_tp1i10S4" target="_blank">
+    <a href="https://plus.oqupie.com/portal/2568" target="_blank">
     <div className="w-[482px] h-[170px] left-0 top-[340px] absolute">
-      <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2023/12/15/Introduction.png" />
+      <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2024/02/07/Maintenance.png" />
     </div>
     </a>
     <a href="https://discord.gg/hmBgZ3nVSA" target="_blank">
@@ -73,7 +73,7 @@ export const KkutuCommunity = (props) => {
     </a>
     <a href="https://cafe.naver.com/ArticleList.nhn?search.clubid=31109813&search.menuid=7&search.boardtype=L" target="_blank">
       <div className="w-[482px] h-[170px] left-0 top-[170px] absolute">
-      <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2023/12/15/Notice.png" />
+      <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2024/02/07/Notice.png" />
       </div>
     </a>
   </div>
