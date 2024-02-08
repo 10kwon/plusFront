@@ -46,6 +46,9 @@ export const KkutuCommunity = (props) => {
           delay: 2500,
           disableOnInteraction: false,
         }} >
+          <swiper-slide>  <a href="https://pcor.me/coupon" target="_blank">
+  <img src="https://imagestorage.pcor.me/images/2024/02/08/77030c1d980105d04c8e245d06702b54.png" className="w-[680px] h-[680px]"/>
+  </a></swiper-slide>
           <swiper-slide>  <a href="https://cafe.naver.com/pluskkutu/58" target="_blank">
   <img src="https://imagestorage.pcor.me/images/2024/02/07/welcomeEvent.png" className="w-[680px] h-[680px]"/>
   </a></swiper-slide>
@@ -59,11 +62,6 @@ export const KkutuCommunity = (props) => {
       </div>
 
   <div className="w-[482px] self-stretch relative">
-    <a href="https://pcor.me/coupon" target="_blank">
-    <div className="w-[482px] h-[170px] left-0 top-[510px] absolute">
-    <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2024/02/08/77030c1d980105d04c8e245d06702b54.png" />
-    </div>
-    </a>
     <a href="https://cafe.naver.com/ArticleList.nhn?search.clubid=31109813&search.menuid=14&search.boardtype=L" target="_blank">
     <div className="w-[482px] h-[170px] left-0 top-[510px] absolute">
     <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2024/02/07/BugReport.png" />
