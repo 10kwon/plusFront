@@ -50,7 +50,7 @@ export const KkutuCommunity = (props) => {
   <img src="https://imagestorage.pcor.me/images/2024/02/07/welcomeEvent.png" className="w-[680px] h-[680px]"/>
   </a></swiper-slide>
     <swiper-slide>  <a href="https://cafe.naver.com/pluskkutu/63" target="_blank">
-  <img src="https://imagestorage.pcor.me/images/2024/02/07/Placehplder08bd1dabd39f56e7.png" className="w-[680px] h-[680px]"/>
+  <img src="https://imagestorage.pcor.me/images/2024/02/08/Placehplder.png" className="w-[680px] h-[680px]"/>
   </a></swiper-slide>
         <swiper-slide>  <a href="https://cafe.naver.com/pluskkutu/45?tc=shared_link" target="_blank">
   <img src="https://imagestorage.pcor.me/images/2024/01/21/image26f6be73bb78647d.png" className="w-[680px] h-[680px]"/>
