@@ -25,6 +25,7 @@ import { KkutuCommunity } from "./pages/app/kkutuCommunity";
 import { KkutuPing } from "./pages/app/pingShop";
 import { YouOnPage } from "./pages/app/youon";
 import { GamePage } from "./pages/app/game";
+import { CouponPage } from "./pages/app/kkutuCoupon";
 
 //행사 페이지
 import { Event230804Page } from "./pages/promotion/230804";
@@ -405,6 +406,13 @@ function App() {
           path="/plKkkutuCafe"
           element={
             <KkutuCommunity
+            />
+          }
+        />
+        <Route
+          path="/coupon"
+          element={
+            <CouponPage
             />
           }
         />
