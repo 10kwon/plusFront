@@ -25,17 +25,7 @@ export const KkutuCommunity = (props) => {
     </div>
     </a>
 
-    <div onClick={() => setxOpen(true)} className="w-[75px] h-[75px] pl-[10.65px] pr-[10.64px] pt-[9.38px] pb-[9.37px] left-[22px] top-[95px] absolute justify-center items-center inline-flex">
-    <FontAwesomeIcon icon={faXTwitter} className="w-[50px] h-[50px] text-[#000000]"/>
-    </div>
-
-    <a href="https://youtube.com/@PlusPlatforms" target="_blank">
-    <div className="w-[75px] h-[75px] pl-[10.65px] pr-[10.64px] pt-[9.38px] pb-[9.37px] left-[22px] top-[180px] absolute justify-center items-center inline-flex">
-    <FontAwesomeIcon icon={faYoutube} className="w-[50px] h-[50px] text-[#ff0000]"/>
-    </div>
-    </a>
-
-    <div onClick={() => setdOpen(true)} className="w-[75px] h-[75px] pl-[10.65px] pr-[10.64px] pt-[9.38px] pb-[9.37px] left-[22px] top-[265px] absolute justify-center items-center inline-flex">
+    <div onClick={() => setdOpen(true)} className="w-[75px] h-[75px] pl-[10.65px] pr-[10.64px] pt-[9.38px] pb-[9.37px] left-[22px] top-[95px] absolute justify-center items-center inline-flex">
     <FontAwesomeIcon icon={faDiscord} className="w-[50px] h-[50px] text-[#5865f2]"/>
     </div>
   </div>
@@ -72,7 +62,7 @@ export const KkutuCommunity = (props) => {
       <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2024/02/07/Maintenance.png" />
     </div>
     </a>
-    <a href="https://discord.gg/hmBgZ3nVSA" target="_blank">
+    <a href="#" target="_blank">
       <div className="w-[482px] h-[170px] left-0 top-0 absolute">
       <img className="w-[482px] h-[170px] left-0 top-0 absolute object-cover object-center bg-cover" src="https://imagestorage.pcor.me/images/2024/01/25/1136_20240125002035.png" />
       </div>
@@ -178,8 +168,8 @@ export const KkutuCommunity = (props) => {
         <Dialog.Panel className="relative transform overflow-hidden text-left transition-all sm:my-8 ">
           <div className="">
           <WidgetBot
-    server="1144989383569715291"
-    channel="1183794227684069487"
+    server="1207032847152578670"
+    channel="1207039278144684042"
     height="540"
     width="800"
   />
@@ -193,13 +183,13 @@ export const KkutuCommunity = (props) => {
             >
               닫기
             </button>
-            <a href="https://discord.com/invite/GKpubCUmtu" target="_blank">
+            <a href="https://discord.gg/yrCCtHYT3U" target="_blank">
           <button
               type="button"
               className="mt-3 mr-2 inline-flex w-full justify-center text-xl bg-gradient-to-r from-indigo-500 to-pink-400 text-white px-3 py-2 text-sm font-bold shadow-sm ring-1 ring-inset ring-purple-500 hover:bg-gray-900 sm:mt-0 sm:w-auto"
               onClick={() => setdOpen(false)}
             >
-              PSP 참여하기
+              공식 서버 참여하기
             </button>
             </a>
           </div>
