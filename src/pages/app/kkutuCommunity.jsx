@@ -26,7 +26,7 @@ export const KkutuCommunity = (props) => {
   <img src="https://imagestorage.pcor.me/images/2024/03/01/b6ef15e07bde4d3a.png" className="w-[1280px] h-[510px]"/>
   </a></swiper-slide>
     <swiper-slide>  <a href="https://cafe.naver.com/pluskkutu/63" target="_blank">
-  <img src="https://imagestorage.pcor.me/images/2024/02/16/HotTime.png" className="w-[1280px] h-[510px]"/>
+  <img src="https://imagestorage.pcor.me/images/2024/03/01/-.png" className="w-[1280px] h-[510px]"/>
   </a></swiper-slide>
       </swiper-container>
       </div>
