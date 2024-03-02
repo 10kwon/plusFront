@@ -22,8 +22,8 @@ export const KkutuCommunity = (props) => {
           delay: 2500,
           disableOnInteraction: false,
         }} >
-          <swiper-slide>  <a href="https://cafe.naver.com/ArticleRead.nhn?clubid=31109813&page=1&menuid=6&boardtype=L&articleid=94&referrerAllArticles=false" target="_blank">
-  <img src="https://imagestorage.pcor.me/images/2024/03/01/b6ef15e07bde4d3a.png" className="w-[1280px] h-[510px]"/>
+          <swiper-slide>  <a href="https://cafe.naver.com/pluskkutu/95" target="_blank">
+  <img src="https://imagestorage.pcor.me/images/2024/03/03/image.png" className="w-[1280px] h-[510px]"/>
   </a></swiper-slide>
     <swiper-slide>  <a href="https://cafe.naver.com/pluskkutu/63" target="_blank">
   <img src="https://imagestorage.pcor.me/images/2024/03/01/-.png" className="w-[1280px] h-[510px]"/>
