@@ -13,7 +13,7 @@ function Footer(props) {
                   Plus
                 </span>{" "}
                 <span class="self-center text-xl text-gray-500 font-semibold whitespace-nowrap dark:text-white">
-                  &nbsp;with Sqlare
+                  &nbsp;with Infole
                 </span>
               </a>
             </div>
@@ -21,7 +21,7 @@ function Footer(props) {
           <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
           <div class="sm:flex sm:items-center sm:justify-between">
             <span class="text-sm text-gray-500 dark:text-gray-400">
-              Copyright &copy; 2021~ Plus Platforms & Sqlare
+              Copyright &copy; 2021~ Plus Platforms & Infole
             </span>
             <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
               <a

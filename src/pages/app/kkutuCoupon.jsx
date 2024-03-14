@@ -37,17 +37,10 @@ export const CouponPage = (props) => {
   };
   
   return (
-    <div className="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat" style={{ backgroundImage: "url('https://imagestorage.pcor.me/images/2024/02/08/fcaec4e2413bd05fd9e7788153fca282.png')" }}>
-      <div className="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
-        <div className="text-white">
-          <div className="mb-8 flex flex-col items-center">
-            <h1 className="mb-2 text-2xl font-semibold">플러스끄투 쿠폰 등록</h1>
-            <span className="text-gray-300 text-center">사용자 ID는 인게임에서 /id 입력하여<br />확인하실 수 있습니다.</span>
-          </div>
           <form onSubmit={handleCouponRegistration} className="px-auto text-black">
             <div className="mb-4 text-lg">
               <input
-                className="rounded-xl border-none bg-white px-6 py-2 text-center text-inherit shadow-lg outline-none backdrop-blur-md"
+                className="rounded-lg border bg-white py-2 text-inherit outline-none"
                 type="text"
                 name="userId"
                 placeholder="사용자 ID"
@@ -58,7 +51,7 @@ export const CouponPage = (props) => {
 
             <div className="mb-4 text-lg">
               <input
-                className="rounded-xl border-none bg-white px-6 py-2 text-center text-inherit shadow-lg outline-none backdrop-blur-md"
+                className="rounded-lg border bg-white py-2 text-inherit outline-none"
                 type="text"
                 name="couponNumber"
                 placeholder="쿠폰번호"
@@ -66,17 +59,14 @@ export const CouponPage = (props) => {
                 onChange={(e) => setCouponNumber(e.target.value)}
               />
             </div>
-            <div className="mt-8 flex justify-center text-lg text-black">
+            <div className="mt-8 flex justify-end text-lg text-black">
               <button
                 type="submit"
-                className="rounded-xl bg-blue-500 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-blue-600"
+                className="rounded-lg bg-blue-500 px-3 py-1 text-white shadow-lg transition-colors duration-300 hover:bg-blue-600"
               >
                 쿠폰등록
               </button>
             </div>
           </form>
-        </div>
-      </div>
-    </div>
   );
 };

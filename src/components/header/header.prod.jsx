@@ -59,7 +59,7 @@ const navigation = {
             { name: "상점", href: "/shop" },
             { name: "카드", href: "/card/setting" },
             { name: "잔액", href: "/coin" },
-            { name: "플러스끄투", href: "https://kkutu.pcor.me" }
+            { name: "플러스끄투", href: "https://kkutu.cc" }
           ],
         },
       ],
@@ -87,8 +87,8 @@ const navigation = {
   ],
   pages: [],
   linkedpages: [
-    { name: "플러스끄투", href: "https://kkutu.pcor.me" },
-    { name: "블로그", href: "https://blog.sqlare.com" },
+    { name: "플러스끄투", href: "https://kkutu.cc" },
+    { name: "블로그", href: "https://now.pcor.me" },
     { name: "Sqlare", href: "https://sqlare.com" },
   ],
 };
@@ -458,7 +458,7 @@ export default function Header(props) {
                   <div className="flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <div>
                         <a
-                        href="https://blog.sqlare.com"
+                        href="https://now.pcor.me"
                         target="_blank"
                         >
                           <button className="dark:text-gray-300 text-gray-700 rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800">
