@@ -59,7 +59,6 @@ const navigation = {
             { name: "상점", href: "/shop" },
             { name: "카드", href: "/card/setting" },
             { name: "잔액", href: "/coin" },
-            { name: "플러스끄투", href: "https://kkutu.cc" }
           ],
         },
       ],
@@ -80,14 +79,13 @@ const navigation = {
         {
           id: "supportNotice",
           name: "새로운 소식",
-          items: [{ name: "플러스끄투 카페", href: "https://cafe.naver.com/pluskkutu" }],
+          items: [],
         },
       ],
     }
   ],
   pages: [],
   linkedpages: [
-    { name: "플러스끄투", href: "https://kkutu.cc" },
     { name: "블로그", href: "https://now.pcor.me" },
     { name: "Sqlare", href: "https://sqlare.com" },
   ],
