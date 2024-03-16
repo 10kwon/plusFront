@@ -76,43 +76,7 @@ export const GamePage = (props) => {
             지금 즐겨보세요
 				</h2>
         <div class="md:flex overflow-x-scroll md:justify-center md:items-center">
-
-        <a href="/youon">
-        				<div class="md:mr-4 bg-cover relative flex flex-col justify-between bg-white transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center shadow-md my-2"
-                style={{ backgroundImage: `url('https://imagestorage.pcor.me/images/2024/01/21/image9b6c16d5b2b7eeee.png')` }}
-                >
-                <div class="absolute bg-gradient-to-r from-transparent to-black  opacity-50 inset-0 z-0"></div>
-                <div class="relative flex flex-row items-end w-full ">
-                  <div class="p-6 rounded-xl  flex flex-col w-full z-10 ">
-                  <h2 class="text-sm flex items-center text-white font-normal">
-                 Minecraft
-                        </h2>
-                    <h4 class="mt-1 text-white text-xl font-bold leading-tight">
-                  유온시티
-                    </h4>
-                  </div>
-                </div>
-              </div>
-              </a>
-              <a href="https://kkutu.cc">
-              <div class="md:mr-4 bg-cover relative flex flex-col justify-between bg-white transform ease-in duration-100 active:scale-95 bg-cover text-gray-800  overflow-hidden cursor-pointer w-full object-cover object-center shadow-md my-2"
-                style={{ backgroundImage: `url('https://imagestorage.pcor.me/images/2024/01/21/bg.png')` }}
-                >
-                <div class="absolute bg-gradient-to-r from-transparent to-black  opacity-50 inset-0 z-0"></div>
-                <div class="relative flex flex-row items-end w-full ">
-                  <div class="p-6 rounded-xl  flex flex-col w-full z-10 ">
-                  <h2 class="text-sm flex items-center text-white font-normal">
-                 Web
-                        </h2>
-                    <h4 class="mt-1 text-white text-xl font-bold leading-tight">
-                  플러스끄투
-                    </h4>
-                  </div>
-                </div>
-              </div>
-              </a>
-
-			</div>
+</div>
 
 
       </main>
