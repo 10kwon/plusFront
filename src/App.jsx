@@ -86,15 +86,6 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
-  useEffect(() => {
-    const token = cookies.sessionID;
-    Axios.get("https://imnyang.xyz/api")
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
   return (
     <div className="App">
       <Routes>
