@@ -44,19 +44,9 @@ const navigation = {
       featured: [],
       sections: [
         {
-          id: "pluscoinEarn",
-          name: "모으기",
-          items: [
-            { name: "리워드 받기", href: "/reward" },
-            { name: "PSP", href: "/pspDiscord" },
-            { name: "Vault 발급받기", href: "/coin/sekai" }
-          ],
-        },
-        {
           id: "pluscoinUsage",
           name: "사용하기",
           items: [
-            { name: "상점", href: "/shop" },
             { name: "카드", href: "/card/setting" },
             { name: "잔액", href: "/coin" },
           ],
@@ -72,23 +62,14 @@ const navigation = {
           id: "supportCenter",
           name: "고객센터",
           items: [
-            { name: "자주 묻는 질문", href: "/support" },
-            { name: "네이버 톡톡 상담", href: "https://talk.naver.com/ct/w5wx2v" },
+            { name: "자주 묻는 질문", href: "/support" }
           ],
-        },
-        {
-          id: "supportNotice",
-          name: "새로운 소식",
-          items: [],
-        },
+        }
       ],
     }
   ],
   pages: [],
-  linkedpages: [
-    { name: "블로그", href: "https://now.pcor.me" },
-    { name: "Sqlare", href: "https://sqlare.com" },
-  ],
+  linkedpages: [],
 };
 
 function classNames(...classes) {
@@ -455,14 +436,7 @@ export default function Header(props) {
                 <div className="ml-auto flex items-center">
                   <div className="flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <div>
-                        <a
-                        href="https://now.pcor.me"
-                        target="_blank"
-                        >
-                          <button className="dark:text-gray-300 text-gray-700 rounded-xl py-2 px-2 transform ease-in duration-100 active:scale-95 hover:bg-gray-100 dark:hover:bg-gray-800">
-                          <MegaphoneIcon className="h-6"/>
-                          </button>
-                        </a>
+                        
                         <span className="px-1"></span>
                         <a
                         href="https://mapi.pcor.me/notification.php"
@@ -613,20 +587,6 @@ export default function Header(props) {
             <WalletIcon className="h-6 w-6" aria-hidden="true" />
           </button>
           <span className="text-xs text-center mt-0.5">월렛</span>
-        </div>
-
-        <div class="flex flex-col items-center transition ease-in duration-100 hover:text-blue-500 dark:hover:text-blue-300 ">
-          <button onClick={() => navigate("/game")}>
-            <PuzzlePieceIcon className="h-6 w-6" aria-hidden="true" />
-          </button>
-          <span className="text-xs text-center mt-0.5">게임</span>
-        </div>
-
-        <div class="flex flex-col items-center transition ease-in duration-100 hover:text-blue-500 dark:hover:text-blue-300 ">
-          <button onClick={() => navigate("/shop")}>
-            <ShoppingBagIcon className="h-6 w-6" aria-hidden="true" />
-          </button>
-          <span className="text-xs text-center mt-0.5">상점</span>
         </div>
 
         <div class="flex flex-col items-center transition ease-in duration-100 hover:text-blue-500 dark:hover:text-blue-300 ">
