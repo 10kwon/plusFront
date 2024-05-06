@@ -70,53 +70,7 @@ export const HomePage = (props) => {
       />
 
 <div class="mx-3 mt-8 mb-6 flex lg:hidden">
-          {props.isLogin ? (
-                        
-                          (Math.floor(Math.random() * 2) == 0) ?
-                        <div onClick={() => navigate("/pspDiscord")} className="flex rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
-                        <div className="ml-2 my-auto">
-                        <img src="/psp.svg" className="h-8 inline-block mr-1"/>
-                        </div>
-                        <div className="ml-2">
-                        <span
-                          style={{
-                            animationDelay: "0.15s",
-                            animationFillMode: "forwards",
-                          }}
-                          class="text-lg animate-fade-up"
-                        >
-                          {props.userName}님을 위한 소식{" "}
-                        </span>
-                        <br class="md:hidden block" />
-                        <span class="text-xl font-bold">
-                        Metro+가 이제 PSP가 됐어요<span class="hidden md:visible">.</span>
-                        </span>
-                        </div>
-                      </div>
-                      :
-                      <div onClick={() => navigate("/shop")} className="flex rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
-                     <div className="ml-2 my-auto">
-                     <img src="/resources/images/pass.svg" className="h-8 inline-block mr-1"/>
-                     </div>
-                     <div className="ml-2">
-                     <span
-                       style={{
-                         animationDelay: "0.15s",
-                         animationFillMode: "forwards",
-                       }}
-                       class="text-lg animate-fade-up"
-                     >
-                       {props.userName}님을 위한 소식{" "}
-                     </span>
-                     <br class="md:hidden block" />
-                     <span class="text-xl font-bold">
-                     시즌패스 S1 정식 오픈!<span class="hidden md:visible">.</span>
-                     </span>
-                     </div>
-                   </div>
-                        
-          ) : (
-            <div className="flex rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
+          <div className="flex rounded-xl p-2 bg-gray-200 w-full dark:bg-gray-700">
               <div className="ml-2 my-auto">
               <img src="https://coin.pcor.me/resources/images/pluscoin.svg" className="h-8 inline-block mr-1"/>
               </div>
@@ -128,11 +82,11 @@ export const HomePage = (props) => {
                 }}
                 class="text-lg animate-fade-up"
               >
-                Plus가 처음이라면?{" "}
+                1년간의 사랑에 감사드립니다!{" "}
               </span>
               <br class="md:hidden block" />
               <span class="text-xl font-bold">
-                코인 받고 시작하세요<span class="hidden md:visible">.</span>
+                보다 나은 모습으로 돌아올게요<span class="hidden md:visible">.</span>
               </span>
               </div>
               <div className="ml-auto my-auto justify-end">
@@ -144,7 +98,6 @@ export const HomePage = (props) => {
                 </button>
               </div>
             </div>
-          )}
         </div>
     <div className="lg:p-0">
       <swiper-container
@@ -183,7 +136,7 @@ export const HomePage = (props) => {
                       {nl2br(item.title)}
                     </h2>
                     <p data-aos="fade-left" data-aos-duration="700" data-aos-delay="500" class="text-md md:text-2xl mt-2 my-auto flex items-center text-white">
-                      바로가기 →
+                      자세히 알아보기 →
                     </p>
                   </div>
                 </div>
@@ -199,7 +152,7 @@ export const HomePage = (props) => {
 		transition duration-500 ease-in-out overflow-y-auto max-w-screen-lg xl:max-w-screen-xl mx-auto"
       >
         <div class="md:grid md:grid-cols-2">
-          <div class="md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col rounded-xl bg-gray-200 dark:bg-gray-700"
+          <div class="hidden md:mr-6 mt-8 py-2 flex-shrink-0 flex flex-col rounded-xl bg-gray-200 dark:bg-gray-700"
           >
             <h3
               class="flex items-center py-2 px-3 md:px-4 text-2xl font-bold dark:text-gray-300"
@@ -241,7 +194,7 @@ export const HomePage = (props) => {
             <h3
               class="flex items-center py-2 px-3 md:px-4 text-2xl font-bold dark:text-gray-300"
             >
-              <span>리워드</span>
+              <span>서비스 종료 관련 공지</span>
             </h3>
 
             <div className="mx-auto w-full md:max-w-2xl lg:max-w-7xl lg:px-8">
@@ -263,7 +216,7 @@ export const HomePage = (props) => {
                             />
                             {item.title}
                           </h3>
-                          <p className="text-sm text-gray-700 dark:text-gray-200">
+                          <p className="hidden text-sm text-gray-700 dark:text-gray-200">
                             <img
                               src="https://coin.pcor.me/resources/images/pluscoin.svg"
                               class="h-4 mr-1 inline-block"
