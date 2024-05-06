@@ -73,14 +73,14 @@ export const NewsPicPage = (props) => {
     메인
   </Breadcrumb.Item>
   <Breadcrumb.Item>
- 리워드
+ 공지사항
   </Breadcrumb.Item>
 </Breadcrumb>
 <h3
 					class="flex items-center pt-6 md:px-4 text-3xl font-bold
 					capitalize dark:text-gray-300">
             
-					<span>리워드 받기</span>
+					<span>서비스 종료<br/>업데이트</span>
 				</h3>
 
 
@@ -89,7 +89,7 @@ export const NewsPicPage = (props) => {
         <h2
 					class="flex items-center pt-8 pb-1 md:px-4 text-2xl font-bold
 					capitalize dark:text-gray-300">
-					<span>인기 많은 리워드</span>
+					<span>최신 소식</span>
 				</h2>
         <div class="md:flex overflow-x-scroll md:justify-center md:items-center">
         {shopData.map((item, index) => (
@@ -106,7 +106,7 @@ export const NewsPicPage = (props) => {
                     {item.title}
                     </h4>
                     <div class="flex pt-4 ext-sm text-gray-300">
-                      <div class="flex items-center font-medium text-white ">
+                      <div class="hidden flex items-center font-medium text-white ">
                       <img src="https://coin.pcor.me/resources/images/pluscoin.svg" class="h-6 mr-2" alt="Coin"/>{item.reward.toLocaleString()+"코인 지급"}
                       </div>
                     </div>
@@ -122,7 +122,7 @@ export const NewsPicPage = (props) => {
       <h2
 					class="flex items-center pt-8 pb-1 md:px-4 text-2xl font-bold
 					capitalize dark:text-gray-300">
-					<span>전체 리워드 보기</span>
+					<span>알려드립니다</span>
 				</h2>
 
 
@@ -146,7 +146,7 @@ export const NewsPicPage = (props) => {
                       <span aria-hidden="true" className="absolute inset-0" />
                       {item.title}
                   </h3>
-                  <p className="text-sm text-gray-700 dark:text-gray-300"><img src="https://coin.pcor.me/resources/images/pluscoin.svg" class="h-4 mr-1 inline-block" alt="Coin"/>{item.reward.toLocaleString()+"코인 지급"}</p>
+                  <p className="hidden text-sm text-gray-700 dark:text-gray-300"><img src="https://coin.pcor.me/resources/images/pluscoin.svg" class="h-4 mr-1 inline-block" alt="Coin"/>{item.reward.toLocaleString()+"코인 지급"}</p>
                 </div>
                 <div className="justify-end lg:hidden aspect-square w-24 h-24 overflow-hidden rounded-xl bg-gray-200 group-hover:opacity-75 lg:h-60 lg:w-60">
                 <img
